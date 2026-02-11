@@ -57,7 +57,22 @@ We chose **ANOVA (Analysis of Variance)** as the primary statistical test.
 *   **Formula**: `Monthly Income / Total Family Members`
 *   **Missing Data Handling**: If Income or Family Size is missing/zero, Per Capita Income is set to `null` (excluded from averages).
 
-## 5. Missing Data Handling
-*   **Empty Rows**: The original dataset contained **160 rows**, of which **40 were completely empty** (missing Age, Education, etc.). These rows were **filtered out** prior to analysis to prevent skewing of results (Sample Size = 120).
-*   **Questionnaire Responses**: For the 120 valid participants, if a specific question response was missing, it was assigned a score of **0** (conservative approach).
-*   **Demographics**: Records with missing demographic data (e.g., Mother's Education) are excluded pair-wise from specific analyses (like the ANOVA test) but included in general summaries if other data is present.
+## 6. Validity Checks & Limitations
+
+### Confounding Factors
+*   **Age**: We found a moderate positive correlation between Age and Knowledge Score (r = 0.307, p = 0.001). This is expected (older adolescents know more). Since Age was not significantly different across Maternal Education groups, it is unlikely to invalidate the main findings, but should be noted.
+*   **Income**: No significant correlation was found between Per Capita Income and Hygiene scores.
+
+### Small Group Sizes
+*   **Imbalance**: Maternal Education groups are unbalanced.
+    *   Level 1: n=86
+    *   Level 2: n=17
+    *   Level 3: n=8
+    *   Level 4: n=8
+    *   Level 5: n=1
+*   **Impact**: The very small sample size for Level 5 (n=1) means we cannot draw strong conclusions about this specific group. However, the overall trend and the statistical difference driven by the larger groups remain valid. The Kruskal-Wallis test helps mitigate the impact of outliers in small groups.
+
+### Data Consistency
+*   **Logic Checks**: We verified that `Total Family Members` equals `Male + Female` members for all 120 records.
+*   **Range Checks**: All Age values (12-18) are within the valid adolescent range.
+
