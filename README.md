@@ -23,6 +23,7 @@ For a detailed explanation of why specific statistical tests (ANOVA vs. T-Test v
 ### Key Findings Summary
 *   **Sample Size**: 160 Total (120 Valid after filtering empty rows)
 *   **Practice Scores**: Significantly influenced by Maternal Education (p = 0.042).
+    *   **Robustness Check**: Confirmed by non-parametric Kruskal-Wallis test (p = 0.038), ensuring the result is valid despite non-normal data distribution.
 *   **Knowledge Scores**: No significant difference found based on Maternal Education (p = 0.261).
 
 
