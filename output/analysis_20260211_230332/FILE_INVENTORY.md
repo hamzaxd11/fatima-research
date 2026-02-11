@@ -1,7 +1,7 @@
 # Analysis Output File Inventory
 
-Generated: 2026-02-11 22:35:15
-Output Folder: output\analysis_20260211_223511
+Generated: 2026-02-11 23:03:36
+Output Folder: output\analysis_20260211_230332
 
 ## Files
 
@@ -10,11 +10,11 @@ Output Folder: output\analysis_20260211_223511
 - **Description**: Analysis execution log with all parameters and messages
 
 ### analysis_report.md
-- **Size**: 5.82 KB
+- **Size**: 5.75 KB
 - **Description**: Comprehensive analysis report (markdown format)
 
 ### analysis_report.txt
-- **Size**: 5.82 KB
+- **Size**: 5.75 KB
 - **Description**: Comprehensive analysis report (text format)
 
 ### correlation_matrix.csv
@@ -22,7 +22,7 @@ Output Folder: output\analysis_20260211_223511
 - **Description**: Correlation coefficients between continuous variables
 
 ### data_quality_missing_values.csv
-- **Size**: 248.85 KB
+- **Size**: 73.14 KB
 
 ### data_quality_summary.txt
 - **Size**: 0.41 KB
@@ -59,11 +59,11 @@ Output Folder: output\analysis_20260211_223511
 - **Description**: Box plots comparing scores across education groups
 
 ### score_distributions.png
-- **Size**: 104.12 KB
+- **Size**: 105.31 KB
 - **Description**: Histograms of score distributions
 
 ### scored_dataset.csv
-- **Size**: 21.61 KB
+- **Size**: 19.69 KB
 - **Description**: Complete dataset with all calculated scores
 
 ### scores_by_maternal_education.png

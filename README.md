@@ -21,10 +21,13 @@ This system analyzes the relationship between maternal education and menstrual h
 For a detailed explanation of why specific statistical tests (ANOVA vs. T-Test vs. Chi-Square) were chosen, please refer to [ANALYSIS_METHODOLOGY.md](ANALYSIS_METHODOLOGY.md).
 
 ### Key Findings Summary
-*   **Sample Size**: 160 Total (120 Valid after filtering empty rows)
+*   **Sample Size**: 120 Valid Respondents (40 empty rows were filtered out during data loading).
 *   **Practice Scores**: Significantly influenced by Maternal Education (p = 0.042).
-    *   **Robustness Check**: Confirmed by non-parametric Kruskal-Wallis test (p = 0.038), ensuring the result is valid despite non-normal data distribution.
+    *   **Robustness Check**: Confirmed by non-parametric Kruskal-Wallis test (p = 0.038).
 *   **Knowledge Scores**: No significant difference found based on Maternal Education (p = 0.261).
+*   **Overall Scores**:
+    *   Mean Knowledge Score: 5.82 (out of 9)
+    *   Mean Practice Score: 5.68 (out of 7)
 
 
 ## Installation

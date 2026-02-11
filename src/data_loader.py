@@ -54,6 +54,23 @@ def load_spss_file(file_path: str) -> Tuple[pd.DataFrame, Dict[str, Any]]:
             'number_rows': meta.number_rows if hasattr(meta, 'number_rows') else len(df),
             'number_columns': meta.number_columns if hasattr(meta, 'number_columns') else len(df.columns)
         }
+
+        # CRITICAL FILTERING STEP:
+        # Filter out rows that are effectively empty.
+        # The dataset contains ~40 empty rows at the end which skew the analysis.
+        # We filter based on missing 'MotherEducation' as it is the primary independent variable.
+        # We try to identify the column name dynamically.
+        maternal_col = None
+        for col in df.columns:
+            if 'mother' in col.lower() and 'education' in col.lower():
+                maternal_ed_col = col
+                break
+        
+        initial_len = len(df)
+        if maternal_ed_col:
+             # Dropping rows where Maternal Education is NaN
+             df = df.dropna(subset=[maternal_ed_col])
+             print(f"      [Data Loader] Filtered out {initial_len - len(df)} empty/invalid rows (based on missing {maternal_ed_col})")
         
         return df, metadata
         

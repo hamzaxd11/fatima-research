@@ -51,6 +51,13 @@ We chose **ANOVA (Analysis of Variance)** as the primary statistical test.
 *   **Conclusion**: The finding that Maternal Education impacts Practice Scores is **robust** and not an artifact of test selection. It holds true even when we don't assume a normal distribution.
 
 
-## 3. Demographics and Per Capita Income
-*   **Per Capita Income**: Calculated as `Monthly Income / Total Family Members`.
-*   **Demographic Analysis**: Simple frequency distributions and descriptive statistics (mean, median) are used for demographic variables (Age, Income, Family Size) to provide a clear picture of the study population.
+## 4. Derived Variables
+
+### Per Capita Income
+*   **Formula**: `Monthly Income / Total Family Members`
+*   **Missing Data Handling**: If Income or Family Size is missing/zero, Per Capita Income is set to `null` (excluded from averages).
+
+## 5. Missing Data Handling
+*   **Empty Rows**: The original dataset contained **160 rows**, of which **40 were completely empty** (missing Age, Education, etc.). These rows were **filtered out** prior to analysis to prevent skewing of results (Sample Size = 120).
+*   **Questionnaire Responses**: For the 120 valid participants, if a specific question response was missing, it was assigned a score of **0** (conservative approach).
+*   **Demographics**: Records with missing demographic data (e.g., Mother's Education) are excluded pair-wise from specific analyses (like the ANOVA test) but included in general summaries if other data is present.

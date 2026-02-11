@@ -2,11 +2,11 @@
 MENSTRUAL HYGIENE AWARENESS ANALYSIS REPORT
 ================================================================================
 
-Report Generated: 2026-02-11 22:35:15
+Report Generated: 2026-02-11 23:03:36
 
 Source Data File: menstrual hygiene spss.sav fatima and ayesha (1).sav
 
-Total Records Analyzed: 160
+Total Records Analyzed: 120
 
 ================================================================================
 
@@ -49,11 +49,11 @@ This section provides an overview of the study population characteristics.
   Range: 10000.00 - 600000.00
 
 **Family Size**
-  Count: 160
-  Mean: 4.99
+  Count: 120
+  Mean: 6.66
   Median: 6.00
-  Std Dev: 3.55
-  Range: 0.00 - 15.00
+  Std Dev: 2.38
+  Range: 2.00 - 15.00
 
 **Per Capita Income**
   Count: 120
@@ -70,22 +70,21 @@ about menstrual hygiene awareness.
 
 ### 2.1 Overall Knowledge Score Statistics
 
-  Total Respondents: 160
-  Mean Score: 4.36
+  Total Respondents: 120
+  Mean Score: 5.82
   Median Score: 6.00
-  Standard Deviation: 2.70
-  Minimum Score: 0
+  Standard Deviation: 1.08
+  Minimum Score: 3
   Maximum Score: 8
 
 ### 2.2 Score Distribution
 
-  Score 0: 40 respondents (25.0%)
-  Score 3: 3 respondents (1.9%)
-  Score 4: 13 respondents (8.1%)
-  Score 5: 23 respondents (14.4%)
-  Score 6: 48 respondents (30.0%)
-  Score 7: 30 respondents (18.8%)
-  Score 8: 3 respondents (1.9%)
+  Score 3: 3 respondents (2.5%)
+  Score 4: 13 respondents (10.8%)
+  Score 5: 23 respondents (19.2%)
+  Score 6: 48 respondents (40.0%)
+  Score 7: 30 respondents (25.0%)
+  Score 8: 3 respondents (2.5%)
 
 **Visualization**: See 'score_distributions.png' for histogram
 
@@ -97,20 +96,19 @@ about actual menstrual hygiene practices.
 
 ### 3.1 Overall Practice Score Statistics
 
-  Total Respondents: 160
-  Mean Score: 4.26
+  Total Respondents: 120
+  Mean Score: 5.68
   Median Score: 6.00
-  Standard Deviation: 2.52
-  Minimum Score: 0
+  Standard Deviation: 0.58
+  Minimum Score: 4
   Maximum Score: 7
 
 ### 3.2 Score Distribution
 
-  Score 0: 40 respondents (25.0%)
-  Score 4: 6 respondents (3.8%)
-  Score 5: 27 respondents (16.9%)
-  Score 6: 86 respondents (53.8%)
-  Score 7: 1 respondents (0.6%)
+  Score 4: 6 respondents (5.0%)
+  Score 5: 27 respondents (22.5%)
+  Score 6: 86 respondents (71.7%)
+  Score 7: 1 respondents (0.8%)
 
 **Visualization**: See 'score_distributions.png' for histogram
 
@@ -183,7 +181,7 @@ Pearson correlation coefficients between continuous variables.
 ## 6. GENERATED OUTPUT FILES
 
 All analysis outputs have been saved to the output folder:
-output\analysis_20260211_223511
+output\analysis_20260211_230332
 
 ### 6.1 Data Files
 
