@@ -16,6 +16,16 @@ This system analyzes the relationship between maternal education and menstrual h
 - Comprehensive analysis reports
 - Data quality reporting
 
+## Statistical Analysis & Methodology
+
+For a detailed explanation of why specific statistical tests (ANOVA vs. T-Test vs. Chi-Square) were chosen, please refer to [ANALYSIS_METHODOLOGY.md](ANALYSIS_METHODOLOGY.md).
+
+### Key Findings Summary
+*   **Sample Size**: 160 Total (120 Valid after filtering empty rows)
+*   **Practice Scores**: Significantly influenced by Maternal Education (p = 0.042).
+*   **Knowledge Scores**: No significant difference found based on Maternal Education (p = 0.261).
+
+
 ## Installation
 
 ### Prerequisites
