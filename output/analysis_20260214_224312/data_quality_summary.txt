@@ -1,0 +1,19 @@
+DATA QUALITY REPORT
+==================================================
+
+Total Rows: 120
+Total Columns: 41
+Total Cells: 4920
+
+Missing Values: 550
+Invalid Values: 0
+Total Issues: 550
+
+Affected Rows: 120
+Affected Columns: 10
+
+Data Quality: 88.82%
+
+WARNINGS:
+- Found 550 missing values across 10 variables
+- Missing values report saved to: output\analysis_20260214_224312/data_quality_missing_values.csv

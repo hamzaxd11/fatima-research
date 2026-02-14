@@ -100,74 +100,98 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
     groups_knowledge = [group['knowledge_score'].values for _, group in grouped]
     groups_practice = [group['practice_score'].values for _, group in grouped]
     
-    # Determine which statistical test to use:
-    # - ANOVA (Analysis of Variance): Parametric test for comparing means across groups
-    #   Assumptions: Normal distribution, equal variances, independent samples
-    #   More powerful when assumptions are met
-    # - Kruskal-Wallis: Non-parametric alternative to ANOVA
-    #   Used when: Small sample sizes, non-normal distributions, unequal variances
-    #   More robust but less powerful than ANOVA
-    # 
-    # We default to ANOVA and fall back to Kruskal-Wallis if ANOVA fails
+    # Check assumptions for ANOVA
+    # 1. Normality (Shapiro-Wilk test)
+    #    We check residuals of the model or the groups themselves. Checking groups is stricter.
+    #    If p < 0.05, data is NOT normal.
+    # 2. Homogeneity of Variance (Levene's test)
+    #    If p < 0.05, variances are NOT equal.
+    
+    use_parametric_knowledge = True
+    use_parametric_practice = True
+    
+    # Check Knowledge Score Assumptions
+    try:
+        # Check normality for each group (if n >= 3)
+        normal_k = True
+        for g in groups_knowledge:
+            if len(g) >= 3:
+                _, p_norm = stats.shapiro(g)
+                if p_norm < 0.05:
+                    normal_k = False
+                    break
+        
+        # Check homogeneity
+        if len(groups_knowledge) >= 2:
+            _, p_var_k = stats.levene(*groups_knowledge)
+        else:
+            p_var_k = 1.0
+            
+        if not normal_k or p_var_k < 0.05:
+            use_parametric_knowledge = False
+            
+    except Exception as e:
+        warnings.warn(f"Assumption check failed for knowledge scores: {str(e)}")
+        use_parametric_knowledge = False
+
+    # Check Practice Score Assumptions
+    try:
+        # Check normality
+        normal_p = True
+        for g in groups_practice:
+            if len(g) >= 3:
+                _, p_norm = stats.shapiro(g)
+                if p_norm < 0.05:
+                    normal_p = False
+                    break
+        
+        # Check homogeneity
+        if len(groups_practice) >= 2:
+            _, p_var_p = stats.levene(*groups_practice)
+        else:
+            p_var_p = 1.0
+            
+        if not normal_p or p_var_p < 0.05:
+            use_parametric_practice = False
+            
+    except Exception as e:
+        warnings.warn(f"Assumption check failed for practice scores: {str(e)}")
+        use_parametric_practice = False
+
+    # Determine validation outcomes
     test_type = 'ANOVA'
-    
-    # Check if we have enough groups
-    if len(groups_knowledge) < 2:
-        warnings.warn("Insufficient groups for statistical testing (need at least 2)")
-        return {
-            'summary_table': summary_table,
-            'anova_knowledge': {'f_statistic': np.nan, 'p_value': np.nan},
-            'anova_practice': {'f_statistic': np.nan, 'p_value': np.nan},
-            'test_type': 'None'
-        }
-    
+    if not use_parametric_knowledge or not use_parametric_practice:
+        test_type = 'Kruskal-Wallis (Robust)'
+
     # Perform statistical tests for knowledge scores
     try:
-        # ANOVA (Analysis of Variance) - One-way ANOVA
-        # Null hypothesis: All group means are equal
-        # Alternative hypothesis: At least one group mean differs
-        # Returns: F-statistic and p-value
-        # F-statistic: Ratio of between-group variance to within-group variance
-        # p-value: Probability of observing this F-statistic if null hypothesis is true
-        # Interpretation: p < 0.05 suggests significant differences between groups
-        f_stat_k, p_value_k = stats.f_oneway(*groups_knowledge)
-        anova_knowledge = {'f_statistic': float(f_stat_k), 'p_value': float(p_value_k)}
-    except Exception as e:
-        warnings.warn(f"ANOVA failed for knowledge scores, using Kruskal-Wallis: {str(e)}")
-        try:
-            # Kruskal-Wallis H-test - Non-parametric alternative to ANOVA
-            # Tests whether samples originate from the same distribution
-            # Null hypothesis: All groups have the same median
-            # Returns: H-statistic and p-value
-            # H-statistic: Measures how much group ranks differ from expected
-            # More robust to outliers and non-normal distributions than ANOVA
+        if use_parametric_knowledge:
+            f_stat_k, p_value_k = stats.f_oneway(*groups_knowledge)
+            anova_knowledge = {'f_statistic': float(f_stat_k), 'p_value': float(p_value_k)}
+        else:
             h_stat_k, p_value_k = stats.kruskal(*groups_knowledge)
             anova_knowledge = {'f_statistic': float(h_stat_k), 'p_value': float(p_value_k)}
-            test_type = 'Kruskal-Wallis'
-        except Exception as e2:
-            warnings.warn(f"Statistical test failed for knowledge scores: {str(e2)}")
-            anova_knowledge = {'f_statistic': np.nan, 'p_value': np.nan}
-            test_type = 'Failed'
+            if test_type == 'ANOVA': test_type = 'Mixed (ANOVA/Kruskal)'
+            
+    except Exception as e:
+        warnings.warn(f"Statistical test failed for knowledge scores: {str(e)}")
+        anova_knowledge = {'f_statistic': np.nan, 'p_value': np.nan}
     
     # Perform statistical tests for practice scores
-    # Use the same test type as determined for knowledge scores for consistency
     try:
-        if test_type == 'ANOVA':
-            # One-way ANOVA for practice scores
+        if use_parametric_practice:
             f_stat_p, p_value_p = stats.f_oneway(*groups_practice)
             anova_practice = {'f_statistic': float(f_stat_p), 'p_value': float(p_value_p)}
         else:
-            # Kruskal-Wallis test for practice scores
             h_stat_p, p_value_p = stats.kruskal(*groups_practice)
             anova_practice = {'f_statistic': float(h_stat_p), 'p_value': float(p_value_p)}
+            if test_type == 'ANOVA': test_type = 'Mixed (ANOVA/Kruskal)'
+            
     except Exception as e:
         warnings.warn(f"Statistical test failed for practice scores: {str(e)}")
         anova_practice = {'f_statistic': np.nan, 'p_value': np.nan}
     
     # Add significance indicators to summary table
-    # Using standard alpha level of 0.05 (5% significance level)
-    # If p < 0.05: Reject null hypothesis, differences are statistically significant
-    # If p >= 0.05: Fail to reject null hypothesis, differences may be due to chance
     alpha = 0.05
     summary_table['knowledge_significant'] = anova_knowledge['p_value'] < alpha if not np.isnan(anova_knowledge['p_value']) else False
     summary_table['practice_significant'] = anova_practice['p_value'] < alpha if not np.isnan(anova_practice['p_value']) else False
@@ -178,7 +202,6 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
         'anova_practice': anova_practice,
         'test_type': test_type
     }
-
 
 def calculate_demographic_summaries(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
     """

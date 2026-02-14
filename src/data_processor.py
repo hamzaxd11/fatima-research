@@ -73,6 +73,17 @@ def calculate_per_capita_income(df: pd.DataFrame) -> pd.DataFrame:
         income = pd.to_numeric(df[income_col], errors='coerce')
     else:
         income = pd.Series([np.nan] * len(df))
+        
+    # Drop "IncomePerCapita" if it exists (but isn't the calculated one yet) to identify confusion
+    # The new calculated column is "per_capita_income"
+    # If there is a completely empty "IncomePerCapita" column from SPSS, it causes data quality false alarms
+    for col in df.columns:
+        if col.lower().replace("_", "") == "incomepercapita" and col != "income_per_month":
+            # Check if it's mostly empty
+            if df[col].isna().sum() > len(df) * 0.9:
+                # Drop it to avoid noise
+                df.drop(columns=[col], inplace=True)
+                warnings.warn(f"Dropped empty '{col}' column to prefer calculated 'per_capita_income'")
     
     family_size = pd.to_numeric(df['total_family_members'], errors='coerce')
     

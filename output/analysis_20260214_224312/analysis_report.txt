@@ -2,7 +2,7 @@
 MENSTRUAL HYGIENE AWARENESS ANALYSIS REPORT
 ================================================================================
 
-Report Generated: 2026-02-11 23:03:36
+Report Generated: 2026-02-14 22:43:16
 
 Source Data File: menstrual hygiene spss.sav fatima and ayesha (1).sav
 
@@ -142,17 +142,17 @@ adolescent girls' menstrual hygiene knowledge and practices.
 
 ### 4.2 Statistical Significance Testing
 
-**Test Used**: ANOVA
+**Test Used**: Kruskal-Wallis (Robust)
 
 **Knowledge Scores:**
-  Test Statistic: 1.3356
-  P-value: 0.2610
+  Test Statistic: 5.8669
+  P-value: 0.2093
   Interpretation: The difference in knowledge scores across maternal
                   education levels is not significant (p ≥ 0.05).
 
 **Practice Scores:**
-  Test Statistic: 2.5679
-  P-value: 0.0417
+  Test Statistic: 10.1562
+  P-value: 0.0379
   Interpretation: The difference in practice scores across maternal
                   education levels is significant (p < 0.05).
 
@@ -181,7 +181,7 @@ Pearson correlation coefficients between continuous variables.
 ## 6. GENERATED OUTPUT FILES
 
 All analysis outputs have been saved to the output folder:
-output\analysis_20260211_230332
+output\analysis_20260214_224312
 
 ### 6.1 Data Files
 

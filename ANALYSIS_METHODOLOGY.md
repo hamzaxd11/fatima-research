@@ -45,10 +45,11 @@ We chose **ANOVA (Analysis of Variance)** as the primary statistical test.
 ### Fallback: Kruskal-Wallis Test
 *   The code includes an automatic check. If the data does not meet the strict requirements for ANOVA (e.g., not normally distributed or very unequal variances), it automatically switches to the **Kruskal-Wallis** test.
 ### Robustness Check (Addressing Normality Concerns)
-*   **Issue**: In our verification, the Shapiro-Wilk test indicated that the data for Practice Scores was **not normally distributed** (p < 0.05).
-*   **Resolution**: To Ensure "p-hacking" did not occur (using an invalid test to get a good result), we ran a **Kruskal-Wallis Test** (non-parametric) as a cross-check.
-*   **Result**: The Kruskal-Wallis test also showed a **statistically significant difference** (p = 0.0379).
-*   **Conclusion**: The finding that Maternal Education impacts Practice Scores is **robust** and not an artifact of test selection. It holds true even when we don't assume a normal distribution.
+*   **Integrated Checks**: The analysis code now performs automatic **Shapiro-Wilk** (normality) and **Levene's** (homogeneity of variance) tests on the data before selecting a statistical test.
+*   **Automatic Switching**:
+    *   If assumptions are met (p > 0.05), **ANOVA** is used.
+    *   If assumptions are violated (p < 0.05), the system automatically switches to the **Kruskal-Wallis Test** (non-parametric).
+*   **Result**: For this dataset, the Practice Score data was not normally distributed. The system correctly identified this and used the Kruskal-Wallis test, confirming the significant result (p = 0.038) is **robust**.
 
 
 ## 4. Derived Variables
