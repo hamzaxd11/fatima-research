@@ -42,6 +42,7 @@ We use **ANOVA** when parametric assumptions are met and **Kruskal-Wallis** when
 - **Normality**: Shapiro-Wilk per group (only when group n >= 3)
 - **Homogeneity of variance**: Levene's test (only when all groups n >= 2)
 - **Minimum group size**: If any group has n < 3, parametric assumptions are considered insufficient for ANOVA
+  - **Note**: Knowledge/practice scores are discrete and bounded, so non-normality is common even in valid data.
 
 ### Test Selection Logic
 - If assumptions are satisfied, **ANOVA** is used.

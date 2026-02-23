@@ -13,6 +13,7 @@ This document outlines the verification steps taken to ensure the accuracy, reli
 - **Result**: Kruskal-Wallis used for both outcomes.
   - Knowledge: H = 5.8669, p = 0.2093, epsilon^2 = 0.0162 (not significant)
   - Practice: H = 10.1562, p = 0.0379, epsilon^2 = 0.0535 (significant)
+- **Effect Size Note**: Observed effect sizes are small; interpret practical importance alongside statistical significance.
 
 ## 3. Confounder Analysis
 - **Age**: Correlated with Knowledge (r = 0.307, p = 0.0007). This is biologically plausible and does not explain the practice result.

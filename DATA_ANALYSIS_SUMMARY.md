@@ -53,3 +53,5 @@
 ## 6. Methodology Notes
 - **Missing Responses**: Questionnaire items missing for valid students are scored as 0.
 - **Assumption Checks**: Shapiro-Wilk and group-size checks triggered non-parametric testing.
+- **Effect Sizes**: Effect sizes are small; interpret practical significance alongside p-values.
+- **Correlations**: Calculated using complete-case data (rows with all continuous variables present).

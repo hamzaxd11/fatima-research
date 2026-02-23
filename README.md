@@ -319,6 +319,13 @@ Calculated as: Monthly Income / Total Family Members (rounded to 2 decimal place
 - **Statistical Tests**: ANOVA or Kruskal-Wallis selected per assumption checks (Shapiro-Wilk, Levene, group size); effect sizes reported (eta^2 or epsilon^2)
 - **Correlation Analysis**: Pearson correlations with p-values (complete-case)
 
+## Research Considerations
+
+- Scores are discrete and bounded, so non-normality is common; non-parametric tests are used when assumptions fail.
+- Maternal education groups are imbalanced (e.g., Level 5 has n = 1); interpret small-group results cautiously and consider sensitivity checks with merged groups.
+- Missing questionnaire responses are scored as 0; if nonresponse does not imply incorrect, results may be conservative.
+- Correlations use complete-case data; the effective sample size may be smaller than the full dataset.
+
 ## Error Handling
 
 The system handles various error conditions gracefully:
