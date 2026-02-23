@@ -1,24 +1,27 @@
+from pathlib import Path
+import os
+import glob
 import pandas as pd
 import numpy as np
 from scipy import stats
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+
 # Load the scored dataset
 # Using the one from the verification run
 # Find the latest analysis folder
-import os
-import glob
 
 # Find the latest analysis folder
 # Try to find the latest analysis folder in output_verify
-output_dirs = ['output_verify', 'output']
+output_dirs = [ROOT_DIR / 'output_verify', ROOT_DIR / 'output']
 list_of_files = []
 
 for out_dir in output_dirs:
     if os.path.exists(out_dir):
         # Using glob to find analysis folders
-        found = glob.glob(os.path.join(out_dir, 'analysis_*'))
+        found = glob.glob(os.path.join(str(out_dir), 'analysis_*'))
         list_of_files.extend(found)
 
 if not list_of_files:
@@ -27,16 +30,16 @@ if not list_of_files:
         if os.path.exists(out_dir):
             for item in os.listdir(out_dir):
                 if item.startswith('analysis_'):
-                    list_of_files.append(os.path.join(out_dir, item))
+                    list_of_files.append(os.path.join(str(out_dir), item))
 
 if not list_of_files:
     print("No analysis output found in output_verify or output.")
     # Debug info
     print(f"CWD: {os.getcwd()}")
-    if os.path.exists('output'):
-        print(f"Output contents: {os.listdir('output')}")
-    if os.path.exists('output_verify'):
-        print(f"Output_verify contents: {os.listdir('output_verify')}")
+    if os.path.exists(ROOT_DIR / 'output'):
+        print(f"Output contents: {os.listdir(ROOT_DIR / 'output')}")
+    if os.path.exists(ROOT_DIR / 'output_verify'):
+        print(f"Output_verify contents: {os.listdir(ROOT_DIR / 'output_verify')}")
     exit()
 
 latest_folder = max(list_of_files, key=os.path.getctime)

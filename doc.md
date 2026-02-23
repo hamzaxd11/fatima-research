@@ -1,4 +1,4 @@
-# Menstrual Hygiene Awareness in Adolescent Girls: Exploring the Influence of Maternal Education on Knowledge and Practices in a Sub-Urban Area of Pakistan"
+# Menstrual Hygiene Awareness in Adolescent Girls: Exploring the Influence of Maternal Education on Knowledge and Practices in a Sub-Urban Area of Pakistan
 
 **Supervisor** – Dr Naureen Omar
 
@@ -382,4 +382,3 @@ Signature of Investigator: _________________________________.
 
 ---
 
-Would you like me to adjust any of the formatting or convert these into a downloadable Markdown file (.md) for you?

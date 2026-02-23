@@ -80,8 +80,8 @@ The pipeline is orchestrated by a main entry point script (`analyze.py`) that ca
 - `analyze_maternal_education_impact(df: pd.DataFrame) -> dict`
   - Groups by maternal education level
   - Calculates mean, std for knowledge and practice scores
-  - Performs ANOVA/Kruskal-Wallis test
-  - Returns: Dictionary with statistics and p-values
+  - Performs ANOVA/Kruskal-Wallis test with assumption checks
+  - Returns: Dictionary with statistics, p-values, effect sizes, and assumption metadata
 
 - `calculate_demographic_summaries(df: pd.DataFrame) -> dict`
   - Generates frequency tables for categorical variables
@@ -91,6 +91,10 @@ The pipeline is orchestrated by a main entry point script (`analyze.py`) that ca
 - `perform_correlation_analysis(df: pd.DataFrame) -> pd.DataFrame`
   - Calculates correlations between continuous variables
   - Returns: Correlation matrix
+
+- `perform_correlation_pvalues(df: pd.DataFrame) -> pd.DataFrame`
+  - Calculates p-values for Pearson correlations
+  - Returns: P-value matrix
 
 ### 4. Visualization Module (`visualizations.py`)
 
@@ -187,8 +191,10 @@ All original columns plus:
 {
     'maternal_education_analysis': {
         'summary_table': pd.DataFrame,  # Education level, n, mean_knowledge, std_knowledge, mean_practice, std_practice
-        'anova_knowledge': {'f_statistic': float, 'p_value': float},
-        'anova_practice': {'f_statistic': float, 'p_value': float}
+        'anova_knowledge': {'f_statistic': float, 'p_value': float, 'effect_size': float, 'effect_size_type': str},
+        'anova_practice': {'f_statistic': float, 'p_value': float, 'effect_size': float, 'effect_size_type': str},
+        'test_type_by_outcome': {'knowledge': str, 'practice': str},
+        'assumption_checks': {'knowledge': dict, 'practice': dict}
     },
     'demographic_summaries': {
         'age_distribution': pd.DataFrame,
@@ -197,11 +203,14 @@ All original columns plus:
         'family_size_statistics': pd.DataFrame
     },
     'correlations': pd.DataFrame,
+    'correlation_pvalues': pd.DataFrame,
     'data_quality_report': {
         'missing_values': pd.DataFrame,
         'invalid_values': pd.DataFrame,
         'warnings': list
-    }
+    },
+    'data_loader_metadata': dict,
+    'family_size_consistency': dict
 }
 ```
 
@@ -274,7 +283,7 @@ This reflection reduces ~60 testable criteria to ~25 unique, non-redundant prope
 **Validates: Requirements 5.2, 5.3, 6.2**
 
 **Property 13: Statistical Test Execution**
-*For any* maternal education analysis, the system should perform ANOVA or Kruskal-Wallis tests and return valid p-values (0 ≤ p ≤ 1) and confidence intervals.
+*For any* maternal education analysis, the system should perform ANOVA or Kruskal-Wallis tests and return valid p-values (0 ≤ p ≤ 1) and effect sizes.
 **Validates: Requirements 5.4, 5.5**
 
 **Property 14: Summary Table Completeness**

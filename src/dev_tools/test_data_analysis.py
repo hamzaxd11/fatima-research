@@ -3,7 +3,14 @@ Test script to load and analyze the actual SPSS data file.
 This will help us understand the data structure, columns, and types.
 """
 
+from pathlib import Path
+import os
 import sys
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import pandas as pd
 from src.data_loader import load_spss_file, generate_data_summary
 from src.data_processor import create_scored_dataset
@@ -16,6 +23,7 @@ pd.set_option('display.max_colwidth', 50)
 def main():
     # Load the SPSS file
     spss_file = 'menstrual hygiene spss.sav fatima and ayesha (1).sav'
+
     
     print("=" * 80)
     print("LOADING SPSS DATA FILE")
@@ -132,6 +140,7 @@ def main():
             print("SAVING SAMPLE OUTPUT")
             print("=" * 80)
             output_file = 'output/sample_scored_data.csv'
+            os.makedirs('output', exist_ok=True)
             scored_df.to_csv(output_file, index=False)
             print(f"✓ Saved scored dataset to: {output_file}")
             

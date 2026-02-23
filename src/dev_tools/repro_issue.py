@@ -1,15 +1,16 @@
+from pathlib import Path
+import os
+import glob
 import pandas as pd
 import numpy as np
 
-# Load the scored dataset
-import glob
-import os
+ROOT_DIR = Path(__file__).resolve().parents[2]
 
-output_dirs = ['output_verify', 'output']
+output_dirs = [ROOT_DIR / 'output_verify', ROOT_DIR / 'output']
 list_of_files = []
 for out_dir in output_dirs:
     if os.path.exists(out_dir):
-        list_of_files.extend(glob.glob(os.path.join(out_dir, 'analysis_*')))
+        list_of_files.extend(glob.glob(os.path.join(str(out_dir), 'analysis_*')))
 
 latest_folder = max(list_of_files, key=os.path.getctime)
 csv_path = os.path.join(latest_folder, 'scored_dataset.csv')

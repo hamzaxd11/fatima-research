@@ -2,6 +2,14 @@
 Convert SPSS data to multiple readable formats for review.
 """
 
+from pathlib import Path
+import sys
+import os
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import pandas as pd
 from src.data_loader import load_spss_file
 from src.data_processor import create_scored_dataset
@@ -17,6 +25,8 @@ scored_df = create_scored_dataset(df)
 # Save in multiple formats
 print("\nSaving converted data in multiple formats...")
 
+os.makedirs('output', exist_ok=True)
+
 # 1. Original data as CSV
 output_file_original = 'output/original_data.csv'
 df.to_csv(output_file_original, index=False)
@@ -29,53 +39,57 @@ print(f"✓ Scored data saved to: {output_file_scored}")
 
 # 3. Excel format with multiple sheets
 output_file_excel = 'output/menstrual_hygiene_data.xlsx'
-with pd.ExcelWriter(output_file_excel, engine='openpyxl') as writer:
-    # Original data
-    df.to_excel(writer, sheet_name='Original Data', index=False)
-    
-    # Scored data
-    scored_df.to_excel(writer, sheet_name='Scored Data', index=False)
-    
-    # Summary statistics
-    summary_stats = pd.DataFrame({
-        'Metric': ['Total Records', 'Total Columns', 'Knowledge Score Mean', 
-                   'Knowledge Score Std', 'Practice Score Mean', 'Practice Score Std',
-                   'Total Score Mean', 'Total Score Std', 'Per Capita Income Mean',
-                   'Per Capita Income Std', 'Valid Per Capita Records'],
-        'Value': [
-            len(scored_df),
-            len(scored_df.columns),
-            scored_df['knowledge_score'].mean(),
-            scored_df['knowledge_score'].std(),
-            scored_df['practice_score'].mean(),
-            scored_df['practice_score'].std(),
-            scored_df['total_score'].mean(),
-            scored_df['total_score'].std(),
-            scored_df['per_capita_income'].mean(),
-            scored_df['per_capita_income'].std(),
-            scored_df['per_capita_income'].notna().sum()
-        ]
-    })
-    summary_stats.to_excel(writer, sheet_name='Summary Statistics', index=False)
-    
-    # Score distributions
-    score_dist = pd.DataFrame({
-        'Knowledge Score': scored_df['knowledge_score'].value_counts().sort_index(),
-        'Practice Score': scored_df['practice_score'].value_counts().sort_index(),
-        'Total Score': scored_df['total_score'].value_counts().sort_index()
-    }).fillna(0).astype(int)
-    score_dist.to_excel(writer, sheet_name='Score Distributions')
-    
-    # Missing data analysis
-    missing_data = pd.DataFrame({
-        'Column': df.columns,
-        'Missing Count': [df[col].isna().sum() for col in df.columns],
-        'Missing Percentage': [f"{(df[col].isna().sum() / len(df) * 100):.1f}%" for col in df.columns]
-    })
-    missing_data = missing_data[missing_data['Missing Count'] > 0].sort_values('Missing Count', ascending=False)
-    missing_data.to_excel(writer, sheet_name='Missing Data Analysis', index=False)
+try:
+    import openpyxl  # noqa: F401
+    with pd.ExcelWriter(output_file_excel, engine='openpyxl') as writer:
+        # Original data
+        df.to_excel(writer, sheet_name='Original Data', index=False)
+        
+        # Scored data
+        scored_df.to_excel(writer, sheet_name='Scored Data', index=False)
+        
+        # Summary statistics
+        summary_stats = pd.DataFrame({
+            'Metric': ['Total Records', 'Total Columns', 'Knowledge Score Mean', 
+                       'Knowledge Score Std', 'Practice Score Mean', 'Practice Score Std',
+                       'Total Score Mean', 'Total Score Std', 'Per Capita Income Mean',
+                       'Per Capita Income Std', 'Valid Per Capita Records'],
+            'Value': [
+                len(scored_df),
+                len(scored_df.columns),
+                scored_df['knowledge_score'].mean(),
+                scored_df['knowledge_score'].std(),
+                scored_df['practice_score'].mean(),
+                scored_df['practice_score'].std(),
+                scored_df['total_score'].mean(),
+                scored_df['total_score'].std(),
+                scored_df['per_capita_income'].mean(),
+                scored_df['per_capita_income'].std(),
+                scored_df['per_capita_income'].notna().sum()
+            ]
+        })
+        summary_stats.to_excel(writer, sheet_name='Summary Statistics', index=False)
+        
+        # Score distributions
+        score_dist = pd.DataFrame({
+            'Knowledge Score': scored_df['knowledge_score'].value_counts().sort_index(),
+            'Practice Score': scored_df['practice_score'].value_counts().sort_index(),
+            'Total Score': scored_df['total_score'].value_counts().sort_index()
+        }).fillna(0).astype(int)
+        score_dist.to_excel(writer, sheet_name='Score Distributions')
+        
+        # Missing data analysis
+        missing_data = pd.DataFrame({
+            'Column': df.columns,
+            'Missing Count': [df[col].isna().sum() for col in df.columns],
+            'Missing Percentage': [f"{(df[col].isna().sum() / len(df) * 100):.1f}%" for col in df.columns]
+        })
+        missing_data = missing_data[missing_data['Missing Count'] > 0].sort_values('Missing Count', ascending=False)
+        missing_data.to_excel(writer, sheet_name='Missing Data Analysis', index=False)
 
-print(f"✓ Excel file with multiple sheets saved to: {output_file_excel}")
+    print(f"✓ Excel file with multiple sheets saved to: {output_file_excel}")
+except ImportError:
+    print("WARNING: openpyxl is not installed. Skipping Excel output.")
 
 # 4. Human-readable text report
 output_file_txt = 'output/data_report.txt'

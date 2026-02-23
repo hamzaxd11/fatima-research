@@ -16,9 +16,14 @@ This system analyzes the relationship between maternal education and menstrual h
 - Comprehensive analysis reports
 - Data quality reporting
 
+## Developer Documentation
+
+- Pipeline flow and module interactions: `DEVELOPER_PIPELINE_FLOW.md`
+- Optional helper scripts: `src/dev_tools/README.md`
+
 ## Statistical Analysis & Methodology
 
-For a detailed explanation of why specific statistical tests (ANOVA vs. T-Test vs. Chi-Square) were chosen, please refer to [ANALYSIS_METHODOLOGY.md](ANALYSIS_METHODOLOGY.md).
+For a detailed explanation of test selection (ANOVA vs. Kruskal-Wallis and assumption checks), please refer to [ANALYSIS_METHODOLOGY.md](ANALYSIS_METHODOLOGY.md).
 
 ### Key Findings Summary
 *   **Sample Size**: 120 Valid Respondents (40 empty rows filtered based on missing maternal education).
@@ -263,7 +268,8 @@ All visualizations are publication-ready with high resolution (300 DPI) suitable
 │   ├── visualizations.py        # Chart and graph generation
 │   ├── report_generator.py      # Report creation
 │   ├── output_manager.py        # Output file management
-│   └── data_quality.py          # Data quality checks
+│   ├── data_quality.py          # Data quality checks
+│   └── dev_tools/               # Optional developer helper scripts
 ├── tests/                        # Test suite
 │   ├── unit/                    # Unit tests
 │   ├── property/                # Property-based tests

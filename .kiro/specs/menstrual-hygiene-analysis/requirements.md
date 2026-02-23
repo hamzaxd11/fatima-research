@@ -14,7 +14,7 @@ The system will read SPSS data files, calculate derived metrics, score questionn
 - **Knowledge_Score**: A calculated value (0-9) based on correct responses to Section III questions
 - **Practice_Score**: A calculated value (0-7) based on responses to Section IV questions
 - **Per_Capita_Income**: Monthly family income divided by total number of family members
-- **Maternal_Education**: The education level of the respondent's mother (Illiterate, Primary, Middle, Secondary, Intermediate and above)
+- **Maternal_Education**: The education level of the respondent's mother (Illiterate/Primary, Middle, Secondary, Intermediate, Higher)
 - **Output_Folder**: The directory where all analysis results, tables, charts, and reports are stored
 - **Scored_Dataset**: The processed dataset with calculated scores and derived fields added
 
@@ -78,7 +78,7 @@ The system will read SPSS data files, calculate derived metrics, score questionn
 2. THE System SHALL calculate mean Knowledge_Score and Practice_Score for each maternal education level
 3. THE System SHALL calculate standard deviation for Knowledge_Score and Practice_Score within each education group
 4. THE System SHALL perform statistical tests (ANOVA or Kruskal-Wallis) to determine if differences between education groups are statistically significant
-5. THE System SHALL report p-values and confidence intervals for all statistical tests
+5. THE System SHALL report p-values and effect sizes (eta^2 or epsilon^2) for all statistical tests
 6. THE System SHALL generate a summary table showing education level, sample size, mean scores, standard deviations, and statistical significance
 
 ### Requirement 6: Demographic Summary Statistics
@@ -89,7 +89,7 @@ The system will read SPSS data files, calculate derived metrics, score questionn
 
 1. THE System SHALL calculate frequency distributions for all categorical demographic variables (age, maternal education, paternal education, maternal occupation, paternal occupation)
 2. THE System SHALL calculate descriptive statistics (mean, median, standard deviation, min, max) for all continuous demographic variables (age, income, family size, per capita income)
-3. THE System SHALL generate cross-tabulation tables for key demographic combinations
+3. THE System SHOULD support cross-tabulation tables for key demographic combinations when explicitly requested (not part of the default pipeline)
 4. THE System SHALL calculate percentages and proportions for all frequency distributions
 5. THE System SHALL save all demographic summary tables to the Output_Folder in CSV format
 
@@ -126,8 +126,8 @@ The system will read SPSS data files, calculate derived metrics, score questionn
 #### Acceptance Criteria
 
 1. THE System SHALL generate a text-based analysis report summarizing all key findings
-2. THE System SHALL include sections for demographics, knowledge scores, practice scores, and maternal education analysis in the report
-3. THE System SHALL include statistical test results with interpretations in the report
+2. THE System SHALL include sections for demographics, data quality, knowledge scores, practice scores, maternal education analysis, and correlations in the report
+3. THE System SHALL include statistical test results with interpretations and effect sizes in the report
 4. THE System SHALL reference all generated tables and charts in the report
 5. THE System SHALL save the analysis report to the Output_Folder in both TXT and Markdown formats
 
@@ -163,6 +163,6 @@ The system will read SPSS data files, calculate derived metrics, score questionn
 
 1. WHEN the System encounters missing values, THE System SHALL handle them according to predefined rules (assign 0 for scores, null for calculations)
 2. WHEN the System encounters invalid values (negative numbers, out-of-range responses), THE System SHALL flag these records in a data quality report
-3. THE System SHALL generate a data quality report listing all issues found with row numbers and variable names
+3. THE System SHALL generate a data quality report listing all issues found with row numbers and variable names, including conditional/skip-logic classification
 4. THE System SHALL continue processing valid records even when some records contain errors
 5. THE System SHALL save the data quality report to the Output_Folder

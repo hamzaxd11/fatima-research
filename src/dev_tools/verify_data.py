@@ -1,4 +1,7 @@
 """Quick verification script to confirm data integrity."""
+from pathlib import Path
+import os
+import glob
 import pandas as pd
 import pyreadstat
 
@@ -6,10 +9,28 @@ print('='*80)
 print('COMPLETE DATA VERIFICATION')
 print('='*80)
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+
 # Load original SPSS
-orig, _ = pyreadstat.read_sav('menstrual hygiene spss.sav fatima and ayesha (1).sav')
-# Load scored output
-scored = pd.read_csv('output/analysis_20260211_191430/scored_dataset.csv')
+orig, _ = pyreadstat.read_sav(str(ROOT_DIR / 'menstrual hygiene spss.sav fatima and ayesha (1).sav'))
+
+# Load latest scored output
+output_dirs = [ROOT_DIR / 'output_verify', ROOT_DIR / 'output']
+list_of_files = []
+
+for out_dir in output_dirs:
+    if out_dir.exists():
+        list_of_files.extend(glob.glob(str(out_dir / 'analysis_*')))
+
+if not list_of_files:
+    print("No analysis output found in output_verify or output.")
+    print(f"CWD: {os.getcwd()}")
+    exit()
+
+latest_folder = max(list_of_files, key=os.path.getctime)
+scored_path = os.path.join(latest_folder, 'scored_dataset.csv')
+print(f"Using scored dataset: {scored_path}")
+scored = pd.read_csv(scored_path)
 
 print(f'\nORIGINAL SPSS: {len(orig)} rows × {len(orig.columns)} columns')
 print(f'SCORED OUTPUT: {len(scored)} rows × {len(scored.columns)} columns')

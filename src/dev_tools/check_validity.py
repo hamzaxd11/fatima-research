@@ -1,15 +1,18 @@
-import pandas as pd
-import numpy as np
+from pathlib import Path
 import os
 import glob
+import pandas as pd
+import numpy as np
 from scipy import stats
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+
 # find latest scored dataset
-output_dirs = ['output_final', 'output']
+output_dirs = [ROOT_DIR / 'output_final', ROOT_DIR / 'output']
 list_of_files = []
 for out_dir in output_dirs:
     if os.path.exists(out_dir):
-        list_of_files.extend(glob.glob(os.path.join(out_dir, 'analysis_*')))
+        list_of_files.extend(glob.glob(os.path.join(str(out_dir), 'analysis_*')))
 
 if not list_of_files:
     print("No analysis output found.")
