@@ -1,0 +1,31 @@
+DATA QUALITY REPORT
+==================================================
+
+Total Rows: 120
+Total Columns: 41
+Total Cells: 4920
+
+Missing Values: 550
+Invalid Values: 0
+Total Issues: 550
+
+Affected Rows: 120
+Affected Columns: 10
+
+Data Quality: 88.82%
+Core Data Quality: 99.85%
+
+Conditional/Skip-Logic Columns:
+- IfYesSourceOfInformationAboutMensturation
+- AnyOtherSpecify
+- AnyOtherPleaseSpecify
+- IfUseClothDoYouRegularyWashClothPadWithSoapAndWater
+- DoYouDryTheClothINSun
+- FaceAnyProblemDuringWashingandDryingClothUsedForMensturation
+- TypeOfProblemFaceWhileWashingAndDryingCloth
+- ReasonNotUsingSanitaryPads
+
+WARNINGS:
+- Found 550 missing values across 10 variables
+- Flagged 8 columns as conditional/skip-logic (missingness reported separately)
+- Missing values report saved to: output\analysis_20260223_220644/data_quality_missing_values.csv
