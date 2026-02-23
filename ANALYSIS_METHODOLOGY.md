@@ -68,6 +68,7 @@ We use **ANOVA** when parametric assumptions are met and **Kruskal-Wallis** when
   - Knowledge Score vs Age: r = 0.307, p = 0.0007
   - Knowledge Score vs Practice Score: r = 0.335, p = 0.0002
 - **Note**: Correlations with Total Score are expected because Total Score is derived from Knowledge + Practice.
+- **Sensitivity Note**: Income is highly skewed with outliers; Pearson correlations may be sensitive. A Spearman or log-transform sensitivity check can be used if needed.
 
 ## 6. Data Quality and Missingness
 
@@ -104,6 +105,9 @@ Small group sizes limit post-hoc testing and reduce confidence in the smallest g
 ### Confounding Factors
 - **Age**: Moderately correlated with Knowledge Score (r = 0.307, p = 0.0007).
 - **Income**: Not significantly correlated with knowledge or practice scores (p > 0.05).
+
+### Modeling Scope
+- Analyses are bivariate and unadjusted. Interpret differences as associations, not causal effects, unless covariates are modeled.
 
 ### Missing Data Assumption
 Missing questionnaire responses are scored as 0. This may bias scores downward if non-response does not imply lack of knowledge/practice.

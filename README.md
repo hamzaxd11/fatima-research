@@ -325,6 +325,8 @@ Calculated as: Monthly Income / Total Family Members (rounded to 2 decimal place
 - Maternal education groups are imbalanced (e.g., Level 5 has n = 1); interpret small-group results cautiously and consider sensitivity checks with merged groups.
 - Missing questionnaire responses are scored as 0; if nonresponse does not imply incorrect, results may be conservative.
 - Correlations use complete-case data; the effective sample size may be smaller than the full dataset.
+- Income is highly skewed with outliers; Pearson correlations can be sensitive, so consider a Spearman or log-transform sensitivity check if required.
+- Analyses are bivariate (unadjusted); do not interpret group differences as causal without multivariable adjustment.
 
 ## Error Handling
 
