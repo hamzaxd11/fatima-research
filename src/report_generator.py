@@ -13,6 +13,39 @@ from typing import Dict, Any, Optional
 import os
 
 
+def _format_maternal_education_label(value: Any) -> str:
+    mapping = {
+        1: 'Illiterate/Primary',
+        2: 'Middle',
+        3: 'Secondary',
+        4: 'Intermediate',
+        5: 'Higher'
+    }
+    try:
+        if pd.isna(value):
+            return str(value)
+        int_value = int(float(value))
+        if int_value in mapping:
+            return f"{int_value} ({mapping[int_value]})"
+    except Exception:
+        pass
+    return str(value)
+
+
+def _format_mean_sd(mean_value: float, sd_value: float) -> str:
+    if pd.isna(sd_value):
+        return f"{mean_value:.2f} ± N/A"
+    return f"{mean_value:.2f} ± {sd_value:.2f}"
+
+
+def _format_p_value(value: Any) -> str:
+    try:
+        if value is None or pd.isna(value):
+            return "N/A"
+        return f"{float(value):.4f}"
+    except Exception:
+        return "N/A"
+
 def generate_analysis_report(
     analysis_results: Dict[str, Any],
     scored_dataset: pd.DataFrame,
@@ -45,11 +78,15 @@ def generate_analysis_report(
     report_lines = []
     
     # Header section
-    report_lines.extend(_generate_header_section(spss_file_path, scored_dataset))
+    data_loader_metadata = analysis_results.get('data_loader_metadata')
+    report_lines.extend(_generate_header_section(spss_file_path, scored_dataset, data_loader_metadata))
     
     # Demographics section
     report_lines.extend(_generate_demographics_section(analysis_results, scored_dataset))
     
+    # Data quality section
+    report_lines.extend(_generate_data_quality_section(analysis_results))
+
     # Knowledge scores section
     report_lines.extend(_generate_knowledge_scores_section(analysis_results, scored_dataset))
     
@@ -84,7 +121,11 @@ def generate_analysis_report(
     return txt_path, md_path
 
 
-def _generate_header_section(spss_file_path: Optional[str], df: pd.DataFrame) -> list:
+def _generate_header_section(
+    spss_file_path: Optional[str],
+    df: pd.DataFrame,
+    metadata: Optional[Dict[str, Any]] = None
+) -> list:
     """Generate report header with metadata."""
     lines = [
         "=" * 80,
@@ -99,6 +140,17 @@ def _generate_header_section(spss_file_path: Optional[str], df: pd.DataFrame) ->
         lines.append(f"Source Data File: {spss_file_path}")
         lines.append("")
     
+    if metadata and metadata.get('number_rows'):
+        raw_rows = metadata.get('number_rows')
+        filtered_rows = metadata.get('filtered_rows', 0)
+        filter_column = metadata.get('filter_column')
+        lines.append(f"Raw Records Loaded: {raw_rows}")
+        if filtered_rows:
+            lines.append(
+                f"Records Excluded (missing {filter_column}): {filtered_rows}"
+            )
+        lines.append("")
+
     lines.extend([
         f"Total Records Analyzed: {len(df)}",
         "",
@@ -140,7 +192,8 @@ def _generate_demographics_section(analysis_results: Dict[str, Any], df: pd.Data
         ])
         mat_ed_freq = demo_summaries['maternal_education_freq']
         for _, row in mat_ed_freq.iterrows():
-            lines.append(f"  {row['maternal_education']}: {row['count']} ({row['percentage']:.1f}%)")
+            label = _format_maternal_education_label(row['maternal_education'])
+            lines.append(f"  {label}: {row['count']} ({row['percentage']:.1f}%)")
         lines.append("")
     
     # Continuous variables statistics
@@ -165,10 +218,64 @@ def _generate_demographics_section(analysis_results: Dict[str, Any], df: pd.Data
     return lines
 
 
+def _generate_data_quality_section(analysis_results: Dict[str, Any]) -> list:
+    """Generate data quality summary section."""
+    lines = [
+        "## 2. DATA QUALITY SUMMARY",
+        "",
+        "This section summarizes missingness and data quality checks.",
+        ""
+    ]
+
+    quality_report = analysis_results.get('data_quality_report', {})
+    summary = quality_report.get('summary', {}) if isinstance(quality_report, dict) else {}
+
+    if summary:
+        lines.extend([
+            f"  Total Rows: {summary.get('total_rows', 'N/A')}",
+            f"  Total Columns: {summary.get('total_columns', 'N/A')}",
+            f"  Missing Values: {summary.get('missing_value_count', 'N/A')}",
+            f"  Invalid Values: {summary.get('invalid_value_count', 'N/A')}",
+            f"  Data Quality: {summary.get('data_quality_percentage', 'N/A')}%"
+        ])
+
+        core_quality = summary.get('core_data_quality_percentage')
+        if core_quality is not None:
+            lines.append(f"  Core Data Quality: {core_quality}%")
+
+        conditional_columns = summary.get('conditional_columns', [])
+        if conditional_columns:
+            lines.append("")
+            lines.append("Conditional/Skip-Logic Columns (missingness expected):")
+            for col in conditional_columns:
+                lines.append(f"  - {col}")
+
+        family_check = analysis_results.get('family_size_consistency', {})
+        if family_check.get('status') == 'checked':
+            lines.append("")
+            lines.append("Family Size Consistency Check:")
+            lines.append(
+                f"  Checked Rows: {family_check.get('checked_rows', 0)}, "
+                f"Mismatches: {family_check.get('mismatch_count', 0)}"
+            )
+            if family_check.get('mismatch_count', 0) > 0:
+                lines.append(f"  Example Mismatch Rows: {family_check.get('mismatch_rows', [])}")
+
+        lines.append("")
+    else:
+        lines.extend([
+            "Data quality summary is unavailable.",
+            ""
+        ])
+
+    lines.append("")
+    return lines
+
+
 def _generate_knowledge_scores_section(analysis_results: Dict[str, Any], df: pd.DataFrame) -> list:
     """Generate knowledge scores analysis section."""
     lines = [
-        "## 2. KNOWLEDGE SCORES ANALYSIS",
+        "## 3. KNOWLEDGE SCORES ANALYSIS",
         "",
         "Knowledge scores range from 0 to 9, based on responses to Section III questions",
         "about menstrual hygiene awareness.",
@@ -180,7 +287,7 @@ def _generate_knowledge_scores_section(analysis_results: Dict[str, Any], df: pd.
         
         if len(knowledge_scores) > 0:
             lines.extend([
-                "### 2.1 Overall Knowledge Score Statistics",
+                "### 3.1 Overall Knowledge Score Statistics",
                 "",
                 f"  Total Respondents: {len(knowledge_scores)}",
                 f"  Mean Score: {knowledge_scores.mean():.2f}",
@@ -189,7 +296,7 @@ def _generate_knowledge_scores_section(analysis_results: Dict[str, Any], df: pd.
                 f"  Minimum Score: {knowledge_scores.min():.0f}",
                 f"  Maximum Score: {knowledge_scores.max():.0f}",
                 "",
-                "### 2.2 Score Distribution",
+                "### 3.2 Score Distribution",
                 ""
             ])
             
@@ -212,7 +319,7 @@ def _generate_knowledge_scores_section(analysis_results: Dict[str, Any], df: pd.
 def _generate_practice_scores_section(analysis_results: Dict[str, Any], df: pd.DataFrame) -> list:
     """Generate practice scores analysis section."""
     lines = [
-        "## 3. PRACTICE SCORES ANALYSIS",
+        "## 4. PRACTICE SCORES ANALYSIS",
         "",
         "Practice scores range from 0 to 7, based on responses to Section IV questions",
         "about actual menstrual hygiene practices.",
@@ -224,7 +331,7 @@ def _generate_practice_scores_section(analysis_results: Dict[str, Any], df: pd.D
         
         if len(practice_scores) > 0:
             lines.extend([
-                "### 3.1 Overall Practice Score Statistics",
+                "### 4.1 Overall Practice Score Statistics",
                 "",
                 f"  Total Respondents: {len(practice_scores)}",
                 f"  Mean Score: {practice_scores.mean():.2f}",
@@ -233,7 +340,7 @@ def _generate_practice_scores_section(analysis_results: Dict[str, Any], df: pd.D
                 f"  Minimum Score: {practice_scores.min():.0f}",
                 f"  Maximum Score: {practice_scores.max():.0f}",
                 "",
-                "### 3.2 Score Distribution",
+                "### 4.2 Score Distribution",
                 ""
             ])
             
@@ -256,7 +363,7 @@ def _generate_practice_scores_section(analysis_results: Dict[str, Any], df: pd.D
 def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> list:
     """Generate maternal education impact analysis section."""
     lines = [
-        "## 4. MATERNAL EDUCATION IMPACT ANALYSIS",
+        "## 5. MATERNAL EDUCATION IMPACT ANALYSIS",
         "",
         "This section examines the relationship between maternal education level and",
         "adolescent girls' menstrual hygiene knowledge and practices.",
@@ -272,22 +379,26 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
         anova_practice = mat_ed_analysis.get('anova_practice', {})
         
         lines.extend([
-            "### 4.1 Scores by Maternal Education Level",
+            "### 5.1 Scores by Maternal Education Level",
             ""
         ])
         
         # Display summary table
         for _, row in summary_table.iterrows():
+            label = _format_maternal_education_label(row['education_level'])
             lines.extend([
-                f"**{row['education_level']}** (n={int(row['n'])})",
-                f"  Knowledge Score: {row['mean_knowledge']:.2f} ± {row['std_knowledge']:.2f}",
-                f"  Practice Score: {row['mean_practice']:.2f} ± {row['std_practice']:.2f}",
+                f"**{label}** (n={int(row['n'])})",
+                f"  Knowledge Score: {_format_mean_sd(row['mean_knowledge'], row['std_knowledge'])}",
+                f"  Practice Score: {_format_mean_sd(row['mean_practice'], row['std_practice'])}",
                 ""
             ])
         
         # Statistical test results
+        test_type_by_outcome = mat_ed_analysis.get('test_type_by_outcome', {})
+        assumption_checks = mat_ed_analysis.get('assumption_checks', {})
+
         lines.extend([
-            "### 4.2 Statistical Significance Testing",
+            "### 5.2 Statistical Significance Testing",
             "",
             f"**Test Used**: {test_type}",
             ""
@@ -297,12 +408,29 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
         if 'p_value' in anova_knowledge:
             p_val_k = anova_knowledge['p_value']
             f_stat_k = anova_knowledge.get('f_statistic', 0)
+            effect_k = anova_knowledge.get('effect_size')
+            effect_k_type = anova_knowledge.get('effect_size_type')
+            outcome_test_k = test_type_by_outcome.get('knowledge')
             
             lines.extend([
                 "**Knowledge Scores:**",
+                f"  Test Type: {outcome_test_k}" if outcome_test_k else "  Test Type: (see overall)",
                 f"  Test Statistic: {f_stat_k:.4f}",
                 f"  P-value: {p_val_k:.4f}",
             ])
+
+            if effect_k is not None and not pd.isna(effect_k):
+                lines.append(f"  Effect Size ({effect_k_type}): {effect_k:.4f}")
+
+            if assumption_checks.get('knowledge'):
+                checks = assumption_checks['knowledge']
+                lines.append(
+                    "  Assumptions: Shapiro-Wilk min p="
+                    f"{_format_p_value(checks.get('normality_min_p'))}, "
+                    f"Levene p={_format_p_value(checks.get('variance_p'))}"
+                )
+                if checks.get('small_groups') or checks.get('insufficient_normality'):
+                    lines.append("  Note: Small group sizes limit parametric assumptions")
             
             if p_val_k < 0.001:
                 interpretation = "highly significant (p < 0.001)"
@@ -323,12 +451,29 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
         if 'p_value' in anova_practice:
             p_val_p = anova_practice['p_value']
             f_stat_p = anova_practice.get('f_statistic', 0)
+            effect_p = anova_practice.get('effect_size')
+            effect_p_type = anova_practice.get('effect_size_type')
+            outcome_test_p = test_type_by_outcome.get('practice')
             
             lines.extend([
                 "**Practice Scores:**",
+                f"  Test Type: {outcome_test_p}" if outcome_test_p else "  Test Type: (see overall)",
                 f"  Test Statistic: {f_stat_p:.4f}",
                 f"  P-value: {p_val_p:.4f}",
             ])
+
+            if effect_p is not None and not pd.isna(effect_p):
+                lines.append(f"  Effect Size ({effect_p_type}): {effect_p:.4f}")
+
+            if assumption_checks.get('practice'):
+                checks = assumption_checks['practice']
+                lines.append(
+                    "  Assumptions: Shapiro-Wilk min p="
+                    f"{_format_p_value(checks.get('normality_min_p'))}, "
+                    f"Levene p={_format_p_value(checks.get('variance_p'))}"
+                )
+                if checks.get('small_groups') or checks.get('insufficient_normality'):
+                    lines.append("  Note: Small group sizes limit parametric assumptions")
             
             if p_val_p < 0.001:
                 interpretation = "highly significant (p < 0.001)"
@@ -364,36 +509,53 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
 def _generate_correlation_section(analysis_results: Dict[str, Any]) -> list:
     """Generate correlation analysis section."""
     lines = [
-        "## 5. CORRELATION ANALYSIS",
+        "## 6. CORRELATION ANALYSIS",
         "",
-        "Pearson correlation coefficients between continuous variables.",
+        "Pearson correlation coefficients between continuous variables (complete-case).",
         ""
     ]
     
     correlations = analysis_results.get('correlations', pd.DataFrame())
     
     if not correlations.empty:
-        lines.append("### 5.1 Correlation Matrix")
+        lines.append("### 6.1 Correlation Matrix")
         lines.append("")
         
         # Display key correlations
         lines.append("**Key Findings:**")
         lines.append("")
-        
-        # Find correlations with knowledge and practice scores
-        if 'knowledge_score' in correlations.columns:
+
+        pvalues = analysis_results.get('correlation_pvalues', pd.DataFrame())
+        seen_pairs = set()
+
+        def format_pair_label(var_name: str) -> str:
+            return var_name.replace('_', ' ').title()
+
+        for source in ['knowledge_score', 'practice_score']:
+            if source not in correlations.columns:
+                continue
             for col in correlations.columns:
-                if col != 'knowledge_score':
-                    corr_val = correlations.loc['knowledge_score', col]
-                    if abs(corr_val) > 0.3:  # Only show moderate to strong correlations
-                        lines.append(f"  Knowledge Score ↔ {col.replace('_', ' ').title()}: {corr_val:.3f}")
-        
-        if 'practice_score' in correlations.columns:
-            for col in correlations.columns:
-                if col != 'practice_score':
-                    corr_val = correlations.loc['practice_score', col]
-                    if abs(corr_val) > 0.3:
-                        lines.append(f"  Practice Score ↔ {col.replace('_', ' ').title()}: {corr_val:.3f}")
+                if col in [source, 'total_score']:
+                    continue
+                pair_key = tuple(sorted([source, col]))
+                if pair_key in seen_pairs:
+                    continue
+                corr_val = correlations.loc[source, col]
+                if pd.isna(corr_val):
+                    continue
+
+                p_val = None
+                if not pvalues.empty and source in pvalues.columns and col in pvalues.columns:
+                    p_val = pvalues.loc[source, col]
+
+                if abs(corr_val) >= 0.3 and (p_val is None or p_val < 0.05):
+                    label = f"{format_pair_label(source)} ↔ {format_pair_label(col)}"
+                    if p_val is not None:
+                        lines.append(f"  {label}: r={corr_val:.3f}, p={p_val:.4f}")
+                    else:
+                        lines.append(f"  {label}: r={corr_val:.3f}")
+
+                seen_pairs.add(pair_key)
         
         lines.extend([
             "",
@@ -413,12 +575,12 @@ def _generate_correlation_section(analysis_results: Dict[str, Any]) -> list:
 def _generate_files_reference_section(output_folder: str) -> list:
     """Generate section listing all output files."""
     lines = [
-        "## 6. GENERATED OUTPUT FILES",
+        "## 7. GENERATED OUTPUT FILES",
         "",
         "All analysis outputs have been saved to the output folder:",
         f"{output_folder}",
         "",
-        "### 6.1 Data Files",
+        "### 7.1 Data Files",
         ""
     ]
     
@@ -426,8 +588,17 @@ def _generate_files_reference_section(output_folder: str) -> list:
     data_files = [
         ("scored_dataset.csv", "Complete dataset with all calculated scores and derived fields"),
         ("maternal_education_summary.csv", "Summary statistics by maternal education level"),
-        ("demographic_summaries.csv", "Frequency distributions and descriptive statistics"),
-        ("correlation_matrix.csv", "Correlation coefficients between continuous variables")
+        ("demographic_age_freq.csv", "Frequency distribution for age"),
+        ("demographic_maternal_education_freq.csv", "Frequency distribution for maternal education"),
+        ("demographic_paternal_education_freq.csv", "Frequency distribution for paternal education"),
+        ("demographic_maternal_occupation_freq.csv", "Frequency distribution for maternal occupation"),
+        ("demographic_paternal_occupation_freq.csv", "Frequency distribution for paternal occupation"),
+        ("demographic_continuous_stats.csv", "Descriptive statistics for continuous variables"),
+        ("correlation_matrix.csv", "Correlation coefficients between continuous variables"),
+        ("correlation_pvalues.csv", "P-values for Pearson correlations"),
+        ("data_quality_summary.txt", "Data quality assessment summary"),
+        ("data_quality_missing_values.csv", "Missing value details"),
+        ("data_quality_invalid_values.csv", "Invalid value details (if any)")
     ]
     
     for filename, description in data_files:
@@ -435,7 +606,7 @@ def _generate_files_reference_section(output_folder: str) -> list:
     
     lines.extend([
         "",
-        "### 6.2 Visualization Files",
+        "### 7.2 Visualization Files",
         ""
     ])
     
@@ -452,7 +623,7 @@ def _generate_files_reference_section(output_folder: str) -> list:
     
     lines.extend([
         "",
-        "### 6.3 Report Files",
+        "### 7.3 Report Files",
         "",
         "  - **analysis_report.txt**: This report in plain text format",
         "  - **analysis_report.md**: This report in Markdown format",
@@ -472,6 +643,8 @@ def _generate_footer_section() -> list:
         "",
         "- All statistical tests use α = 0.05 significance level",
         "- Missing values were handled according to predefined rules (0 for scores, null for calculations)",
+        "- Conditional/skip-logic columns are reported separately in data quality summaries",
+        "- Group sizes may be imbalanced; interpret small-n groups with caution",
         "- All visualizations are saved at 300 DPI resolution in PNG format",
         "- For detailed methodology, refer to the analysis documentation",
         "",

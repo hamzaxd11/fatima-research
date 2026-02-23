@@ -5,75 +5,104 @@ This document explains the statistical methods chosen for the Menstrual Hygiene 
 ## 1. Variables and Data Types
 
 ### Dependent Variables (Outcomes)
-These are the variables we are measuring and testing for differences.
-*   **Knowledge Score**:
-    *   **Type**: Continuous / Interval (Range: 0-9)
-    *   **Description**: A calculated score representing the level of awareness.
-*   **Practice Score**:
-    *   **Type**: Continuous / Interval (Range: 0-7)
-    *   **Description**: A calculated score representing the quality of hygiene practices.
+- **Knowledge Score**
+  - **Type**: Continuous / Interval (Range: 0-9)
+  - **Description**: A calculated score representing menstrual hygiene awareness.
+- **Practice Score**
+  - **Type**: Continuous / Interval (Range: 0-7)
+  - **Description**: A calculated score representing hygiene practices.
 
 ### Independent Variable (Predictor)
-This is the variable we are using to group the data to see if it causes a difference.
-*   **Maternal Education**:
-    *   **Type**: Categorical / Ordinal (Multi-level)
-    *   **Levels**:
-        1.  Illiterate/Primary (Level 1)
-        2.  Middle (Level 2)
-        3.  Secondary (Level 3)
-        4.  Intermediate (Level 4)
-        5.  Higher (Level 5)
+- **Maternal Education**
+  - **Type**: Categorical / Ordinal (Multi-level)
+  - **Levels**:
+    1. Illiterate/Primary
+    2. Middle
+    3. Secondary
+    4. Intermediate
+    5. Higher
 
-## 2. Statistical Test Selection
+## 2. Scoring and Derived Variables
 
-We chose **ANOVA (Analysis of Variance)** as the primary statistical test.
+### Knowledge Score (0-9)
+Calculated from Section III responses using questionnaire scoring rules. Missing responses are assigned a score of 0.
 
-### Why ANOVA?
-*   **Reason**: ANOVA is specifically designed to compare the means of a continuous dependent variable (e.g., Knowledge Score) across **three or more** independent groups (e.g., the 5 levels of Maternal Education).
-*   **Goal**: To determine if there is a statistically significant difference in the average scores between different education levels.
-
-### Why Not T-Test?
-*   **Limitation**: A T-test is used to compare means between **exactly two** groups (e.g., Male vs. Female).
-*   **Problem**: Since we have 5 education levels, we would have to run many separate T-tests (Level 1 vs 2, Level 1 vs 3, Level 2 vs 3, etc.).
-*   **Risk**: Running multiple tests drastically increases the "Type I Error" rate (the probability of finding a "significant" result purely by chance). ANOVA handles all groups at once to avoid this issue.
-
-### Why Not Chi-Square?
-*   **Limitation**: The Chi-Square test checks for a relationship between **two categorical** variables.
-*   **Problem**: While Maternal Education is categorical, our outcomes (Knowledge/Practice Scores) are **continuous**.
-*   **Mismatch**: To use Chi-Square, we would have to convert our precise scores into vague categories like "High Score" vs "Low Score". This would throw away valuable detailed data and make the analysis less accurate.
-
-### Fallback: Kruskal-Wallis Test
-*   The code includes an automatic check. If the data does not meet the strict requirements for ANOVA (e.g., not normally distributed or very unequal variances), it automatically switches to the **Kruskal-Wallis** test.
-### Robustness Check (Addressing Normality Concerns)
-*   **Integrated Checks**: The analysis code now performs automatic **Shapiro-Wilk** (normality) and **Levene's** (homogeneity of variance) tests on the data before selecting a statistical test.
-*   **Automatic Switching**:
-    *   If assumptions are met (p > 0.05), **ANOVA** is used.
-    *   If assumptions are violated (p < 0.05), the system automatically switches to the **Kruskal-Wallis Test** (non-parametric).
-*   **Result**: For this dataset, the Practice Score data was not normally distributed. The system correctly identified this and used the Kruskal-Wallis test, confirming the significant result (p = 0.038) is **robust**.
-
-
-## 4. Derived Variables
+### Practice Score (0-7)
+Calculated from Section IV responses using questionnaire scoring rules. Missing responses are assigned a score of 0.
 
 ### Per Capita Income
-*   **Formula**: `Monthly Income / Total Family Members`
-*   **Missing Data Handling**: If Income or Family Size is missing/zero, Per Capita Income is set to `null` (excluded from averages).
+- **Formula**: `Monthly Income / Total Family Members`
+- **Missing Data Handling**: If income or family size is missing/zero, per capita income is set to null and excluded from averages.
 
-## 6. Validity Checks & Limitations
+## 3. Statistical Test Selection
+
+We use **ANOVA** when parametric assumptions are met and **Kruskal-Wallis** when they are not.
+
+### Assumption Checks
+- **Normality**: Shapiro-Wilk per group (only when group n >= 3)
+- **Homogeneity of variance**: Levene's test (only when all groups n >= 2)
+- **Minimum group size**: If any group has n < 3, parametric assumptions are considered insufficient for ANOVA
+
+### Test Selection Logic
+- If assumptions are satisfied, **ANOVA** is used.
+- If assumptions are violated or not testable due to small group sizes, **Kruskal-Wallis** is used.
+
+### Results for this Dataset
+- **Knowledge Score**: Kruskal-Wallis H = 5.8669, p = 0.2093
+- **Practice Score**: Kruskal-Wallis H = 10.1562, p = 0.0379
+
+## 4. Effect Sizes
+
+- **ANOVA**: Eta squared (eta^2)
+- **Kruskal-Wallis**: Epsilon squared (epsilon^2)
+
+### Results for this Dataset
+- **Knowledge Score**: epsilon^2 = 0.0162
+- **Practice Score**: epsilon^2 = 0.0535
+
+## 5. Correlation Analysis
+
+- **Method**: Pearson correlation with p-values (complete-case)
+- **Key correlations**:
+  - Knowledge Score vs Age: r = 0.307, p = 0.0007
+  - Knowledge Score vs Practice Score: r = 0.335, p = 0.0002
+- **Note**: Correlations with Total Score are expected because Total Score is derived from Knowledge + Practice.
+
+## 6. Data Quality and Missingness
+
+- **Overall Missing Values**: 550 cells
+- **Overall Data Quality**: 88.82%
+- **Core Data Quality (excluding conditional/skip-logic columns)**: 99.85%
+
+Conditional/skip-logic columns (expected missingness):
+- IfYesSourceOfInformationAboutMensturation
+- AnyOtherSpecify
+- AnyOtherPleaseSpecify
+- IfUseClothDoYouRegularyWashClothPadWithSoapAndWater
+- DoYouDryTheClothINSun
+- FaceAnyProblemDuringWashingandDryingClothUsedForMensturation
+- TypeOfProblemFaceWhileWashingAndDryingCloth
+- ReasonNotUsingSanitaryPads
+
+## 7. Validity Checks and Limitations
+
+### Group Size Imbalance
+Maternal education groups are unbalanced:
+- Level 1: n = 86
+- Level 2: n = 17
+- Level 3: n = 8
+- Level 4: n = 8
+- Level 5: n = 1
+
+Small group sizes limit post-hoc testing and reduce confidence in the smallest group (Level 5).
+
+### Consistency Checks
+- **Family size check**: Total family members equals male + female for all 120 records.
+- **Age range**: 12-18, within the adolescent range.
 
 ### Confounding Factors
-*   **Age**: We found a moderate positive correlation between Age and Knowledge Score (r = 0.307, p = 0.001). This is expected (older adolescents know more). Since Age was not significantly different across Maternal Education groups, it is unlikely to invalidate the main findings, but should be noted.
-*   **Income**: No significant correlation was found between Per Capita Income and Hygiene scores.
+- **Age**: Moderately correlated with Knowledge Score (r = 0.307, p = 0.0007).
+- **Income**: Not significantly correlated with knowledge or practice scores (p > 0.05).
 
-### Small Group Sizes
-*   **Imbalance**: Maternal Education groups are unbalanced.
-    *   Level 1: n=86
-    *   Level 2: n=17
-    *   Level 3: n=8
-    *   Level 4: n=8
-    *   Level 5: n=1
-*   **Impact**: The very small sample size for Level 5 (n=1) means we cannot draw strong conclusions about this specific group. However, the overall trend and the statistical difference driven by the larger groups remain valid. The Kruskal-Wallis test helps mitigate the impact of outliers in small groups.
-
-### Data Consistency
-*   **Logic Checks**: We verified that `Total Family Members` equals `Male + Female` members for all 120 records.
-*   **Range Checks**: All Age values (12-18) are within the valid adolescent range.
-
+### Missing Data Assumption
+Missing questionnaire responses are scored as 0. This may bias scores downward if non-response does not imply lack of knowledge/practice.

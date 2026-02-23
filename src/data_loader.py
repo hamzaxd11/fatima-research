@@ -6,6 +6,7 @@ and generate data summaries for the menstrual hygiene analysis system.
 """
 
 import os
+import logging
 from typing import Tuple, List, Dict, Any
 import pandas as pd
 import pyreadstat
@@ -60,17 +61,32 @@ def load_spss_file(file_path: str) -> Tuple[pd.DataFrame, Dict[str, Any]]:
         # The dataset contains ~40 empty rows at the end which skew the analysis.
         # We filter based on missing 'MotherEducation' as it is the primary independent variable.
         # We try to identify the column name dynamically.
-        maternal_col = None
+        maternal_ed_col = None
         for col in df.columns:
-            if 'mother' in col.lower() and 'education' in col.lower():
+            col_lower = col.lower()
+            if ('mother' in col_lower or 'maternal' in col_lower) and 'education' in col_lower:
                 maternal_ed_col = col
                 break
         
         initial_len = len(df)
         if maternal_ed_col:
-             # Dropping rows where Maternal Education is NaN
-             df = df.dropna(subset=[maternal_ed_col])
-             print(f"      [Data Loader] Filtered out {initial_len - len(df)} empty/invalid rows (based on missing {maternal_ed_col})")
+            # Dropping rows where Maternal Education is NaN
+            df = df.dropna(subset=[maternal_ed_col])
+            filtered_rows = initial_len - len(df)
+            if filtered_rows > 0:
+                message = (
+                    "      [Data Loader] Filtered out "
+                    f"{filtered_rows} empty/invalid rows (based on missing {maternal_ed_col})"
+                )
+                print(message)
+                logging.info(message.strip())
+            metadata['filtered_rows'] = filtered_rows
+            metadata['filter_column'] = maternal_ed_col
+            metadata['post_filter_row_count'] = len(df)
+        else:
+            metadata['filtered_rows'] = 0
+            metadata['filter_column'] = None
+            metadata['post_filter_row_count'] = len(df)
         
         return df, metadata
         

@@ -7,8 +7,15 @@ from the menstrual hygiene survey data.
 
 import pandas as pd
 import numpy as np
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import warnings
+
+
+def _find_column(df: pd.DataFrame, possible_names: List[str]) -> Optional[str]:
+    for name in possible_names:
+        if name in df.columns:
+            return name
+    return None
 
 
 def calculate_per_capita_income(df: pd.DataFrame) -> pd.DataFrame:
@@ -45,46 +52,49 @@ def calculate_per_capita_income(df: pd.DataFrame) -> pd.DataFrame:
                 male_col = col
             elif 'female' in col_lower and 'family' in col_lower:
                 female_col = col
-        
+
+        reported_total_col = _find_column(df, [
+            'total_family_members', 'Total_family_members', 'TotalFamilyMembers',
+            'NoOfFamilyMembers', 'No_of_family_members'
+        ])
+
         # Handle missing values in family member counts
-        if male_col and male_col in df.columns:
+        if male_col and female_col:
             male_members = pd.to_numeric(df[male_col], errors='coerce').fillna(0)
-        else:
-            male_members = pd.Series([0] * len(df))
-        
-        if female_col and female_col in df.columns:
             female_members = pd.to_numeric(df[female_col], errors='coerce').fillna(0)
+            df['total_family_members'] = male_members + female_members
+        elif reported_total_col:
+            df['total_family_members'] = pd.to_numeric(df[reported_total_col], errors='coerce')
         else:
-            female_members = pd.Series([0] * len(df))
-        
-        df['total_family_members'] = male_members + female_members
+            df['total_family_members'] = np.nan
+            warnings.warn("Total family members could not be derived from available columns")
     
     # Initialize per_capita_income column with NaN
     df['per_capita_income'] = np.nan
     
-    # Get income column - try different name variations
-    income_col = None
-    for col in df.columns:
-        if 'income' in col.lower() and 'capita' not in col.lower():
-            income_col = col
-            break
+    # Drop empty IncomePerCapita-like columns to avoid ambiguity
+    for col in list(df.columns):
+        if col.lower().replace("_", "") == "incomepercapita" and col != "income_per_month":
+            if df[col].isna().sum() > len(df) * 0.9:
+                df.drop(columns=[col], inplace=True)
+                warnings.warn(f"Dropped empty '{col}' column to prefer calculated 'per_capita_income'")
+
+    # Get income column - prefer explicit monthly income names
+    income_col = _find_column(df, [
+        'income_per_month', 'Income_per_month', 'IncomePerMonth'
+    ])
+
+    if income_col is None:
+        for col in df.columns:
+            if 'income' in col.lower() and 'capita' not in col.lower():
+                income_col = col
+                break
     
     if income_col and income_col in df.columns:
         income = pd.to_numeric(df[income_col], errors='coerce')
     else:
         income = pd.Series([np.nan] * len(df))
         
-    # Drop "IncomePerCapita" if it exists (but isn't the calculated one yet) to identify confusion
-    # The new calculated column is "per_capita_income"
-    # If there is a completely empty "IncomePerCapita" column from SPSS, it causes data quality false alarms
-    for col in df.columns:
-        if col.lower().replace("_", "") == "incomepercapita" and col != "income_per_month":
-            # Check if it's mostly empty
-            if df[col].isna().sum() > len(df) * 0.9:
-                # Drop it to avoid noise
-                df.drop(columns=[col], inplace=True)
-                warnings.warn(f"Dropped empty '{col}' column to prefer calculated 'per_capita_income'")
-    
     family_size = pd.to_numeric(df['total_family_members'], errors='coerce')
     
     # Calculate per capita income only for valid records
@@ -121,6 +131,54 @@ def calculate_per_capita_income(df: pd.DataFrame) -> pd.DataFrame:
         warnings.warn(f"Per capita income set to null for {missing_data.sum()} records with missing income or family size")
     
     return df
+
+
+def check_family_size_consistency(df: pd.DataFrame) -> Dict[str, Any]:
+    """
+    Check consistency between reported total family members and male+female counts.
+
+    Returns a summary dict with counts and mismatch details.
+    """
+    reported_total_col = _find_column(df, [
+        'total_family_members', 'Total_family_members', 'TotalFamilyMembers',
+        'NoOfFamilyMembers', 'No_of_family_members'
+    ])
+
+    male_col = None
+    female_col = None
+    for col in df.columns:
+        col_lower = col.lower()
+        if 'male' in col_lower and 'family' in col_lower and 'female' not in col_lower:
+            male_col = col
+        elif 'female' in col_lower and 'family' in col_lower:
+            female_col = col
+
+    if not reported_total_col or not male_col or not female_col:
+        return {
+            'status': 'not_applicable',
+            'checked_rows': 0,
+            'mismatch_count': 0,
+            'mismatch_rows': []
+        }
+
+    reported_total = pd.to_numeric(df[reported_total_col], errors='coerce')
+    male_members = pd.to_numeric(df[male_col], errors='coerce')
+    female_members = pd.to_numeric(df[female_col], errors='coerce')
+    computed_total = male_members + female_members
+
+    valid_mask = reported_total.notna() & male_members.notna() & female_members.notna()
+    mismatches = (reported_total != computed_total) & valid_mask
+    mismatch_rows = (df.index[mismatches] + 1).tolist()
+
+    return {
+        'status': 'checked',
+        'reported_total_column': reported_total_col,
+        'male_column': male_col,
+        'female_column': female_col,
+        'checked_rows': int(valid_mask.sum()),
+        'mismatch_count': int(mismatches.sum()),
+        'mismatch_rows': mismatch_rows[:25]
+    }
 
 
 def calculate_knowledge_score(df: pd.DataFrame, question_columns: Optional[List[str]] = None) -> pd.DataFrame:

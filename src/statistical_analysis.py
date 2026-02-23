@@ -13,6 +13,61 @@ from typing import Dict, List, Any, Optional
 import warnings
 
 
+def _compute_eta_squared(groups: List[np.ndarray]) -> float:
+    try:
+        all_values = np.concatenate(groups)
+        if all_values.size == 0:
+            return np.nan
+        overall_mean = np.mean(all_values)
+        ss_between = 0.0
+        for group in groups:
+            if len(group) == 0:
+                continue
+            ss_between += len(group) * (np.mean(group) - overall_mean) ** 2
+        ss_total = np.sum((all_values - overall_mean) ** 2)
+        return float(ss_between / ss_total) if ss_total > 0 else np.nan
+    except Exception:
+        return np.nan
+
+
+def _compute_epsilon_squared(h_stat: float, n: int, k: int) -> float:
+    try:
+        if n <= k or n <= 0:
+            return np.nan
+        return float((h_stat - k + 1) / (n - k))
+    except Exception:
+        return np.nan
+
+
+_CONTINUOUS_VAR_MAPPINGS = {
+    'age': ['age', 'Age'],
+    'income_per_month': ['income_per_month', 'Income_per_month', 'IncomePerMonth'],
+    'total_family_members': ['total_family_members', 'Total_family_members', 'TotalFamilyMembers'],
+    'per_capita_income': ['per_capita_income', 'Per_capita_income', 'PerCapitaIncome'],
+    'knowledge_score': ['knowledge_score'],
+    'practice_score': ['practice_score'],
+    'total_score': ['total_score']
+}
+
+
+def _build_correlation_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    available_cols = {}
+    for var_name, possible_names in _CONTINUOUS_VAR_MAPPINGS.items():
+        for name in possible_names:
+            if name in df.columns:
+                available_cols[var_name] = name
+                break
+
+    if not available_cols:
+        return pd.DataFrame()
+
+    correlation_df = pd.DataFrame()
+    for var_name, col_name in available_cols.items():
+        correlation_df[var_name] = pd.to_numeric(df[col_name], errors='coerce')
+
+    correlation_df = correlation_df.dropna()
+    return correlation_df
+
 def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
     """
     Analyze the relationship between maternal education and hygiene awareness scores.
@@ -52,7 +107,9 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
             'summary_table': pd.DataFrame(),
             'anova_knowledge': {'f_statistic': np.nan, 'p_value': np.nan},
             'anova_practice': {'f_statistic': np.nan, 'p_value': np.nan},
-            'test_type': 'None'
+            'test_type': 'None',
+            'test_type_by_outcome': {},
+            'assumption_checks': {}
         }
     
     # Check if required score columns exist
@@ -62,7 +119,9 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
             'summary_table': pd.DataFrame(),
             'anova_knowledge': {'f_statistic': np.nan, 'p_value': np.nan},
             'anova_practice': {'f_statistic': np.nan, 'p_value': np.nan},
-            'test_type': 'None'
+            'test_type': 'None',
+            'test_type_by_outcome': {},
+            'assumption_checks': {}
         }
     
     # Remove rows with missing maternal education or scores
@@ -75,7 +134,9 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
             'summary_table': pd.DataFrame(),
             'anova_knowledge': {'f_statistic': np.nan, 'p_value': np.nan},
             'anova_practice': {'f_statistic': np.nan, 'p_value': np.nan},
-            'test_type': 'None'
+            'test_type': 'None',
+            'test_type_by_outcome': {},
+            'assumption_checks': {}
         }
     
     # Group by maternal education level
@@ -102,76 +163,91 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
     
     # Check assumptions for ANOVA
     # 1. Normality (Shapiro-Wilk test)
-    #    We check residuals of the model or the groups themselves. Checking groups is stricter.
     #    If p < 0.05, data is NOT normal.
     # 2. Homogeneity of Variance (Levene's test)
     #    If p < 0.05, variances are NOT equal.
-    
-    use_parametric_knowledge = True
-    use_parametric_practice = True
-    
-    # Check Knowledge Score Assumptions
-    try:
-        # Check normality for each group (if n >= 3)
-        normal_k = True
-        for g in groups_knowledge:
-            if len(g) >= 3:
-                _, p_norm = stats.shapiro(g)
-                if p_norm < 0.05:
-                    normal_k = False
-                    break
-        
-        # Check homogeneity
-        if len(groups_knowledge) >= 2:
-            _, p_var_k = stats.levene(*groups_knowledge)
-        else:
-            p_var_k = 1.0
-            
-        if not normal_k or p_var_k < 0.05:
-            use_parametric_knowledge = False
-            
-    except Exception as e:
-        warnings.warn(f"Assumption check failed for knowledge scores: {str(e)}")
-        use_parametric_knowledge = False
+    # 3. Minimum group size (n >= 3) for reliable assumption testing
 
-    # Check Practice Score Assumptions
-    try:
-        # Check normality
-        normal_p = True
-        for g in groups_practice:
-            if len(g) >= 3:
-                _, p_norm = stats.shapiro(g)
-                if p_norm < 0.05:
-                    normal_p = False
-                    break
-        
-        # Check homogeneity
-        if len(groups_practice) >= 2:
-            _, p_var_p = stats.levene(*groups_practice)
-        else:
-            p_var_p = 1.0
-            
-        if not normal_p or p_var_p < 0.05:
-            use_parametric_practice = False
-            
-    except Exception as e:
-        warnings.warn(f"Assumption check failed for practice scores: {str(e)}")
-        use_parametric_practice = False
+    def check_assumptions(groups: List[np.ndarray], label: str) -> Dict[str, Any]:
+        normality_pvalues = []
+        tested_groups = 0
+        small_groups = any(len(g) < 2 for g in groups)
+        insufficient_normality = any(len(g) < 3 for g in groups)
 
-    # Determine validation outcomes
-    test_type = 'ANOVA'
-    if not use_parametric_knowledge or not use_parametric_practice:
-        test_type = 'Kruskal-Wallis (Robust)'
+        try:
+            for g in groups:
+                if len(g) >= 3:
+                    if np.all(g == g[0]):
+                        normality_pvalues.append(0.0)
+                        tested_groups += 1
+                    else:
+                        _, p_norm = stats.shapiro(g)
+                        normality_pvalues.append(float(p_norm))
+                        tested_groups += 1
+        except Exception as e:
+            warnings.warn(f"Normality check failed for {label} scores: {str(e)}")
+
+        normality_ok = all(p >= 0.05 for p in normality_pvalues) if normality_pvalues else False
+
+        p_var = np.nan
+        variance_ok = False
+        try:
+            if len(groups) >= 2 and all(len(g) >= 2 for g in groups):
+                _, p_var = stats.levene(*groups)
+                variance_ok = p_var >= 0.05
+        except Exception as e:
+            warnings.warn(f"Variance check failed for {label} scores: {str(e)}")
+
+        use_parametric = normality_ok and variance_ok and not small_groups and not insufficient_normality
+
+        return {
+            'normality_min_p': min(normality_pvalues) if normality_pvalues else np.nan,
+            'normality_tested_groups': tested_groups,
+            'variance_p': float(p_var) if not np.isnan(p_var) else np.nan,
+            'small_groups': small_groups,
+            'insufficient_normality': insufficient_normality,
+            'use_parametric': use_parametric
+        }
+
+    assumption_checks = {
+        'knowledge': check_assumptions(groups_knowledge, 'knowledge'),
+        'practice': check_assumptions(groups_practice, 'practice')
+    }
+
+    use_parametric_knowledge = assumption_checks['knowledge']['use_parametric']
+    use_parametric_practice = assumption_checks['practice']['use_parametric']
+
+    test_type_by_outcome = {
+        'knowledge': 'ANOVA' if use_parametric_knowledge else 'Kruskal-Wallis',
+        'practice': 'ANOVA' if use_parametric_practice else 'Kruskal-Wallis'
+    }
+
+    # Determine overall test type
+    if test_type_by_outcome['knowledge'] == test_type_by_outcome['practice']:
+        test_type = f"{test_type_by_outcome['knowledge']} (Robust)" if 'Kruskal' in test_type_by_outcome['knowledge'] else 'ANOVA'
+    else:
+        test_type = 'Mixed (ANOVA/Kruskal)'
 
     # Perform statistical tests for knowledge scores
     try:
         if use_parametric_knowledge:
             f_stat_k, p_value_k = stats.f_oneway(*groups_knowledge)
-            anova_knowledge = {'f_statistic': float(f_stat_k), 'p_value': float(p_value_k)}
+            anova_knowledge = {
+                'f_statistic': float(f_stat_k),
+                'p_value': float(p_value_k),
+                'effect_size': _compute_eta_squared(groups_knowledge),
+                'effect_size_type': 'eta_squared'
+            }
         else:
             h_stat_k, p_value_k = stats.kruskal(*groups_knowledge)
-            anova_knowledge = {'f_statistic': float(h_stat_k), 'p_value': float(p_value_k)}
-            if test_type == 'ANOVA': test_type = 'Mixed (ANOVA/Kruskal)'
+            anova_knowledge = {
+                'f_statistic': float(h_stat_k),
+                'p_value': float(p_value_k),
+                'effect_size': _compute_epsilon_squared(float(h_stat_k), len(analysis_df), len(groups_knowledge)),
+                'effect_size_type': 'epsilon_squared'
+            }
+            if test_type == 'ANOVA':
+                test_type = 'Mixed (ANOVA/Kruskal)'
             
     except Exception as e:
         warnings.warn(f"Statistical test failed for knowledge scores: {str(e)}")
@@ -181,11 +257,22 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
     try:
         if use_parametric_practice:
             f_stat_p, p_value_p = stats.f_oneway(*groups_practice)
-            anova_practice = {'f_statistic': float(f_stat_p), 'p_value': float(p_value_p)}
+            anova_practice = {
+                'f_statistic': float(f_stat_p),
+                'p_value': float(p_value_p),
+                'effect_size': _compute_eta_squared(groups_practice),
+                'effect_size_type': 'eta_squared'
+            }
         else:
             h_stat_p, p_value_p = stats.kruskal(*groups_practice)
-            anova_practice = {'f_statistic': float(h_stat_p), 'p_value': float(p_value_p)}
-            if test_type == 'ANOVA': test_type = 'Mixed (ANOVA/Kruskal)'
+            anova_practice = {
+                'f_statistic': float(h_stat_p),
+                'p_value': float(p_value_p),
+                'effect_size': _compute_epsilon_squared(float(h_stat_p), len(analysis_df), len(groups_practice)),
+                'effect_size_type': 'epsilon_squared'
+            }
+            if test_type == 'ANOVA':
+                test_type = 'Mixed (ANOVA/Kruskal)'
             
     except Exception as e:
         warnings.warn(f"Statistical test failed for practice scores: {str(e)}")
@@ -200,7 +287,9 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
         'summary_table': summary_table,
         'anova_knowledge': anova_knowledge,
         'anova_practice': anova_practice,
-        'test_type': test_type
+        'test_type': test_type,
+        'test_type_by_outcome': test_type_by_outcome,
+        'assumption_checks': assumption_checks
     }
 
 def calculate_demographic_summaries(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
@@ -303,37 +392,10 @@ def perform_correlation_analysis(df: pd.DataFrame) -> pd.DataFrame:
         
     Requirements: 6.4
     """
-    # Define continuous variables to correlate
-    continuous_vars = []
-    var_mappings = {
-        'age': ['age', 'Age'],
-        'income_per_month': ['income_per_month', 'Income_per_month', 'IncomePerMonth'],
-        'total_family_members': ['total_family_members', 'Total_family_members', 'TotalFamilyMembers'],
-        'per_capita_income': ['per_capita_income', 'Per_capita_income', 'PerCapitaIncome'],
-        'knowledge_score': ['knowledge_score'],
-        'practice_score': ['practice_score'],
-        'total_score': ['total_score']
-    }
-    
-    # Find which columns exist
-    available_cols = {}
-    for var_name, possible_names in var_mappings.items():
-        for name in possible_names:
-            if name in df.columns:
-                available_cols[var_name] = name
-                break
-    
-    if not available_cols:
+    correlation_df = _build_correlation_dataframe(df)
+    if correlation_df.empty:
         warnings.warn("No continuous variables found for correlation analysis")
         return pd.DataFrame()
-    
-    # Extract data for correlation
-    correlation_df = pd.DataFrame()
-    for var_name, col_name in available_cols.items():
-        correlation_df[var_name] = pd.to_numeric(df[col_name], errors='coerce')
-    
-    # Remove rows with any missing values
-    correlation_df = correlation_df.dropna()
     
     if len(correlation_df) < 2:
         warnings.warn("Insufficient data for correlation analysis (need at least 2 complete records)")
@@ -356,6 +418,33 @@ def perform_correlation_analysis(df: pd.DataFrame) -> pd.DataFrame:
         return corr_matrix
     except Exception as e:
         warnings.warn(f"Correlation analysis failed: {str(e)}")
+        return pd.DataFrame()
+
+
+def perform_correlation_pvalues(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate p-values for Pearson correlations between continuous variables.
+    """
+    correlation_df = _build_correlation_dataframe(df)
+    if correlation_df.empty or len(correlation_df) < 2:
+        warnings.warn("Insufficient data for correlation p-values")
+        return pd.DataFrame()
+
+    cols = correlation_df.columns
+    p_matrix = pd.DataFrame(np.nan, index=cols, columns=cols)
+
+    try:
+        for i, col_i in enumerate(cols):
+            for j, col_j in enumerate(cols):
+                if i == j:
+                    p_matrix.loc[col_i, col_j] = 0.0
+                elif i < j:
+                    _, p_val = stats.pearsonr(correlation_df[col_i], correlation_df[col_j])
+                    p_matrix.loc[col_i, col_j] = p_val
+                    p_matrix.loc[col_j, col_i] = p_val
+        return p_matrix
+    except Exception as e:
+        warnings.warn(f"Correlation p-value analysis failed: {str(e)}")
         return pd.DataFrame()
 
 

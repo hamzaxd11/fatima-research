@@ -11,6 +11,27 @@ from typing import Dict, List, Any, Optional
 import warnings
 
 
+def _is_conditional_column(column_name: str) -> bool:
+    name = column_name.lower()
+    if name.startswith('if'):
+        return True
+    if 'anyother' in name or 'any_other' in name:
+        return True
+    if 'specify' in name:
+        return True
+    if 'sourceofinformation' in name:
+        return True
+    if 'type' in name and 'problem' in name:
+        return True
+    if 'problem' in name and 'cloth' in name:
+        return True
+    if name.startswith('doyou') and 'cloth' in name:
+        return True
+    if 'reason' in name:
+        return True
+    return False
+
+
 def detect_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """
     Detect and report missing values in the dataset.
@@ -203,9 +224,26 @@ def generate_data_quality_report(
     # Detect missing values
     missing_df = detect_missing_values(df)
     missing_count = len(missing_df)
+
+    # Identify conditional/skip-logic columns (high missingness + conditional naming)
+    conditional_columns = []
+    for col in df.columns:
+        if _is_conditional_column(col):
+            conditional_columns.append(col)
     
     if missing_count > 0:
         warnings_list.append(f"Found {missing_count} missing values across {missing_df['variable_name'].nunique()} variables")
+
+    if missing_count > 0 and conditional_columns:
+        conditional_set = set(conditional_columns)
+        missing_df['missing_category'] = missing_df['variable_name'].apply(
+            lambda name: 'conditional' if name in conditional_set else 'core'
+        )
+        warnings_list.append(
+            f"Flagged {len(conditional_columns)} columns as conditional/skip-logic (missingness reported separately)"
+        )
+    elif missing_count > 0:
+        missing_df['missing_category'] = 'core'
     
     # Detect invalid values
     invalid_df = detect_invalid_values(df, validation_rules)
@@ -218,6 +256,14 @@ def generate_data_quality_report(
     total_cells = df.shape[0] * df.shape[1]
     total_issues = missing_count + invalid_count
     quality_percentage = ((total_cells - total_issues) / total_cells * 100) if total_cells > 0 else 0
+
+    conditional_set = set(conditional_columns)
+    core_columns = [col for col in df.columns if col not in conditional_set]
+    core_total_cells = df.shape[0] * len(core_columns)
+    core_missing_count = int(missing_df[missing_df['variable_name'].isin(core_columns)].shape[0]) if missing_count > 0 else 0
+    core_invalid_count = int(invalid_df[invalid_df['variable_name'].isin(core_columns)].shape[0]) if invalid_count > 0 else 0
+    core_total_issues = core_missing_count + core_invalid_count
+    core_quality_percentage = ((core_total_cells - core_total_issues) / core_total_cells * 100) if core_total_cells > 0 else 0
     
     summary = {
         'total_rows': len(df),
@@ -228,7 +274,14 @@ def generate_data_quality_report(
         'total_issues': total_issues,
         'data_quality_percentage': round(quality_percentage, 2),
         'affected_rows': len(set(list(missing_df['row_number']) + list(invalid_df['row_number']))) if total_issues > 0 else 0,
-        'affected_columns': len(set(list(missing_df['variable_name']) + list(invalid_df['variable_name']))) if total_issues > 0 else 0
+        'affected_columns': len(set(list(missing_df['variable_name']) + list(invalid_df['variable_name']))) if total_issues > 0 else 0,
+        'conditional_columns': conditional_columns,
+        'conditional_missing_count': int(missing_df[missing_df['variable_name'].isin(conditional_columns)].shape[0]) if missing_count > 0 else 0,
+        'core_columns_count': len(core_columns),
+        'core_total_cells': core_total_cells,
+        'core_missing_count': core_missing_count,
+        'core_invalid_count': core_invalid_count,
+        'core_data_quality_percentage': round(core_quality_percentage, 2)
     }
     
     # Save report files if output path provided
@@ -256,7 +309,16 @@ def generate_data_quality_report(
             f.write(f"Total Issues: {summary['total_issues']}\n\n")
             f.write(f"Affected Rows: {summary['affected_rows']}\n")
             f.write(f"Affected Columns: {summary['affected_columns']}\n\n")
-            f.write(f"Data Quality: {summary['data_quality_percentage']}%\n\n")
+            f.write(f"Data Quality: {summary['data_quality_percentage']}%\n")
+            if summary['core_total_cells'] > 0:
+                f.write(f"Core Data Quality: {summary['core_data_quality_percentage']}%\n")
+            f.write("\n")
+
+            if summary['conditional_columns']:
+                f.write("Conditional/Skip-Logic Columns:\n")
+                for col in summary['conditional_columns']:
+                    f.write(f"- {col}\n")
+                f.write("\n")
             
             if warnings_list:
                 f.write("WARNINGS:\n")

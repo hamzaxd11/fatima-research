@@ -25,11 +25,12 @@ from pathlib import Path
 
 # Import analysis modules
 from src.data_loader import load_spss_file, validate_required_columns, generate_data_summary
-from src.data_processor import create_scored_dataset
+from src.data_processor import create_scored_dataset, check_family_size_consistency
 from src.statistical_analysis import (
     analyze_maternal_education_impact,
     calculate_demographic_summaries,
-    perform_correlation_analysis
+    perform_correlation_analysis,
+    perform_correlation_pvalues
 )
 from src.visualizations import generate_all_visualizations
 from src.report_generator import generate_analysis_report
@@ -139,6 +140,9 @@ def main():
     spss_file_path = args.spss_file
     output_base_path = args.output_base
     
+    loader_metadata = {}
+    family_size_check = {}
+
     try:
         # ===================================================================
         # STAGE 0: Setup
@@ -166,6 +170,7 @@ def main():
         
         try:
             df, metadata = load_spss_file(spss_file_path)
+            loader_metadata = metadata
             logging.info(f"Successfully loaded {len(df)} records with {len(df.columns)} variables")
             print(f"      Loaded {len(df)} records with {len(df.columns)} variables")
             
@@ -204,6 +209,14 @@ def main():
             scored_file = save_dataframe(scored_df, 'scored_dataset.csv', output_folder)
             logging.info(f"Scored dataset saved to: {scored_file}")
             print(f"      Scored dataset saved: scored_dataset.csv")
+
+            # Consistency checks
+            family_size_check = check_family_size_consistency(scored_df)
+            if family_size_check.get('status') == 'checked':
+                logging.info(
+                    "Family size consistency check: "
+                    f"{family_size_check.get('mismatch_count', 0)} mismatches"
+                )
             
         except Exception as e:
             logging.error(f"Failed during data processing: {str(e)}")
@@ -236,6 +249,8 @@ def main():
         logging.info("Stage 4: Statistical analysis")
         
         analysis_results = {}
+        analysis_results['data_loader_metadata'] = loader_metadata
+        analysis_results['family_size_consistency'] = family_size_check
         
         try:
             # Maternal education analysis
@@ -272,6 +287,12 @@ def main():
             if not correlations.empty:
                 logging.info("Correlation analysis complete")
                 save_dataframe(correlations, 'correlation_matrix.csv', output_folder)
+
+            # Correlation p-values
+            corr_pvalues = perform_correlation_pvalues(scored_df)
+            analysis_results['correlation_pvalues'] = corr_pvalues
+            if not corr_pvalues.empty:
+                save_dataframe(corr_pvalues, 'correlation_pvalues.csv', output_folder)
             
             # Add data quality report to results
             analysis_results['data_quality_report'] = quality_report
@@ -329,6 +350,7 @@ def main():
                 'scored_dataset.csv': 'Complete dataset with all calculated scores',
                 'maternal_education_summary.csv': 'Summary statistics by maternal education level',
                 'correlation_matrix.csv': 'Correlation coefficients between continuous variables',
+                'correlation_pvalues.csv': 'P-values for Pearson correlations between continuous variables',
                 'scores_by_maternal_education.png': 'Bar chart of mean scores by education level',
                 'score_distributions.png': 'Histograms of score distributions',
                 'score_boxplots.png': 'Box plots comparing scores across education groups',
@@ -336,7 +358,9 @@ def main():
                 'analysis_report.txt': 'Comprehensive analysis report (text format)',
                 'analysis_report.md': 'Comprehensive analysis report (markdown format)',
                 'analysis.log': 'Analysis execution log with all parameters and messages',
-                'data_quality_summary.txt': 'Data quality assessment summary'
+                'data_quality_summary.txt': 'Data quality assessment summary',
+                'data_quality_missing_values.csv': 'Missing value details',
+                'data_quality_invalid_values.csv': 'Invalid value details (if any)'
             }
             
             inventory_file = generate_file_inventory(output_folder, file_descriptions)

@@ -21,10 +21,10 @@ This system analyzes the relationship between maternal education and menstrual h
 For a detailed explanation of why specific statistical tests (ANOVA vs. T-Test vs. Chi-Square) were chosen, please refer to [ANALYSIS_METHODOLOGY.md](ANALYSIS_METHODOLOGY.md).
 
 ### Key Findings Summary
-*   **Sample Size**: 120 Valid Respondents (40 empty rows were filtered out during data loading).
-*   **Practice Scores**: Significantly influenced by Maternal Education (p = 0.042).
-    *   **Robustness Check**: Confirmed by non-parametric Kruskal-Wallis test (p = 0.038).
-*   **Knowledge Scores**: No significant difference found based on Maternal Education (p = 0.261).
+*   **Sample Size**: 120 Valid Respondents (40 empty rows filtered based on missing maternal education).
+*   **Practice Scores**: Significant differences by Maternal Education (Kruskal-Wallis H = 10.1562, p = 0.0379, epsilon^2 = 0.0535).
+*   **Knowledge Scores**: Not significant by Maternal Education (Kruskal-Wallis H = 5.8669, p = 0.2093, epsilon^2 = 0.0162).
+*   **Assumption Checks**: Shapiro-Wilk indicated non-normality and small group sizes; non-parametric tests were used.
 *   **Overall Scores**:
     *   Mean Knowledge Score: 5.82 (out of 9)
     *   Mean Practice Score: 5.68 (out of 7)
@@ -179,9 +179,14 @@ The system generates a timestamped output folder (e.g., `output/analysis_2024021
 - Symmetric matrix format with variable names as row/column headers
 - Values range from -1 (perfect negative correlation) to +1 (perfect positive correlation)
 
+**correlation_pvalues.csv**
+- P-values for Pearson correlations (complete-case)
+- Use alongside correlation_matrix.csv to assess statistical significance
+
 **data_quality_*.csv files**
 - Lists all missing values with row numbers and variable names
 - Lists all invalid values with details about the issue
+- Missing values include a `missing_category` column (core vs conditional/skip-logic)
 - Use these files to identify and address data quality problems
 
 ### Visualizations (PNG format, 300 DPI)
@@ -233,7 +238,8 @@ All visualizations are publication-ready with high resolution (300 DPI) suitable
 **data_quality_summary.txt**
 - Summary of data quality assessment
 - Lists total missing values, invalid values, and affected rows/columns
-- Includes data quality percentage score
+- Includes overall and core data quality percentage scores
+- Lists conditional/skip-logic columns with expected missingness
 - Warnings and recommendations for data cleaning
 
 **FILE_INVENTORY.md**
@@ -304,8 +310,8 @@ Calculated as: Monthly Income / Total Family Members (rounded to 2 decimal place
 
 - **Descriptive Statistics**: Mean, median, standard deviation, min, max
 - **Frequency Distributions**: For categorical variables
-- **Statistical Tests**: ANOVA or Kruskal-Wallis test for group comparisons
-- **Correlation Analysis**: Pearson correlation for continuous variables
+- **Statistical Tests**: ANOVA or Kruskal-Wallis selected per assumption checks (Shapiro-Wilk, Levene, group size); effect sizes reported (eta^2 or epsilon^2)
+- **Correlation Analysis**: Pearson correlations with p-values (complete-case)
 
 ## Error Handling
 
@@ -523,13 +529,14 @@ cat data_quality_summary.txt      # macOS/Linux
 ```
 
 **What to look for**:
-- Data quality percentage (aim for >90%)
+- Overall and core data quality percentage (core excludes conditional/skip-logic columns; aim for >90%)
 - Number of missing values
 - Number of invalid values
 - Affected rows and columns
 
 **Action items**:
-- If data quality is low (<80%), review the missing/invalid value CSV files
+- If overall quality is low (<80%) but core quality is high, verify conditional columns are correctly flagged
+- If core quality is low (<80%), review the missing/invalid value CSV files
 - Consider cleaning the original data and re-running analysis
 - Document any data quality issues in your research notes
 
@@ -705,7 +712,7 @@ python -m pytest tests/integration/
 
 ## License
 
-This project is developed for medical research purposes at [Institution Name].
+This project is developed for medical research purposes. Update the institutional affiliation before publication.
 
 ## Contact
 

@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-from typing import Optional, List
+from typing import Optional, List, Dict, Any
 import warnings
 import os
 
@@ -41,6 +41,33 @@ def _find_column(df: pd.DataFrame, possible_names: List[str]) -> Optional[str]:
         if name in df.columns:
             return name
     return None
+
+
+def _format_maternal_education_label(value: Any) -> str:
+    mapping = {
+        1: 'Illiterate/Primary',
+        2: 'Middle',
+        3: 'Secondary',
+        4: 'Intermediate',
+        5: 'Higher'
+    }
+    try:
+        int_value = int(float(value))
+        if int_value in mapping:
+            return mapping[int_value]
+    except Exception:
+        pass
+    return str(value)
+
+
+def _format_maternal_education_labels(levels: List[Any], counts: Optional[Dict[Any, int]] = None) -> List[str]:
+    labels = []
+    for level in levels:
+        label = _format_maternal_education_label(level)
+        if counts and level in counts:
+            label = f"{label} (n={counts[level]})"
+        labels.append(label)
+    return labels
 
 
 def plot_scores_by_maternal_education(
@@ -94,6 +121,7 @@ def plot_scores_by_maternal_education(
         'knowledge_score': 'std',
         'practice_score': 'std'
     })
+    counts = grouped.size().to_dict()
     
     # Create figure
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -115,7 +143,8 @@ def plot_scores_by_maternal_education(
     ax.set_ylabel('Mean Score', fontweight='bold')
     ax.set_title('Knowledge and Practice Scores by Maternal Education Level', fontweight='bold', pad=20)
     ax.set_xticks(x)
-    ax.set_xticklabels(means.index, rotation=45, ha='right')
+    labels = _format_maternal_education_labels(list(means.index), counts)
+    ax.set_xticklabels(labels, rotation=30, ha='right')
     ax.legend()
     ax.grid(axis='y', alpha=0.3, linestyle='--')
     
@@ -241,6 +270,8 @@ def plot_score_boxplots(
     
     # Get unique education levels
     education_levels = sorted(analysis_df[maternal_ed_col].unique())
+    counts = analysis_df[maternal_ed_col].value_counts().to_dict()
+    labels = _format_maternal_education_labels(education_levels, counts)
     
     # Prepare data for box plots
     knowledge_data = [analysis_df[analysis_df[maternal_ed_col] == level]['knowledge_score'].values
@@ -252,25 +283,25 @@ def plot_score_boxplots(
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
     
     # Knowledge score box plot
-    bp1 = ax1.boxplot(knowledge_data, labels=education_levels, patch_artist=True)
+    bp1 = ax1.boxplot(knowledge_data, labels=labels, patch_artist=True)
     for patch in bp1['boxes']:
         patch.set_facecolor('#3498db')
         patch.set_alpha(0.7)
     ax1.set_xlabel('Maternal Education Level', fontweight='bold')
     ax1.set_ylabel('Knowledge Score', fontweight='bold')
     ax1.set_title('Knowledge Scores by Maternal Education', fontweight='bold', pad=15)
-    ax1.tick_params(axis='x', rotation=45)
+    ax1.tick_params(axis='x', rotation=30)
     ax1.grid(axis='y', alpha=0.3, linestyle='--')
     
     # Practice score box plot
-    bp2 = ax2.boxplot(practice_data, labels=education_levels, patch_artist=True)
+    bp2 = ax2.boxplot(practice_data, labels=labels, patch_artist=True)
     for patch in bp2['boxes']:
         patch.set_facecolor('#e74c3c')
         patch.set_alpha(0.7)
     ax2.set_xlabel('Maternal Education Level', fontweight='bold')
     ax2.set_ylabel('Practice Score', fontweight='bold')
     ax2.set_title('Practice Scores by Maternal Education', fontweight='bold', pad=15)
-    ax2.tick_params(axis='x', rotation=45)
+    ax2.tick_params(axis='x', rotation=30)
     ax2.grid(axis='y', alpha=0.3, linestyle='--')
     
     # Adjust layout and save
