@@ -374,16 +374,16 @@ Investigator and supervisor roles are as listed on the title page. Statistical p
 
 ## 11. References
 
-1. World Health Organization. Strengthening the health sector response to adolescent health and development. Geneva; 2011.
-2. World Health Organization. WHO statement on menstrual health and rights.
-3. UNESCO. Menstrual health and hygiene management: a module for gender empowerment.
-4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools in rural northern Ghana.
-5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene practice among adolescent girls in Ethiopia: a systematic review and meta-analysis.
-6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent schoolgirls in southern Ethiopia: a cross-sectional study.
-7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in Dang District, Nepal.
-8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District, Nepal.
-9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in urban slums.
-10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding pubertal changes and reproductive health.
+1. World Health Organization. *Making health services adolescent friendly: developing national quality standards for adolescent-friendly health services.* Geneva: WHO; 2012. Available from: https://www.who.int/publications/i/item/9789241503594 (No DOI).
+2. World Health Organization. *WHO statement on menstrual health and rights.* 22 June 2022. Available from: https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights (No DOI).
+3. UNESCO. *Puberty education and menstrual hygiene management.* Paris: UNESCO. Available from: https://unesdoc.unesco.org/ark:/48223/pf0000263833 (No DOI).
+4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools in rural Northern Ghana. *Pan Afr Med J.* 2020;37:190. doi:10.11604/pamj.2020.37.190.19015
+5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene practice among adolescent girls in Ethiopia: a systematic review and meta-analysis. *PLoS One.* 2022;17(1):e0262295. doi:10.1371/journal.pone.0262295
+6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent schoolgirls in southern Ethiopia: a cross-sectional study. *BMC Public Health.* 2019;19:1595. doi:10.1186/s12889-019-7973-9
+7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in Dang District, Nepal. *Adv Prev Med.* 2020;2020:1292070. doi:10.1155/2020/1292070
+8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District, Nepal. *Adv Prev Med.* 2020;2020:8872119. doi:10.1155/2020/8872119
+9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in urban slums of Dibrugarh town, Assam. *J Family Med Prim Care.* 2021;10(12):4448-4453. doi:10.4103/jfmpc.jfmpc_703_21
+10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding pubertal changes and reproductive health. *Indian J Youth Adolesc Health.* 2017;4(3):1-7. doi:10.24321/2349.2880.201705
 
 ---
 
