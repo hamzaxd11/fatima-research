@@ -1,6 +1,7 @@
 # Menstrual Hygiene Awareness in Adolescent Girls: Exploring the Influence of Maternal Education on Knowledge and Practices in a Sub-Urban Area of Pakistan
 
-**Supervisor:** Dr Naureen Omar  
+**Supervisor:** Dr Naureen Omar
+
 **Investigators:** Dr Ayesha Javed, Dr Fatima Sohail
 
 ---

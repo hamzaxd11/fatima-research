@@ -21,7 +21,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Inches, Pt
+from docx.shared import Inches, Pt, RGBColor
 
 
 INLINE_TOKEN_RE = re.compile(r"(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)")
@@ -39,19 +39,26 @@ def configure_document(doc: Document) -> None:
     normal.font.name = "Times New Roman"
     normal._element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
     normal.font.size = Pt(12)
+    normal.font.color.rgb = RGBColor(0, 0, 0)
     normal.paragraph_format.line_spacing = 1.5
-    normal.paragraph_format.space_after = Pt(6)
-    normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    normal.paragraph_format.space_after = Pt(0)
+    normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
 
     title = doc.styles["Title"]
     title.font.name = "Times New Roman"
     title._element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
     title.font.size = Pt(16)
+    title.font.color.rgb = RGBColor(0, 0, 0)
 
     for style_name in ("Heading 1", "Heading 2", "Heading 3", "Heading 4"):
         style = doc.styles[style_name]
         style.font.name = "Times New Roman"
         style._element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
+        style.font.color.rgb = RGBColor(0, 0, 0)
+    doc.styles["Heading 1"].font.size = Pt(14)
+    doc.styles["Heading 2"].font.size = Pt(12)
+    doc.styles["Heading 3"].font.size = Pt(12)
+    doc.styles["Heading 4"].font.size = Pt(12)
 
 
 def add_page_number(section) -> None:
@@ -63,6 +70,7 @@ def add_page_number(section) -> None:
     run = paragraph.add_run("Page ")
     run.font.name = "Times New Roman"
     run.font.size = Pt(10)
+    run.font.color.rgb = RGBColor(0, 0, 0)
 
     fld_begin = OxmlElement("w:fldChar")
     fld_begin.set(qn("w:fldCharType"), "begin")
@@ -104,6 +112,7 @@ def add_inline_runs(paragraph, text: str) -> None:
     for kind, value in parse_inline_tokens(text):
         run = paragraph.add_run(value)
         run.font.name = "Times New Roman"
+        run.font.color.rgb = RGBColor(0, 0, 0)
         if kind == "bold":
             run.bold = True
         elif kind == "italic":
@@ -157,6 +166,7 @@ def add_table(doc: Document, rows: List[List[str]]) -> None:
             for run in para.runs:
                 run.font.name = "Times New Roman"
                 run.font.size = Pt(10)
+                run.font.color.rgb = RGBColor(0, 0, 0)
                 if r_idx == 0:
                     run.bold = True
             # Right-align mostly numeric cells (except header row)
@@ -239,8 +249,7 @@ def convert_markdown_to_docx(markdown_path: Path, output_path: Path) -> None:
 
         # Horizontal rule
         if stripped in {"---", "***", "___"}:
-            p = doc.add_paragraph("_" * 70)
-            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            doc.add_paragraph()
             i += 1
             continue
 
@@ -262,6 +271,7 @@ def convert_markdown_to_docx(markdown_path: Path, output_path: Path) -> None:
                 p = doc.add_paragraph(f"[Image not found: {img_ref}]")
                 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 p.runs[0].italic = True
+                p.runs[0].font.color.rgb = RGBColor(0, 0, 0)
 
             if caption:
                 cp = doc.add_paragraph(caption)
@@ -270,6 +280,7 @@ def convert_markdown_to_docx(markdown_path: Path, output_path: Path) -> None:
                     run.italic = True
                     run.font.name = "Times New Roman"
                     run.font.size = Pt(11)
+                    run.font.color.rgb = RGBColor(0, 0, 0)
 
             doc.add_paragraph()
             i += 1
@@ -311,7 +322,10 @@ def convert_markdown_to_docx(markdown_path: Path, output_path: Path) -> None:
 
         paragraph_text = " ".join(paragraph_lines)
         p = doc.add_paragraph()
-        p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        if paragraph_text.startswith("**Supervisor:**") or paragraph_text.startswith("**Investigators:**"):
+            p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        else:
+            p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
         add_inline_runs(p, paragraph_text)
 
     # Start references on a new page if that heading exists
