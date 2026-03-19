@@ -1,20 +1,20 @@
 # Analysis Output File Inventory
 
-Generated: 2026-02-23 22:06:48
-Output Folder: output\analysis_20260223_220644
+Generated: 2026-03-19 17:34:32
+Output Folder: output\analysis_20260319_173428
 
 ## Files
 
 ### analysis.log
-- **Size**: 2.27 KB
+- **Size**: 2.32 KB
 - **Description**: Analysis execution log with all parameters and messages
 
 ### analysis_report.md
-- **Size**: 7.76 KB
+- **Size**: 7.77 KB
 - **Description**: Comprehensive analysis report (markdown format)
 
 ### analysis_report.txt
-- **Size**: 7.76 KB
+- **Size**: 7.77 KB
 - **Description**: Comprehensive analysis report (text format)
 
 ### correlation_matrix.csv
@@ -30,7 +30,7 @@ Output Folder: output\analysis_20260223_220644
 - **Description**: Missing value details
 
 ### data_quality_summary.txt
-- **Size**: 0.85 KB
+- **Size**: 0.86 KB
 - **Description**: Data quality assessment summary
 
 ### demographic_age_freq.csv
@@ -40,19 +40,19 @@ Output Folder: output\analysis_20260223_220644
 - **Size**: 0.37 KB
 
 ### demographic_maternal_education_freq.csv
-- **Size**: 0.14 KB
+- **Size**: 0.23 KB
 
 ### demographic_maternal_occupation_freq.csv
 - **Size**: 0.11 KB
 
 ### demographic_paternal_education_freq.csv
-- **Size**: 0.14 KB
+- **Size**: 0.22 KB
 
 ### demographic_paternal_occupation_freq.csv
 - **Size**: 0.20 KB
 
 ### maternal_education_summary.csv
-- **Size**: 0.44 KB
+- **Size**: 0.51 KB
 - **Description**: Summary statistics by maternal education level
 
 ### scatter_matrix.png
@@ -60,7 +60,7 @@ Output Folder: output\analysis_20260223_220644
 - **Description**: Scatter plot matrix for continuous variables
 
 ### score_boxplots.png
-- **Size**: 194.60 KB
+- **Size**: 197.26 KB
 - **Description**: Box plots comparing scores across education groups
 
 ### score_distributions.png
@@ -72,5 +72,5 @@ Output Folder: output\analysis_20260223_220644
 - **Description**: Complete dataset with all calculated scores
 
 ### scores_by_maternal_education.png
-- **Size**: 158.59 KB
+- **Size**: 162.03 KB
 - **Description**: Bar chart of mean scores by education level

@@ -15,11 +15,11 @@ import os
 
 def _format_maternal_education_label(value: Any) -> str:
     mapping = {
-        1: 'Illiterate/Primary',
-        2: 'Middle',
-        3: 'Secondary',
-        4: 'Intermediate',
-        5: 'Higher'
+        1: 'Illiterate',
+        2: 'Primary',
+        3: 'Middle',
+        4: 'Secondary',
+        5: 'Intermediate and above'
     }
     try:
         if pd.isna(value):

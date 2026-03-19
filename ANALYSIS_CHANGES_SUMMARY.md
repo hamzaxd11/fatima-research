@@ -3,7 +3,8 @@
 This note summarizes what changed in the overall analysis compared to the previous version, in plain language.
 
 ## What Changed
-- The analysis was re-run and a fresh output folder was generated (`output/analysis_20260223_220644`).
+- The analysis was re-run and the final consolidated output folder was generated as `output/analysis_20260319_173428`.
+- Maternal education labels in reports, visualizations, and statistical summary CSVs were corrected to match the source SPSS coding: Illiterate, Primary, Middle, Secondary, and Intermediate and above.
 - The report now separates expected missing answers (skip-logic questions) from true missing data, so data quality is clearer and more fair.
 - Results are labeled with clearer maternal education names (not just numeric codes) and include sample sizes next to each group.
 - The report now includes the strength of the relationships (effect sizes) and clearer notes on which tests were used.
@@ -20,6 +21,6 @@ This note summarizes what changed in the overall analysis compared to the previo
 - The new output files make it easier to verify significance without re-running the analysis.
 
 ## Where to Find the Latest Results
-- Main report: `output/analysis_20260223_220644/analysis_report.md`
-- Output inventory: `output/analysis_20260223_220644/FILE_INVENTORY.md`
-- Correlation p-values: `output/analysis_20260223_220644/correlation_pvalues.csv`
+- Main report: `output/analysis_20260319_173428/analysis_report.md`
+- Output inventory: `output/analysis_20260319_173428/FILE_INVENTORY.md`
+- Correlation p-values: `output/analysis_20260319_173428/correlation_pvalues.csv`

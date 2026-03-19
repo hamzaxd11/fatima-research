@@ -16,11 +16,11 @@ This document explains the statistical methods chosen for the Menstrual Hygiene 
 - **Maternal Education**
   - **Type**: Categorical / Ordinal (Multi-level)
   - **Levels**:
-    1. Illiterate/Primary
-    2. Middle
-    3. Secondary
-    4. Intermediate
-    5. Higher
+    1. Illiterate
+    2. Primary
+    3. Middle
+    4. Secondary
+    5. Intermediate and above
 
 ## 2. Scoring and Derived Variables
 

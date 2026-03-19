@@ -12,11 +12,11 @@
 - **Average Monthly Income**: 48,833
 - **Family Size**: 6.66 members (avg)
 - **Maternal Education**:
-  - Illiterate/Primary (Level 1): 71.7%
-  - Middle (Level 2): 14.2%
-  - Secondary (Level 3): 6.7%
-  - Intermediate (Level 4): 6.7%
-  - Higher (Level 5): 0.8%
+  - Illiterate (Level 1): 71.7%
+  - Primary (Level 2): 14.2%
+  - Middle (Level 3): 6.7%
+  - Secondary (Level 4): 6.7%
+  - Intermediate and above (Level 5): 0.8%
 
 ### Score Summary
 - **Knowledge Score** (0-9): Mean 5.82, Median 6.00, Max 8

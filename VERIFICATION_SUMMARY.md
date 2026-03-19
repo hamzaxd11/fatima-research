@@ -20,7 +20,7 @@ This document outlines the verification steps taken to ensure the accuracy, reli
 - **Income**: Not significantly correlated with knowledge or practice scores (p > 0.05).
 
 ## 4. Limitations Identified
-- **Small Group Sizes**: The "Higher Education" group has n = 1; Levels 3 and 4 have n = 8.
+- **Small Group Sizes**: The "Intermediate and above" group has n = 1; Levels 3 and 4 have n = 8.
   - **Implication**: Conclusions about the smallest groups should be interpreted cautiously.
 
 ## 5. Final Verdict

@@ -2,7 +2,7 @@
 MENSTRUAL HYGIENE AWARENESS ANALYSIS REPORT
 ================================================================================
 
-Report Generated: 2026-02-23 22:06:48
+Report Generated: 2026-03-19 17:34:32
 
 Source Data File: menstrual hygiene spss.sav fatima and ayesha (1).sav
 
@@ -29,11 +29,11 @@ This section provides an overview of the study population characteristics.
 
 ### 1.2 Maternal Education Distribution
 
-  1 (Illiterate/Primary): 86.0 (71.7%)
-  2 (Middle): 17.0 (14.2%)
-  4 (Intermediate): 8.0 (6.7%)
-  3 (Secondary): 8.0 (6.7%)
-  5 (Higher): 1.0 (0.8%)
+  1 (Illiterate): 86 (71.7%)
+  2 (Primary): 17 (14.2%)
+  4 (Secondary): 8 (6.7%)
+  3 (Middle): 8 (6.7%)
+  5 (Intermediate and above): 1 (0.8%)
 
 ### 1.3 Continuous Variables Summary
 
@@ -148,23 +148,23 @@ adolescent girls' menstrual hygiene knowledge and practices.
 
 ### 5.1 Scores by Maternal Education Level
 
-**1 (Illiterate/Primary)** (n=86)
+**1 (Illiterate)** (n=86)
   Knowledge Score: 5.73 ± 1.16
   Practice Score: 5.59 ± 0.62
 
-**2 (Middle)** (n=17)
+**2 (Primary)** (n=17)
   Knowledge Score: 5.71 ± 0.92
   Practice Score: 5.76 ± 0.44
 
-**3 (Secondary)** (n=8)
+**3 (Middle)** (n=8)
   Knowledge Score: 6.38 ± 0.52
   Practice Score: 6.00 ± 0.00
 
-**4 (Intermediate)** (n=8)
+**4 (Secondary)** (n=8)
   Knowledge Score: 6.25 ± 0.71
   Practice Score: 6.12 ± 0.35
 
-**5 (Higher)** (n=1)
+**5 (Intermediate and above)** (n=1)
   Knowledge Score: 7.00 ± N/A
   Practice Score: 6.00 ± N/A
 
@@ -214,7 +214,7 @@ Pearson correlation coefficients between continuous variables (complete-case).
 ## 7. GENERATED OUTPUT FILES
 
 All analysis outputs have been saved to the output folder:
-output\analysis_20260223_220644
+output\analysis_20260319_173428
 
 ### 7.1 Data Files
 

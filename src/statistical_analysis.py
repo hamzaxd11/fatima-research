@@ -50,6 +50,25 @@ _CONTINUOUS_VAR_MAPPINGS = {
 }
 
 
+_EDUCATION_LABELS = {
+    1: 'Illiterate',
+    2: 'Primary',
+    3: 'Middle',
+    4: 'Secondary',
+    5: 'Intermediate and above'
+}
+
+
+def _map_education_label(value: Any) -> Any:
+    try:
+        if pd.isna(value):
+            return value
+        int_value = int(float(value))
+        return _EDUCATION_LABELS.get(int_value, value)
+    except Exception:
+        return value
+
+
 def _build_correlation_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     available_cols = {}
     for var_name, possible_names in _CONTINUOUS_VAR_MAPPINGS.items():
@@ -147,6 +166,7 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
     for education_level, group in grouped:
         summary_data.append({
             'education_level': education_level,
+            'education_label': _map_education_label(education_level),
             'n': len(group),
             'mean_knowledge': group['knowledge_score'].mean(),
             'std_knowledge': group['knowledge_score'].std(ddof=1),
@@ -346,6 +366,8 @@ def calculate_demographic_summaries(df: pd.DataFrame) -> Dict[str, pd.DataFrame]
         if col:
             freq_table = df[col].value_counts().reset_index()
             freq_table.columns = [var_name, 'count']
+            if var_name in {'maternal_education', 'paternal_education'}:
+                freq_table[f'{var_name}_label'] = freq_table[var_name].apply(_map_education_label)
             freq_table['percentage'] = (freq_table['count'] / freq_table['count'].sum() * 100).round(2)
             freq_table['proportion'] = (freq_table['count'] / freq_table['count'].sum()).round(4)
             freq_table = freq_table.sort_values('count', ascending=False)
