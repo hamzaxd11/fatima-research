@@ -12,9 +12,9 @@ Verification date: 2026-03-19
 
 | # | Citation short title | DOI / URL | Status |
 | --- | --- | --- | --- |
-| 1 | WHO adolescent-friendly services publication | https://www.who.int/publications/i/item/9789241503594 | Exists (institutional source, no DOI) |
+| 1 | WHO strengthening health sector response (adolescent health) | https://apps.who.int/iris/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y | Exists (institutional source, no DOI) |
 | 2 | WHO statement on menstrual health and rights | https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights | Exists (institutional source, no DOI) |
-| 3 | UNESCO puberty education & MHM resource | https://unesdoc.unesco.org/ark:/48223/pf0000263833 | Exists (institutional source, no DOI) |
+| 3 | UNESCO puberty & menstrual hygiene management resource page | https://www.unesco.org/en/health-education/puberty | Exists (institutional source, no DOI) |
 | 4 | Kumbeni et al., Pan Afr Med J (2020) | 10.11604/pamj.2020.37.190.19015 | Verified in Crossref |
 | 5 | Sahiledengle et al., PLOS One (2022) | 10.1371/journal.pone.0262295 | Verified in Crossref |
 | 6 | Belayneh & Mekuriaw, BMC Public Health (2019) | 10.1186/s12889-019-7973-9 | Verified in Crossref |
@@ -25,4 +25,5 @@ Verification date: 2026-03-19
 
 ## Notes
 - References 1-3 are institutional documents/pages and do not have DOIs.
-- For references with DOIs, DOI registration was checked via Crossref API.
+- References 4-10 were verified by exact DOI lookup in Crossref metadata.
+- Some publisher domains may block automated `HEAD` requests; Crossref verification was used as the primary DOI-validity check.

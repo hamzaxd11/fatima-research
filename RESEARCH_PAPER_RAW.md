@@ -30,9 +30,9 @@ Menstrual hygiene, adolescent girls, maternal education, Pakistan, knowledge sco
 
 ## 1. Introduction
 
-Adolescence is a critical developmental period in which lifelong health behaviors are established. Menstrual health literacy and hygienic practice are particularly important for adolescent girls because they affect physical comfort, infection risk, school participation, and psychosocial well-being. International guidance from WHO and UNESCO frames menstrual health as both a health and rights issue requiring access to accurate information, hygiene products, safe sanitation, and supportive social environments.
+Adolescence is a critical developmental period in which lifelong health behaviors are established. Menstrual health literacy and hygienic practice are particularly important for adolescent girls because they affect physical comfort, infection risk, school participation, and psychosocial well-being. International guidance from WHO and UNESCO frames menstrual health as both a health and rights issue requiring access to accurate information, hygiene products, safe sanitation, and supportive social environments [1-3].
 
-In many low- and middle-income settings, menstrual hygiene management is constrained by stigma, silence, and limited resources. Girls may enter menarche with incomplete understanding, rely on informal sources of information, and face practical barriers to product use, washing, and disposal. These challenges are amplified in socioeconomically constrained communities where household resources and parental literacy influence adolescent health behavior.
+In many low- and middle-income settings, menstrual hygiene management is constrained by stigma, silence, and limited resources. Girls may enter menarche with incomplete understanding, rely on informal sources of information, and face practical barriers to product use, washing, and disposal. These challenges are amplified in socioeconomically constrained communities where household resources and parental literacy influence adolescent health behavior [4-10].
 
 Within Pakistan, these concerns are highly relevant in sub-urban and peri-urban populations, where heterogeneous education and income profiles intersect with persistent menstrual taboos. Maternal education is frequently hypothesized to shape daughters' knowledge and behavior through communication, supervision, and hygiene norms. However, empirical evidence in local contexts remains sparse.
 
@@ -302,7 +302,7 @@ The divergence between knowledge and practice findings is important. It suggests
 The age-knowledge and knowledge-practice associations support a plausible developmental pattern: as girls grow older, menstrual literacy improves, and better literacy aligns with better behavior. However, these are associative patterns and should not be interpreted causally without adjusted modeling.
 
 ### 7.3 Context Within Prior Literature
-The direction of findings is broadly compatible with regional literature that links parental education and socioeconomic context to menstrual hygiene management quality, while also showing persistent gaps between awareness and practical implementation. This pattern aligns with evidence from South Asian and other low-resource settings, where social norms and infrastructure constraints can blunt translation of knowledge into behavior.
+The direction of findings is broadly compatible with regional literature that links parental education and socioeconomic context to menstrual hygiene management quality, while also showing persistent gaps between awareness and practical implementation [4-10]. This pattern aligns with evidence from South Asian and other low-resource settings, where social norms and infrastructure constraints can blunt translation of knowledge into behavior.
 
 ### 7.4 Strengths
 - Predefined, reproducible analysis pipeline with timestamped outputs.
@@ -374,16 +374,16 @@ Investigator and supervisor roles are as listed on the title page. Statistical p
 
 ## 11. References
 
-1. World Health Organization. *Making health services adolescent friendly: developing national quality standards for adolescent-friendly health services.* Geneva: WHO; 2012. Available from: https://www.who.int/publications/i/item/9789241503594 (No DOI).
-2. World Health Organization. *WHO statement on menstrual health and rights.* 22 June 2022. Available from: https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights (No DOI).
-3. UNESCO. *Puberty education and menstrual hygiene management.* Paris: UNESCO. Available from: https://unesdoc.unesco.org/ark:/48223/pf0000263833 (No DOI).
-4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools in rural Northern Ghana. *Pan Afr Med J.* 2020;37:190. doi:10.11604/pamj.2020.37.190.19015
-5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene practice among adolescent girls in Ethiopia: a systematic review and meta-analysis. *PLoS One.* 2022;17(1):e0262295. doi:10.1371/journal.pone.0262295
-6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent schoolgirls in southern Ethiopia: a cross-sectional study. *BMC Public Health.* 2019;19:1595. doi:10.1186/s12889-019-7973-9
-7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in Dang District, Nepal. *Adv Prev Med.* 2020;2020:1292070. doi:10.1155/2020/1292070
-8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District, Nepal. *Adv Prev Med.* 2020;2020:8872119. doi:10.1155/2020/8872119
-9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in urban slums of Dibrugarh town, Assam. *J Family Med Prim Care.* 2021;10(12):4448-4453. doi:10.4103/jfmpc.jfmpc_703_21
-10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding pubertal changes and reproductive health. *Indian J Youth Adolesc Health.* 2017;4(3):1-7. doi:10.24321/2349.2880.201705
+1. World Health Organization. *Strengthening the health sector response to adolescent health and development.* Geneva: WHO; 2010. Available from: https://apps.who.int/iris/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y (No DOI; accessed 2026-03-19).
+2. World Health Organization. *WHO statement on menstrual health and rights.* 22 June 2022. Available from: https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights (No DOI; accessed 2026-03-19).
+3. UNESCO. *Puberty and menstrual hygiene management.* Available from: https://www.unesco.org/en/health-education/puberty (No DOI; accessed 2026-03-19).
+4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools in rural Northern Ghana. *Pan Afr Med J.* 2020;37:190. https://doi.org/10.11604/pamj.2020.37.190.19015
+5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene practice among adolescent girls in Ethiopia: a systematic review and meta-analysis. *PLoS One.* 2022;17(1):e0262295. https://doi.org/10.1371/journal.pone.0262295
+6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent schoolgirls in southern Ethiopia: a cross-sectional study. *BMC Public Health.* 2019;19(1):1595. https://doi.org/10.1186/s12889-019-7973-9
+7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in Dang District, Nepal. *Adv Prev Med.* 2020;2020:1292070. https://doi.org/10.1155/2020/1292070
+8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District, Nepal. *Adv Prev Med.* 2020;2020:8872119. https://doi.org/10.1155/2020/8872119
+9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in urban slums of Dibrugarh town, Assam. *J Family Med Prim Care.* 2021;10(12):4446-4451. https://doi.org/10.4103/jfmpc.jfmpc_703_21
+10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding pubertal changes and reproductive health. *Indian J Youth Adolesc Health.* 2017;4(1):26-35. https://doi.org/10.24321/2349.2880.201705
 
 ---
 
