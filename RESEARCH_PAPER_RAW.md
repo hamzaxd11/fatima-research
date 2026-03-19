@@ -84,6 +84,8 @@ This is a cross-sectional, questionnaire-based analysis using SPSS source data c
   - Level 4: Intermediate
   - Level 5: Higher
 
+These level names follow the analysis pipeline labeling used in the final output artifacts to keep manuscript tables and figures fully traceable to generated files.
+
 #### Additional Covariates/Descriptors
 - Age
 - Household monthly income
@@ -387,7 +389,7 @@ Investigator and supervisor roles are as listed on the title page. Statistical p
 
 ## 12. Appendix: Supplemental Statistical Notes
 
-1. Primary inferential tests were non-parametric due bounded/discrete outcomes, non-normal group behavior, and group imbalance.
+1. Primary inferential tests were non-parametric due to bounded/discrete outcomes, non-normal group behavior, and group imbalance.
 2. Effect sizes are small (knowledge epsilon-squared=0.0162; practice epsilon-squared=0.0535), indicating modest practical magnitude despite statistical significance for practice.
 3. Post-hoc pairwise inference was not emphasized because of extreme imbalance and sparse highest-education stratum (n=1), which can destabilize pairwise conclusions.
 4. Income-related analyses should be interpreted with distribution-aware caution; robust/rank approaches are recommended in confirmatory follow-up studies.
