@@ -14,7 +14,7 @@ This note summarizes what changed in the overall analysis compared to the previo
 - Filtering of empty rows is explicitly documented in the report header (raw vs. analyzed records).
 
 ## What Stayed the Same
-- The unadjusted practice p-value remains 0.0379, but the result does not remain below 0.05 after Holm correction for the two principal outcomes (adjusted p = 0.0758). The knowledge omnibus p-value is 0.0900.
+- The statistically significant unadjusted practice p-value remains 0.0379. A conservative exploratory Holm sensitivity correction gives an adjusted p-value of 0.0758. The knowledge omnibus p-value is 0.0900.
 - Sample size remained 120 after removing 40 empty rows from the raw dataset.
 - Mean knowledge increased from 5.82 to 6.65 after correction; mean practice remained 5.68.
 

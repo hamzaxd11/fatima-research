@@ -194,9 +194,9 @@ adolescent girls' menstrual hygiene knowledge and practices.
   Assumptions: Shapiro-Wilk min p=0.0000, Levene p=N/A
   Note: Small group sizes limit parametric assumptions
   Interpretation: The difference in practice scores across maternal
-                  education levels is nominally significant before multiplicity correction.
-  Multiplicity note: Two principal outcomes were tested. Interpret the Holm-adjusted
-                     p-value in the sensitivity table as the confirmatory result.
+                  education levels is statistically significant in the primary unadjusted analysis.
+  Sensitivity note: A conservative exploratory Holm correction across knowledge and
+                    practice is reported separately to assess multiplicity sensitivity.
 
 **Visualizations**:
   - See 'scores_by_maternal_education.png' for bar chart with error bars

@@ -111,7 +111,7 @@
     {
       "check": "DOCX exists",
       "passed": true,
-      "detail": "1023441 bytes"
+      "detail": "1023497 bytes"
     },
     {
       "check": "DOCX comparative content",

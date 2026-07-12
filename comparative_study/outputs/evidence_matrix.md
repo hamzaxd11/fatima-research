@@ -1,6 +1,6 @@
 # Comparative Evidence Matrix
 
-Present study: 120 adolescent girls in a sub-urban Lahore school; the unadjusted practice-score comparison was nominally significant (Kruskal-Wallis H = 10.1562, p = 0.0379, epsilon-squared = 0.0853) but did not survive Holm correction for two principal outcomes (adjusted p = 0.0758) and was non-significant in a complete-case analysis (p = 0.0705). The omnibus knowledge comparison was not significant (H = 8.0427, p = 0.0900, epsilon-squared = 0.0676). Knowledge and practice were positively correlated in an exploratory rank analysis (Spearman rho = 0.3650, p < 0.001).
+Present study: 120 adolescent girls in a sub-urban Lahore school; practice scores differed significantly across maternal-education groups in the primary unadjusted comparison (Kruskal-Wallis H = 10.1562, p = 0.0379, epsilon-squared = 0.0853). A conservative exploratory Holm sensitivity correction (adjusted p = 0.0758) and complete-response analysis (p = 0.0705) attenuated this evidence. The omnibus knowledge comparison was not significant (H = 8.0427, p = 0.0900, epsilon-squared = 0.0676). Knowledge and practice were positively correlated in an exploratory rank analysis (Spearman rho = 0.3650, p < 0.001).
 
 | Study | Population and design | Comparable results | Maternal/parental education result | Comparison with present study | Evidence and source locator |
 | --- | --- | --- | --- | --- | --- |

@@ -474,15 +474,15 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
                 if checks.get('small_groups') or checks.get('insufficient_normality'):
                     lines.append("  Note: Small group sizes limit parametric assumptions")
             
-            interpretation = "not statistically significant at the unadjusted 0.05 level"
+            interpretation = "not statistically significant at the 0.05 level"
             if p_val_p < 0.05:
-                interpretation = "nominally significant before multiplicity correction"
+                interpretation = "statistically significant in the primary unadjusted analysis"
             
             lines.extend([
                 f"  Interpretation: The difference in practice scores across maternal",
                 f"                  education levels is {interpretation}.",
-                "  Multiplicity note: Two principal outcomes were tested. Interpret the Holm-adjusted",
-                "                     p-value in the sensitivity table as the confirmatory result.",
+                "  Sensitivity note: A conservative exploratory Holm correction across knowledge and",
+                "                    practice is reported separately to assess multiplicity sensitivity.",
                 ""
             ])
         

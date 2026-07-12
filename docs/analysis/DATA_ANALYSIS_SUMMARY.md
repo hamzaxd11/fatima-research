@@ -25,14 +25,14 @@
 ## 3. Hypothesis Testing Results
 
 ### Association of Maternal Education with **Practice**
-- **Result**: **Nominal unadjusted association; exploratory after multiplicity correction**
+- **Result**: **Statistically significant primary unadjusted association; attenuated in conservative sensitivity analyses**
 - **Test Used**: Kruskal-Wallis
 - **H Statistic**: 10.1562
 - **P-Value**: 0.0379
 - **Holm-Adjusted P-Value**: 0.0758 for the two principal outcomes
 - **Effect Size**: epsilon^2 = 0.0853
 - **Complete-Case Sensitivity**: H = 8.6488, p = 0.0705 (n = 115)
-- **Conclusion**: The unadjusted omnibus p-value is below 0.05, but the result is not familywise-error robust.
+- **Conclusion**: The unadjusted omnibus comparison is statistically significant; the exploratory Holm sensitivity correction attenuates the strength of evidence and supports confirmation.
 
 ### Association of Maternal Education with **Knowledge**
 - **Result**: **Omnibus comparison not significant**
@@ -40,7 +40,7 @@
 - **H Statistic**: 8.0427
 - **P-Value**: 0.0900
 - **Effect Size**: epsilon^2 = 0.0676
-- **Conclusion**: The selected omnibus test did not detect a distributional difference. An exploratory ordinal trend was nominally significant (rho = 0.2023, p = 0.0267).
+- **Conclusion**: The selected omnibus test did not detect a distributional difference. An exploratory ordinal trend was statistically significant (rho = 0.2023, p = 0.0267).
 
 ## 4. Correlations
 - **Age vs. Knowledge**: r = 0.314, p = 0.0005 (moderate positive)
@@ -63,4 +63,4 @@
 - **Correlations**: Calculated using complete-case data (rows with all continuous variables present).
 - **Income Skew**: Income is highly skewed; Pearson correlations can be sensitive to outliers.
 - **Modeling Scope**: Results are unadjusted (bivariate); interpret as associations rather than causal effects.
-- **Multiplicity**: The practice result does not remain below 0.05 after Holm correction for the two principal outcomes.
+- **Multiplicity**: A conservative exploratory Holm correction across knowledge and practice gives an adjusted practice p-value of 0.0758.

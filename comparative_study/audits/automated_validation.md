@@ -25,7 +25,7 @@ Overall: PASS (25/25)
 | comparative manuscript content | PASS | all required comparative and result phrases present |
 | protected root files | PASS | menstrual hygiene spss.sav fatima and ayesha (1).sav, Synopsis - Menstrual hygiene..docx, doc.md |
 | local Markdown links | PASS | 40 inspected; broken: [] |
-| DOCX exists | PASS | 1023441 bytes |
+| DOCX exists | PASS | 1023497 bytes |
 | DOCX comparative content | PASS | required comparison phrases present |
 | DOCX figures | PASS | 4 embedded media files |
 | DOCX tables | PASS | 8 tables |

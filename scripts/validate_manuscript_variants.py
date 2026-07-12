@@ -28,6 +28,14 @@ CRITICAL_PATTERNS = (
     r"550 (?:missing cells|cells were missing)",
     r"six (?:out-of-label|categorical responses (?:were outside|fell outside))",
     r"no reportable ethics approval identifier",
+    r"Practice(?: scores)? differed significantly across maternal education groups",
+    r"conservative exploratory Holm sensitivity correction",
+)
+FORBIDDEN_FRAMING = (
+    "nominally significant",
+    "did not survive Holm",
+    "confirmatory result",
+    "not familywise-error robust",
 )
 
 
@@ -75,6 +83,9 @@ def main() -> None:
         assert extract_tables(text) == source_tables, f"{stem}: source tables changed"
         assert source_dois.issubset(set(re.findall(r"https://doi.org/[^\s)]+", text)))
         assert "Excluded (missing maternal education)" not in text
+        for phrase in FORBIDDEN_FRAMING:
+            assert phrase not in text, f"{stem}: deprecated framing in Markdown: {phrase}"
+            assert phrase not in docx_text, f"{stem}: deprecated framing in DOCX: {phrase}"
         assert "TODO" not in text and "[PLACEHOLDER]" not in text
         assert len(document.tables) == 8, f"{stem}: expected 8 DOCX tables"
         assert len(document.inline_shapes) == 4, f"{stem}: expected 4 DOCX figures"

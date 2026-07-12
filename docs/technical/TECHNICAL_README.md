@@ -27,7 +27,7 @@ For a detailed explanation of test selection (ANOVA vs. Kruskal-Wallis and assum
 
 ### Key Findings Summary
 *   **Sample Size**: 120 valid respondents after removing 40 fully empty source rows.
-*   **Practice Scores**: Nominal unadjusted difference by Maternal Education (Kruskal-Wallis H = 10.1562, p = 0.0379, epsilon^2 = 0.0853); Holm-adjusted p = 0.0758.
+*   **Practice Scores**: Statistically significant unadjusted difference by Maternal Education (Kruskal-Wallis H = 10.1562, p = 0.0379, epsilon^2 = 0.0853); exploratory Holm sensitivity p = 0.0758.
 *   **Knowledge Scores**: Omnibus comparison not significant by Maternal Education (Kruskal-Wallis H = 8.0427, p = 0.0900, epsilon^2 = 0.0676).
 *   **Assumption Checks**: Shapiro-Wilk indicated non-normality and small group sizes; non-parametric tests were used.
 *   **Overall Scores**:

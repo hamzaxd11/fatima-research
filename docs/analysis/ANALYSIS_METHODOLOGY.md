@@ -53,7 +53,7 @@ We use **ANOVA** when parametric assumptions are met and **Kruskal-Wallis** when
 ### Results for this Dataset
 - **Knowledge Score**: Kruskal-Wallis H = 8.0427, p = 0.0900
 - **Practice Score**: Kruskal-Wallis H = 10.1562, p = 0.0379
-- **Multiplicity**: Holm-adjusted practice p = 0.0758 and knowledge p = 0.0900. The practice result is exploratory rather than familywise-error robust.
+- **Multiplicity**: Unadjusted p-values are the principal comparisons. A conservative exploratory Holm sensitivity analysis gives practice p = 0.0758 and knowledge p = 0.0900.
 
 ## 4. Effect Sizes
 

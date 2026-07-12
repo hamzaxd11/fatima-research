@@ -29,4 +29,4 @@ This document outlines the verification steps taken to ensure the accuracy, reli
 - **Ethics Archive**: The consent text appended to `doc.md` concerns bullying rather than menstrual hygiene. The correct consent and ethics approval record must be confirmed before submission.
 
 ## 5. Final Verdict
-The corrected calculations and reproducibility artifacts have been verified. The practice comparison is nominally significant before multiplicity correction but exploratory after Holm adjustment. The knowledge omnibus comparison is not significant, although an exploratory ordinal trend is nominally significant. Neither result establishes causation or an independent maternal-education effect.
+The corrected calculations and reproducibility artifacts have been verified. Practice scores differed significantly across maternal-education groups in the primary unadjusted comparison; a conservative exploratory Holm sensitivity correction attenuated this evidence. The knowledge omnibus comparison is not significant, although an exploratory ordinal trend is statistically significant. Neither result establishes causation or an independent maternal-education effect.

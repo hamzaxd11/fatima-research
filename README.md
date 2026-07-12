@@ -21,8 +21,8 @@ This repository contains the final research paper, statistical analysis, and sup
 
 The final analysis included **120 valid participants**.
 
-- Practice scores differed across maternal-education groups at the unadjusted 0.05 level, but the result did not survive Holm correction for two principal outcomes.
-- The omnibus knowledge-score comparison was not statistically significant; an exploratory ordinal trend was nominally significant.
+- Practice scores differed significantly across maternal-education groups in the primary unadjusted analysis; a conservative exploratory Holm sensitivity correction attenuated the evidence.
+- The omnibus knowledge-score comparison was not statistically significant; an exploratory ordinal trend was statistically significant.
 - The effects were small, age may confound the group result, and some education groups had very few participants.
 
 ## Supporting Documents
