@@ -1,0 +1,15 @@
+analysis,variables,statistic,p_value,effect_size,n
+Holm-adjusted primary outcome,knowledge_score,8.04270824662229,0.09002620536579195,,120
+Holm-adjusted primary outcome,practice_score,10.156183700872907,0.07575477020702262,,120
+Complete-case practice responses,practice_score,8.648830950806051,0.07050211710828458,0.07586693816496536,115
+Kruskal-Wallis excluding MotherEducation=5,knowledge_score,6.371911684959964,0.0948531978468998,0.05399925156745732,119
+Kruskal-Wallis excluding MotherEducation=5,practice_score,9.751452082327603,0.020801446837314996,0.08263942442650511,119
+Archived pathological-response scoring key,knowledge_score,5.866939302604405,0.2093081414138121,0.049302010946255505,120
+Spearman ordinal trend,MotherEducation vs knowledge_score,0.2022558682455305,0.026735357086843495,,120
+Spearman ordinal trend,MotherEducation vs practice_score,0.2683923551894273,0.0030376887033854976,,120
+Kruskal-Wallis confounder check,Age by MotherEducation,10.691276684448635,0.03026175301424202,0.08984266121385408,120
+Spearman correlation,Age vs knowledge_score,0.37103487101116367,3.0212218144048542e-05,,120
+Spearman correlation,Age vs practice_score,0.2232594986880224,0.014241711698090034,,120
+Spearman correlation,knowledge_score vs practice_score,0.3649662173747294,4.159193733208261e-05,,120
+Spearman correlation,IncomePerMonth vs knowledge_score,0.2159977163019348,0.017816400038718486,,120
+Spearman correlation,IncomePerMonth vs practice_score,0.05440893815550924,0.5550438328339016,,120

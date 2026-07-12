@@ -1,0 +1,94 @@
+"""Validate humanized manuscript variants against the corrected source paper."""
+
+import hashlib
+import re
+from pathlib import Path
+
+from docx import Document
+
+
+ROOT = Path(__file__).resolve().parents[1]
+STEMS = (
+    "RESEARCH_PAPER - PLAIN SCHOLARLY",
+    "RESEARCH_PAPER - NATURAL ACADEMIC",
+    "RESEARCH_PAPER - CONCISE JOURNAL",
+)
+CRITICAL_TEXT = (
+    "H = 8.0427",
+    "p = 0.0900",
+    "H = 10.1562",
+    "p = 0.0379",
+    "0.0758",
+    "p = 0.0705",
+    "0.0676",
+    "0.0853",
+)
+CRITICAL_PATTERNS = (
+    r"(?:40|Forty) fully blank trailing records",
+    r"550 (?:missing cells|cells were missing)",
+    r"six (?:out-of-label|categorical responses (?:were outside|fell outside))",
+    r"no reportable ethics approval identifier",
+)
+
+
+def extract_tables(text: str) -> list[str]:
+    lines = text.splitlines()
+    tables = []
+    index = 0
+    while index < len(lines):
+        if not lines[index].startswith("|"):
+            index += 1
+            continue
+        block = []
+        while index < len(lines) and lines[index].startswith("|"):
+            block.append(lines[index])
+            index += 1
+        tables.append("\n".join(block))
+    return tables
+
+
+def main() -> None:
+    source = (ROOT / "RESEARCH_PAPER_RAW.md").read_text(encoding="utf-8")
+    source_tables = extract_tables(source)
+    source_dois = set(re.findall(r"https://doi.org/[^\s)]+", source))
+    hashes = set()
+
+    for stem in STEMS:
+        markdown_path = ROOT / f"{stem}.md"
+        docx_path = ROOT / f"{stem}.docx"
+        text = markdown_path.read_text(encoding="utf-8")
+        document = Document(docx_path)
+        docx_text = "\n".join(paragraph.text for paragraph in document.paragraphs)
+
+        references = re.findall(r"^(?:[1-9]|1[0-9]|2[01])\. ", text, re.MULTILINE)
+        figures = re.findall(r"^!\[Figure [1-4]\.", text, re.MULTILINE)
+        missing = [value for value in CRITICAL_TEXT if value not in text]
+        missing_docx = [value for value in CRITICAL_TEXT if value not in docx_text]
+
+        assert not missing, f"{stem}: missing critical Markdown text: {missing}"
+        assert not missing_docx, f"{stem}: missing critical DOCX text: {missing_docx}"
+        for pattern in CRITICAL_PATTERNS:
+            assert re.search(pattern, text, re.IGNORECASE), f"{stem}: missing Markdown pattern: {pattern}"
+            assert re.search(pattern, docx_text, re.IGNORECASE), f"{stem}: missing DOCX pattern: {pattern}"
+        assert len(references) == 21, f"{stem}: expected 21 references"
+        assert len(figures) == 4, f"{stem}: expected 4 figure links"
+        assert extract_tables(text) == source_tables, f"{stem}: source tables changed"
+        assert source_dois.issubset(set(re.findall(r"https://doi.org/[^\s)]+", text)))
+        assert "Excluded (missing maternal education)" not in text
+        assert "TODO" not in text and "[PLACEHOLDER]" not in text
+        assert len(document.tables) == 8, f"{stem}: expected 8 DOCX tables"
+        assert len(document.inline_shapes) == 4, f"{stem}: expected 4 DOCX figures"
+
+        digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        hashes.add(digest)
+        print(
+            f"{stem}: {len(text.split())} words, 21 references, "
+            f"8 tables, 4 figures, sha256={digest[:12]}"
+        )
+
+    assert len(hashes) == len(STEMS), "Variants are not textually distinct"
+    print("ALL_VARIANTS_VERIFIED")
+
+
+if __name__ == "__main__":
+    main()

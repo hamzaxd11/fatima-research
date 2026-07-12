@@ -30,7 +30,8 @@ from src.statistical_analysis import (
     analyze_maternal_education_impact,
     calculate_demographic_summaries,
     perform_correlation_analysis,
-    perform_correlation_pvalues
+    perform_correlation_pvalues,
+    perform_sensitivity_analyses,
 )
 from src.visualizations import generate_all_visualizations
 from src.report_generator import generate_analysis_report
@@ -231,7 +232,11 @@ def main():
         logging.info("Stage 3: Data quality assessment")
         
         try:
-            quality_report = generate_data_quality_report(scored_df, output_path=output_folder)
+            quality_report = generate_data_quality_report(
+                scored_df,
+                output_path=output_folder,
+                value_labels=loader_metadata.get('value_labels'),
+            )
             logging.info(f"Data quality: {quality_report['summary']['data_quality_percentage']}%")
             print(f"      Data quality: {quality_report['summary']['data_quality_percentage']}%")
             print(f"      Missing values: {quality_report['summary']['missing_value_count']}")
@@ -293,6 +298,11 @@ def main():
             analysis_results['correlation_pvalues'] = corr_pvalues
             if not corr_pvalues.empty:
                 save_dataframe(corr_pvalues, 'correlation_pvalues.csv', output_folder)
+
+            sensitivity = perform_sensitivity_analyses(scored_df)
+            analysis_results['sensitivity_analyses'] = sensitivity
+            if not sensitivity.empty:
+                save_dataframe(sensitivity, 'sensitivity_analyses.csv', output_folder)
             
             # Add data quality report to results
             analysis_results['data_quality_report'] = quality_report
@@ -347,7 +357,7 @@ def main():
         # ===================================================================
         try:
             file_descriptions = {
-                'scored_dataset.csv': 'Complete dataset with all calculated scores',
+                'scored_dataset.csv': 'Local participant-level dataset with calculated scores; do not publish',
                 'maternal_education_summary.csv': 'Summary statistics by maternal education level',
                 'correlation_matrix.csv': 'Correlation coefficients between continuous variables',
                 'correlation_pvalues.csv': 'P-values for Pearson correlations between continuous variables',
@@ -360,7 +370,7 @@ def main():
                 'analysis.log': 'Analysis execution log with all parameters and messages',
                 'data_quality_summary.txt': 'Data quality assessment summary',
                 'data_quality_missing_values.csv': 'Missing value details',
-                'data_quality_invalid_values.csv': 'Invalid value details (if any)'
+                'data_quality_invalid_values.csv': 'Out-of-domain or unexpected coded values (if any)'
             }
             
             inventory_file = generate_file_inventory(output_folder, file_descriptions)

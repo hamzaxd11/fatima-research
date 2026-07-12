@@ -109,12 +109,13 @@ def detect_invalid_values(df: pd.DataFrame, validation_rules: Optional[Dict[str,
             invalid_indices = df.index[invalid_mask].tolist()
             
             for idx in invalid_indices:
+                value = col_data.loc[idx]
                 invalid_records.append({
                     'row_number': idx + 1,
                     'variable_name': col,
                     'issue_type': 'Out of Range (Below Minimum)',
-                    'current_value': str(col_data.iloc[idx]),
-                    'details': f'Value {col_data.iloc[idx]} is below minimum {min_val}'
+                    'current_value': str(value),
+                    'details': f'Value {value} is below minimum {min_val}'
                 })
         
         # Check maximum value constraint
@@ -124,29 +125,35 @@ def detect_invalid_values(df: pd.DataFrame, validation_rules: Optional[Dict[str,
             invalid_indices = df.index[invalid_mask].tolist()
             
             for idx in invalid_indices:
+                value = col_data.loc[idx]
                 invalid_records.append({
                     'row_number': idx + 1,
                     'variable_name': col,
                     'issue_type': 'Out of Range (Above Maximum)',
-                    'current_value': str(col_data.iloc[idx]),
-                    'details': f'Value {col_data.iloc[idx]} is above maximum {max_val}'
+                    'current_value': str(value),
+                    'details': f'Value {value} is above maximum {max_val}'
                 })
         
         # Check valid values constraint
         if 'valid_values' in rules:
             valid_vals = rules['valid_values']
-            # Convert to numeric for comparison if needed
             numeric_data = pd.to_numeric(col_data, errors='coerce')
-            invalid_mask = (col_data.notna()) & (~numeric_data.isin(valid_vals))
+            numeric_valid = pd.to_numeric(pd.Series(valid_vals), errors='coerce')
+            if numeric_valid.notna().all():
+                invalid_mask = col_data.notna() & ~numeric_data.isin(numeric_valid)
+            else:
+                valid_strings = {str(value) for value in valid_vals}
+                invalid_mask = col_data.notna() & ~col_data.astype(str).isin(valid_strings)
             invalid_indices = df.index[invalid_mask].tolist()
             
             for idx in invalid_indices:
+                value = col_data.loc[idx]
                 invalid_records.append({
                     'row_number': idx + 1,
                     'variable_name': col,
                     'issue_type': 'Invalid Value',
-                    'current_value': str(col_data.iloc[idx]),
-                    'details': f'Value {col_data.iloc[idx]} is not in valid set: {valid_vals}'
+                    'current_value': str(value),
+                    'details': f'Value {value} is not in valid set: {valid_vals}'
                 })
     
     if invalid_records:
@@ -196,7 +203,8 @@ def _get_default_validation_rules(df: pd.DataFrame) -> Dict[str, Dict[str, Any]]
 def generate_data_quality_report(
     df: pd.DataFrame,
     validation_rules: Optional[Dict[str, Dict[str, Any]]] = None,
-    output_path: Optional[str] = None
+    output_path: Optional[str] = None,
+    value_labels: Optional[Dict[str, Dict[Any, str]]] = None,
 ) -> Dict[str, Any]:
     """
     Generate a comprehensive data quality report.
@@ -209,6 +217,8 @@ def generate_data_quality_report(
         df: DataFrame to analyze
         validation_rules: Optional custom validation rules
         output_path: Optional path to save the report CSV files
+        value_labels: Optional SPSS value-label mappings used to validate
+            categorical response domains
         
     Returns:
         Dictionary containing:
@@ -245,8 +255,17 @@ def generate_data_quality_report(
     elif missing_count > 0:
         missing_df['missing_category'] = 'core'
     
+    # Apply SPSS value-label domains in addition to the numeric defaults.
+    rules = {
+        column: dict(column_rules)
+        for column, column_rules in (validation_rules or _get_default_validation_rules(df)).items()
+    }
+    for column, labels in (value_labels or {}).items():
+        if column in df.columns and labels:
+            rules.setdefault(column, {}).setdefault('valid_values', list(labels))
+
     # Detect invalid values
-    invalid_df = detect_invalid_values(df, validation_rules)
+    invalid_df = detect_invalid_values(df, rules)
     invalid_count = len(invalid_df)
     
     if invalid_count > 0:

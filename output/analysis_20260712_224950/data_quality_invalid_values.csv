@@ -1,0 +1,7 @@
+row_number,variable_name,issue_type,current_value,details
+7,MotherOccupation,Invalid Value,3.0,"Value 3.0 is not in valid set: [1.0, 2.0]"
+8,MotherOccupation,Invalid Value,3.0,"Value 3.0 is not in valid set: [1.0, 2.0]"
+49,MotherOccupation,Invalid Value,3.0,"Value 3.0 is not in valid set: [1.0, 2.0]"
+1,WhatDoYouThinkAboutThePrecessofMensturation,Invalid Value,5.0,"Value 5.0 is not in valid set: [1.0, 2.0, 3.0]"
+87,WhatDoYouThinkAboutThePrecessofMensturation,Invalid Value,5.0,"Value 5.0 is not in valid set: [1.0, 2.0, 3.0]"
+10,AfterThatWashHandsWithSoapAndWater,Invalid Value,3.0,"Value 3.0 is not in valid set: [1.0, 2.0]"

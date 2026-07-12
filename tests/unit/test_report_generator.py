@@ -44,6 +44,44 @@ def test_report_generation_basic():
         print(f"✓ Basic report generated: {txt_path}")
 
 
+def test_report_describes_fully_empty_rows_and_keeps_sensitivity_without_correlations():
+    with tempfile.TemporaryDirectory() as temp_dir:
+        scored_dataset = pd.DataFrame({
+            'knowledge_score': [5, 6],
+            'practice_score': [5, 6],
+        })
+        sensitivity = pd.DataFrame([{
+            'analysis': 'Holm-adjusted primary outcome',
+            'variables': 'practice_score',
+            'statistic': 1.0,
+            'p_value': 0.1,
+            'effect_size': np.nan,
+            'n': 2,
+        }])
+        results = {
+            'demographic_summaries': {},
+            'maternal_education_analysis': {},
+            'correlations': pd.DataFrame(),
+            'sensitivity_analyses': sensitivity,
+            'data_loader_metadata': {
+                'number_rows': 42,
+                'filtered_rows': 40,
+                'filter_method': 'all_columns_missing',
+                'filter_column': None,
+            },
+        }
+
+        txt_path, _ = generate_analysis_report(
+            results, scored_dataset, temp_dir, "test_data.sav"
+        )
+        with open(txt_path, encoding='utf-8') as report_file:
+            content = report_file.read()
+
+        assert "Fully Empty Records Removed: 40" in content
+        assert "missing None" not in content
+        assert "Holm-adjusted primary outcome" in content
+
+
 def test_report_generation_complete():
     """Test report generation with complete analysis results."""
     with tempfile.TemporaryDirectory() as temp_dir:

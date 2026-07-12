@@ -190,7 +190,7 @@ def calculate_knowledge_score(df: pd.DataFrame, question_columns: Optional[List[
     
     Scoring rules from questionnaire:
     Q1 (RangeOfUsualAgeOfMenarche): 2=1 point, else 0
-    Q2 (WhatDoYouThinkAboutThePrecessofMensturation): 2=1 point, else 0  
+    Q2 (WhatDoYouThinkAboutThePrecessofMensturation): 1=1 point, else 0
     Q3 (OrganOfBodyResponsibleForMenarche): 3=1 point, else 0
     Q4 (RangeOfNormalDurationOfMensturalBleeding): 4=1 point, else 0
     Q5 (AfterHowManyDaysDoYouMensturateEveryMonth): 3=1 point, else 0
@@ -245,8 +245,8 @@ def calculate_knowledge_score(df: pd.DataFrame, question_columns: Optional[List[
         'RangeOfUsualAgeOfMenarche': {2.0: 1},
         
         # Q2: What do you think about the process of menstruation?
-        # Correct answer: Physiological/Normal process (coded as 2.0)
-        'WhatDoYouThinkAboutThePrecessofMensturation': {2.0: 1},
+        # Correct answer: Physiological/Natural process (coded as 1.0)
+        'WhatDoYouThinkAboutThePrecessofMensturation': {1.0: 1},
         
         # Q3: Which organ of the body is responsible for menarche?
         # Correct answer: Uterus (coded as 3.0)

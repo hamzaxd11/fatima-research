@@ -32,9 +32,9 @@ def _compute_eta_squared(groups: List[np.ndarray]) -> float:
 
 def _compute_epsilon_squared(h_stat: float, n: int, k: int) -> float:
     try:
-        if n <= k or n <= 0:
+        if n <= 1:
             return np.nan
-        return float((h_stat - k + 1) / (n - k))
+        return float(h_stat / (n - 1))
     except Exception:
         return np.nan
 
@@ -86,6 +86,181 @@ def _build_correlation_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
     correlation_df = correlation_df.dropna()
     return correlation_df
+
+
+def perform_sensitivity_analyses(df: pd.DataFrame) -> pd.DataFrame:
+    """Run and tabulate the manuscript's sensitivity and robustness checks."""
+    maternal_col = next(
+        (
+            col
+            for col in df.columns
+            if ('mother' in col.lower() or 'maternal' in col.lower())
+            and 'education' in col.lower()
+        ),
+        None,
+    )
+    age_col = next((name for name in ('Age', 'age') if name in df.columns), None)
+    income_col = next(
+        (name for name in ('IncomePerMonth', 'income_per_month') if name in df.columns),
+        None,
+    )
+    rows = []
+
+    if maternal_col:
+        primary_tests = []
+        for outcome in ('knowledge_score', 'practice_score'):
+            analyzed = df[[maternal_col, outcome]].dropna()
+            groups = [group[outcome].values for _, group in analyzed.groupby(maternal_col)]
+            if len(groups) < 2 or analyzed[outcome].nunique() < 2:
+                continue
+            statistic, p_value = stats.kruskal(*groups)
+            primary_tests.append((outcome, statistic, p_value, len(analyzed)))
+
+        order = sorted(range(len(primary_tests)), key=lambda index: primary_tests[index][2])
+        adjusted = [np.nan] * len(primary_tests)
+        running = 0.0
+        for rank, index in enumerate(order):
+            candidate = min((len(primary_tests) - rank) * primary_tests[index][2], 1.0)
+            running = max(running, candidate)
+            adjusted[index] = running
+        for index, (outcome, statistic, _, analyzed_n) in enumerate(primary_tests):
+            rows.append(
+                {
+                    'analysis': 'Holm-adjusted primary outcome',
+                    'variables': outcome,
+                    'statistic': statistic,
+                    'p_value': adjusted[index],
+                    'effect_size': np.nan,
+                    'n': analyzed_n,
+                }
+            )
+
+        practice_items = [
+            'WhichTypeOfAbsorbentDoYouUseDuringMensturation',
+            'UsePaperToDisposeThePadByWrapping',
+            'WhereDisposeTheUsedPads',
+            'HowManyTimeUsualyChangeTheClothandSanitaryPad',
+            'HowManyTimesTakeBathDuringMensturation',
+            'CleanYourExternalGenitaliaThroughlyWaterDuringMensturation',
+            'AfterThatWashHandsWithSoapAndWater',
+        ]
+        if all(column in df.columns for column in practice_items):
+            complete = df.dropna(subset=[maternal_col, *practice_items])
+            groups = [
+                group['practice_score'].values
+                for _, group in complete.groupby(maternal_col)
+            ]
+            if len(groups) >= 2 and complete['practice_score'].nunique() >= 2:
+                statistic, p_value = stats.kruskal(*groups)
+            else:
+                statistic, p_value = np.nan, np.nan
+            rows.append(
+                {
+                    'analysis': 'Complete-case practice responses',
+                    'variables': 'practice_score',
+                    'statistic': statistic,
+                    'p_value': p_value,
+                    'effect_size': _compute_epsilon_squared(
+                        statistic, len(complete), len(groups)
+                    ),
+                    'n': len(complete),
+                }
+            )
+
+        reduced = df[df[maternal_col] != 5]
+        for outcome in ('knowledge_score', 'practice_score'):
+            analyzed = reduced[[maternal_col, outcome]].dropna()
+            groups = [group[outcome].values for _, group in analyzed.groupby(maternal_col)]
+            if len(groups) >= 2 and analyzed[outcome].nunique() >= 2:
+                statistic, p_value = stats.kruskal(*groups)
+                rows.append(
+                    {
+                        'analysis': f'Kruskal-Wallis excluding {maternal_col}=5',
+                        'variables': outcome,
+                        'statistic': statistic,
+                        'p_value': p_value,
+                        'effect_size': _compute_epsilon_squared(statistic, len(analyzed), len(groups)),
+                        'n': len(analyzed),
+                    }
+                )
+
+        process_col = 'WhatDoYouThinkAboutThePrecessofMensturation'
+        if process_col in df.columns:
+            archived = df['knowledge_score'].copy()
+            responses = pd.to_numeric(df[process_col], errors='coerce')
+            archived = archived - (responses == 1).astype(int) + (responses == 2).astype(int)
+            archived_frame = pd.DataFrame({maternal_col: df[maternal_col], 'score': archived}).dropna()
+            groups = [group['score'].values for _, group in archived_frame.groupby(maternal_col)]
+            statistic, p_value = stats.kruskal(*groups)
+            rows.append(
+                {
+                    'analysis': 'Archived pathological-response scoring key',
+                    'variables': 'knowledge_score',
+                    'statistic': statistic,
+                    'p_value': p_value,
+                    'effect_size': _compute_epsilon_squared(
+                        statistic, len(archived_frame), len(groups)
+                    ),
+                    'n': len(archived_frame),
+                }
+            )
+
+        for outcome in ('knowledge_score', 'practice_score'):
+            pair = df[[maternal_col, outcome]].dropna()
+            statistic, p_value = stats.spearmanr(pair[maternal_col], pair[outcome])
+            rows.append(
+                {
+                    'analysis': 'Spearman ordinal trend',
+                    'variables': f'{maternal_col} vs {outcome}',
+                    'statistic': statistic,
+                    'p_value': p_value,
+                    'effect_size': np.nan,
+                    'n': len(pair),
+                }
+            )
+
+        if age_col:
+            analyzed = df[[maternal_col, age_col]].dropna()
+            groups = [group[age_col].values for _, group in analyzed.groupby(maternal_col)]
+            if len(groups) < 2 or analyzed[age_col].nunique() < 2:
+                statistic, p_value = np.nan, np.nan
+            else:
+                statistic, p_value = stats.kruskal(*groups)
+            rows.append(
+                {
+                    'analysis': 'Kruskal-Wallis confounder check',
+                    'variables': f'{age_col} by {maternal_col}',
+                    'statistic': statistic,
+                    'p_value': p_value,
+                    'effect_size': _compute_epsilon_squared(statistic, len(analyzed), len(groups)),
+                    'n': len(analyzed),
+                }
+            )
+
+    spearman_pairs = [
+        (age_col, 'knowledge_score'),
+        (age_col, 'practice_score'),
+        ('knowledge_score', 'practice_score'),
+        (income_col, 'knowledge_score'),
+        (income_col, 'practice_score'),
+    ]
+    for left, right in spearman_pairs:
+        if not left or left not in df.columns or right not in df.columns:
+            continue
+        pair = df[[left, right]].dropna()
+        statistic, p_value = stats.spearmanr(pair[left], pair[right])
+        rows.append(
+            {
+                'analysis': 'Spearman correlation',
+                'variables': f'{left} vs {right}',
+                'statistic': statistic,
+                'p_value': p_value,
+                'effect_size': np.nan,
+                'n': len(pair),
+            }
+        )
+
+    return pd.DataFrame(rows)
 
 def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
     """
@@ -298,18 +473,17 @@ def analyze_maternal_education_impact(df: pd.DataFrame) -> Dict[str, Any]:
         warnings.warn(f"Statistical test failed for practice scores: {str(e)}")
         anova_practice = {'f_statistic': np.nan, 'p_value': np.nan}
     
-    # Add significance indicators to summary table
-    alpha = 0.05
-    summary_table['knowledge_significant'] = anova_knowledge['p_value'] < alpha if not np.isnan(anova_knowledge['p_value']) else False
-    summary_table['practice_significant'] = anova_practice['p_value'] < alpha if not np.isnan(anova_practice['p_value']) else False
-    
     return {
         'summary_table': summary_table,
         'anova_knowledge': anova_knowledge,
         'anova_practice': anova_practice,
         'test_type': test_type,
         'test_type_by_outcome': test_type_by_outcome,
-        'assumption_checks': assumption_checks
+        'assumption_checks': assumption_checks,
+        'significant_unadjusted': {
+            'knowledge': bool(anova_knowledge['p_value'] < 0.05),
+            'practice': bool(anova_practice['p_value'] < 0.05),
+        },
     }
 
 def calculate_demographic_summaries(df: pd.DataFrame) -> Dict[str, pd.DataFrame]:

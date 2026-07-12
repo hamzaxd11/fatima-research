@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "passed_count": 25,
+  "total_count": 25,
+  "checks": [
+    {
+      "check": "included study count",
+      "passed": true,
+      "detail": "12 studies"
+    },
+    {
+      "check": "DOI and title verification",
+      "passed": true,
+      "detail": "12/12 verified"
+    },
+    {
+      "check": "full-text evidence count",
+      "passed": true,
+      "detail": "11/12 full text; one abstract-level record expected"
+    },
+    {
+      "check": "local evidence paths",
+      "passed": true,
+      "detail": "12/12 source texts exist"
+    },
+    {
+      "check": "claim source: wasan2022.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: aziz2024.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: shah2023.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: michael2020.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: afzaal2024.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: dasgupta2008.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: kansal2016.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: yadav2018.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: bhusal2020.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: haque2014.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: alam2017.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "claim source: upashe2015.txt",
+      "passed": true,
+      "detail": "all markers found"
+    },
+    {
+      "check": "reference numbering",
+      "passed": true,
+      "detail": "references: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]"
+    },
+    {
+      "check": "unique DOI count",
+      "passed": true,
+      "detail": "18 unique DOI links; 3 institutional references have no DOI"
+    },
+    {
+      "check": "comparative manuscript content",
+      "passed": true,
+      "detail": "all required comparative and result phrases present"
+    },
+    {
+      "check": "protected root files",
+      "passed": true,
+      "detail": "menstrual hygiene spss.sav fatima and ayesha (1).sav, Synopsis - Menstrual hygiene..docx, doc.md"
+    },
+    {
+      "check": "local Markdown links",
+      "passed": true,
+      "detail": "40 inspected; broken: []"
+    },
+    {
+      "check": "DOCX exists",
+      "passed": true,
+      "detail": "1023441 bytes"
+    },
+    {
+      "check": "DOCX comparative content",
+      "passed": true,
+      "detail": "required comparison phrases present"
+    },
+    {
+      "check": "DOCX figures",
+      "passed": true,
+      "detail": "4 embedded media files"
+    },
+    {
+      "check": "DOCX tables",
+      "passed": true,
+      "detail": "8 tables"
+    }
+  ]
+}

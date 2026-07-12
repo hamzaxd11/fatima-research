@@ -1,0 +1,29 @@
+2026-07-12 22:49:50,063 - INFO - ================================================================================
+2026-07-12 22:49:50,063 - INFO - ANALYSIS PARAMETERS
+2026-07-12 22:49:50,063 - INFO - ================================================================================
+2026-07-12 22:49:50,063 - INFO - Timestamp: 2026-07-12 22:49:50
+2026-07-12 22:49:50,063 - INFO - SPSS File: menstrual hygiene spss.sav fatima and ayesha (1).sav
+2026-07-12 22:49:50,063 - INFO - Output Folder: output\analysis_20260712_224950
+2026-07-12 22:49:50,063 - INFO - Python Version: 3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]
+2026-07-12 22:49:50,063 - INFO - Working Directory: D:\Work\fatima\menstrual_hygiene
+2026-07-12 22:49:50,064 - INFO - ================================================================================
+2026-07-12 22:49:50,064 - INFO - Stage 1: Loading SPSS data file
+2026-07-12 22:49:50,079 - INFO - [Data Loader] Filtered out 40 fully empty rows
+2026-07-12 22:49:50,079 - INFO - Successfully loaded 120 records with 37 variables
+2026-07-12 22:49:50,082 - INFO - Data summary: 120 rows, 37 columns
+2026-07-12 22:49:50,083 - INFO - Stage 2: Data processing and scoring
+2026-07-12 22:49:50,103 - INFO - Successfully calculated all scores and derived fields
+2026-07-12 22:49:50,109 - INFO - Scored dataset saved to: output\analysis_20260712_224950\scored_dataset.csv
+2026-07-12 22:49:50,111 - INFO - Family size consistency check: 0 mismatches
+2026-07-12 22:49:50,111 - INFO - Stage 3: Data quality assessment
+2026-07-12 22:49:50,133 - INFO - Data quality: 88.7%
+2026-07-12 22:49:50,133 - INFO - Stage 4: Statistical analysis
+2026-07-12 22:49:50,139 - INFO - Maternal education analysis complete: 5 groups
+2026-07-12 22:49:50,152 - INFO - Demographic summaries calculated: 6 tables
+2026-07-12 22:49:50,159 - INFO - Correlation analysis complete
+2026-07-12 22:49:50,217 - INFO - Stage 5: Visualization generation
+2026-07-12 22:49:53,994 - INFO - All visualizations generated successfully
+2026-07-12 22:49:53,994 - INFO - Stage 6: Report generation
+2026-07-12 22:49:54,000 - INFO - Analysis reports generated: output\analysis_20260712_224950\analysis_report.txt, output\analysis_20260712_224950\analysis_report.md
+2026-07-12 22:49:54,002 - INFO - File inventory generated: output\analysis_20260712_224950\FILE_INVENTORY.md
+2026-07-12 22:49:54,002 - INFO - Analysis pipeline completed successfully

@@ -1,0 +1,483 @@
+[
+  {
+    "key": "wasan2022",
+    "title": "Practices and predictors of menstrual hygiene management material use among adolescent and young women in rural Pakistan: a cross-sectional assessment",
+    "doi": "10.7189/jogh.12.04059",
+    "pmid": "35908217",
+    "pmcid": "PMC9339234",
+    "region": "Pakistan",
+    "setting": "Matiari District, rural Sindh",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Practices and predictors of menstrual hygiene management material use among adolescent and young women in rural Pakistan: A cross-sectional assessment",
+      "title_similarity": 1.0,
+      "authors": [
+        "Yaqub Wasan",
+        "Jo-Anna B. Baxter",
+        "Arjumand Rizvi",
+        "Fariha Shaheen",
+        "Qamaruddin Junejo",
+        "Mansoor A Abro",
+        "Amjad Hussain",
+        "Imran Ahmed",
+        "Sajid B Soofi",
+        "Zulfiqar A Bhutta"
+      ],
+      "journal": "Journal of Global Health",
+      "published": [
+        2022,
+        8,
+        10
+      ],
+      "volume": "12",
+      "issue": null,
+      "pages": "04059",
+      "url": "https://doi.org/10.7189/jogh.12.04059"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\wasan2022.xml",
+      "text_path": "paper_text/wasan2022.txt",
+      "text_chars": 32916,
+      "pdf_url": "https://jogh.org/wp-content/uploads/2022/08/jogh-12-04059.pdf",
+      "pdf_path": "papers/wasan2022.pdf",
+      "pdf_pages": 10,
+      "pdf_text_chars": 41969
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "aziz2024",
+    "title": "A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study",
+    "doi": "10.1177/17455057241231420",
+    "pmid": "38385267",
+    "pmcid": "PMC10893828",
+    "region": "Pakistan",
+    "setting": "Government girls' schools, Khairpur District, Sindh",
+    "handle_valid": true,
+    "crossref": {
+      "title": "A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study",
+      "title_similarity": 1.0,
+      "authors": [
+        "Amina Aziz",
+        "Salma Memon",
+        "Farhana Aziz",
+        "Farzana Memon",
+        "Bakhtawar M Hanif Khowaja",
+        "Shehla Naeem Zafar"
+      ],
+      "journal": "Women's Health",
+      "published": [
+        2024,
+        2,
+        22
+      ],
+      "volume": "20",
+      "issue": null,
+      "pages": "17455057241231420",
+      "url": "https://doi.org/10.1177/17455057241231420"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\aziz2024.xml",
+      "text_path": "paper_text/aziz2024.txt",
+      "text_chars": 37541,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/8b/64/PMC10893828.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "shah2023",
+    "title": "Knowledge, Attitudes, and Practices Regarding Menstrual Hygiene among Girls in Ghizer, Gilgit, Pakistan",
+    "doi": "10.3390/ijerph20146424",
+    "pmid": "37510656",
+    "pmcid": "PMC10378792",
+    "region": "Pakistan",
+    "setting": "Government educational institutions, Ghizer District",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Knowledge, Attitudes, and Practices Regarding Menstrual Hygiene among Girls in Ghizer, Gilgit, Pakistan",
+      "title_similarity": 1.0,
+      "authors": [
+        "Sanober Fazal Shah",
+        "Neelam Saleem Punjani",
+        "Syeda Naghma Rizvi",
+        "Sana Sadiq Sheikh",
+        "Rafat Jan"
+      ],
+      "journal": "International Journal of Environmental Research and Public Health",
+      "published": [
+        2023,
+        7,
+        21
+      ],
+      "volume": "20",
+      "issue": "14",
+      "pages": "6424",
+      "url": "https://doi.org/10.3390/ijerph20146424"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\shah2023.xml",
+      "text_path": "paper_text/shah2023.txt",
+      "text_chars": 38757,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/fc/72/PMC10378792.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "michael2020",
+    "title": "Knowledge and practice of adolescent females about menstruation and menstruation hygiene visiting a public healthcare institute of Quetta, Pakistan",
+    "doi": "10.1186/s12905-019-0874-3",
+    "pmid": "31906921",
+    "pmcid": "PMC6945726",
+    "region": "Pakistan",
+    "setting": "Public hospital outpatient department, Quetta",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Knowledge and practice of adolescent females about menstruation and menstruation hygiene visiting a public healthcare institute of Quetta, Pakistan",
+      "title_similarity": 1.0,
+      "authors": [
+        "Judy Michael",
+        "Qaiser Iqbal",
+        "Sajjad Haider",
+        "Adnan Khalid",
+        "Naheed Haque",
+        "Rabia Ishaq",
+        "Fahad Saleem",
+        "Mohamed Azmi Hassali",
+        "Mohammad Bashaar"
+      ],
+      "journal": "BMC Women's Health",
+      "published": [
+        2020,
+        1,
+        6
+      ],
+      "volume": "20",
+      "issue": "1",
+      "pages": "4",
+      "url": "https://doi.org/10.1186/s12905-019-0874-3"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\michael2020.xml",
+      "text_path": "paper_text/michael2020.txt",
+      "text_chars": 28754,
+      "pdf_url": "https://link.springer.com/content/pdf/10.1186/s12905-019-0874-3.pdf",
+      "pdf_path": "papers/michael2020.pdf",
+      "pdf_pages": 8,
+      "pdf_text_chars": 38596
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "afzaal2024",
+    "title": "Awareness and Practices of Menstrual Hygiene Among Rural Adolescent Schoolgirls in Lahore, Pakistan: A Cross-Sectional Study",
+    "doi": "10.7759/cureus.73899",
+    "pmid": "39697906",
+    "pmcid": "PMC11655083",
+    "region": "Pakistan",
+    "setting": "Rural schoolgirls, Lahore",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Awareness and Practices of Menstrual Hygiene Among Rural Adolescent Schoolgirls in Lahore, Pakistan: A Cross-Sectional Study",
+      "title_similarity": 1.0,
+      "authors": [
+        "Saba Shanza Afzaal",
+        "Shahzeb Baloch",
+        "Sulaiman Tahir",
+        "Hamna Javed",
+        "Adil Saeed",
+        "Muhammad Haadi Ashal Pal",
+        "Maryyam Islam",
+        "Bilal Qammar"
+      ],
+      "journal": "Cureus",
+      "published": [
+        2024,
+        11,
+        18
+      ],
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "url": "https://doi.org/10.7759/cureus.73899"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\afzaal2024.xml",
+      "text_path": "paper_text/afzaal2024.txt",
+      "text_chars": 16181,
+      "pdf_url": "https://www.cureus.com/articles/298309-awareness-and-practices-of-menstrual-hygiene-among-rural-adolescent-schoolgirls-in-lahore-pakistan-a-cross-sectional-study.pdf",
+      "pdf_path": "papers/afzaal2024.pdf",
+      "pdf_pages": 6,
+      "pdf_text_chars": 22151
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "dasgupta2008",
+    "title": "Menstrual hygiene: how hygienic is the adolescent girl?",
+    "doi": "10.4103/0970-0218.40872",
+    "pmid": "19967028",
+    "pmcid": "PMC2784630",
+    "region": "India",
+    "setting": "Rural secondary school, Singur, West Bengal",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Menstrual hygiene: How hygienic is the adolescent girl?",
+      "title_similarity": 1.0,
+      "authors": [
+        "A Dasgupta",
+        "M Sarkar"
+      ],
+      "journal": "Indian Journal of Community Medicine",
+      "published": [
+        2008
+      ],
+      "volume": "33",
+      "issue": "2",
+      "pages": "77",
+      "url": "https://doi.org/10.4103/0970-0218.40872"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\dasgupta2008.xml",
+      "text_path": "paper_text/dasgupta2008.txt",
+      "text_chars": 17313,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/59/6b/PMC2784630.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "kansal2016",
+    "title": "Menstrual Hygiene Practices in Context of Schooling: A Community Study Among Rural Adolescent Girls in Varanasi",
+    "doi": "10.4103/0970-0218.170964",
+    "pmid": "26917872",
+    "pmcid": "PMC4746952",
+    "region": "India",
+    "setting": "Eight rural villages, Varanasi",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Menstrual hygiene practices in context of schooling: A community study among rural adolescent girls in Varanasi",
+      "title_similarity": 1.0,
+      "authors": [
+        "Alok Kumar",
+        "Sangeeta Kansal",
+        "Sweta Singh"
+      ],
+      "journal": "Indian Journal of Community Medicine",
+      "published": [
+        2016
+      ],
+      "volume": "41",
+      "issue": "1",
+      "pages": "39",
+      "url": "https://doi.org/10.4103/0970-0218.170964"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\kansal2016.xml",
+      "text_path": "paper_text/kansal2016.txt",
+      "text_chars": 22970,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/12/3a/PMC4746952.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "yadav2018",
+    "title": "Knowledge, Attitude, and Practice on Menstrual Hygiene Management among School Adolescents",
+    "doi": "10.3126/jnhrc.v15i3.18842",
+    "pmid": "29353891",
+    "region": "Nepal",
+    "setting": "Schools in Doti District",
+    "pdf_url": "https://www.nepjol.info/index.php/JNHRC/article/download/18842/15403",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Knowledge, Attitude, and Practice on Menstrual Hygiene Management among School Adolescents",
+      "title_similarity": 1.0,
+      "authors": [
+        "Ram Naresh Yadav",
+        "Shrijana Joshi",
+        "Rajesh Poudel",
+        "Pawan Pandeya"
+      ],
+      "journal": "Journal of Nepal Health Research Council",
+      "published": [
+        2018,
+        1,
+        1
+      ],
+      "volume": "15",
+      "issue": "3",
+      "pages": "212-216",
+      "url": "https://doi.org/10.3126/jnhrc.v15i3.18842"
+    },
+    "title_match": true,
+    "evidence": {
+      "pdf_url": "https://www.nepjol.info/index.php/JNHRC/article/download/18842/15403",
+      "pdf_error": "500 Server Error: Internal Server Error for url: https://www.nepjol.info/index.php/JNHRC/article/download/18842/15403",
+      "article_page": "article_pages\\yadav2018.html",
+      "text_path": "paper_text/yadav2018.txt",
+      "text_chars": 1495
+    },
+    "evidence_status": "abstract_and_doi_checked"
+  },
+  {
+    "key": "bhusal2020",
+    "title": "Practice of Menstrual Hygiene and Associated Factors among Adolescent School Girls in Dang District, Nepal",
+    "doi": "10.1155/2020/1292070",
+    "pmid": "32774926",
+    "pmcid": "PMC7396122",
+    "region": "Nepal",
+    "setting": "Public and private schools, Dang District",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Practice of Menstrual Hygiene and Associated Factors among Adolescent School Girls in Dang District, Nepal",
+      "title_similarity": 1.0,
+      "authors": [
+        "Chet Kant Bhusal"
+      ],
+      "journal": "Advances in Preventive Medicine",
+      "published": [
+        2020,
+        7,
+        24
+      ],
+      "volume": "2020",
+      "issue": null,
+      "pages": "1-7",
+      "url": "https://doi.org/10.1155/2020/1292070"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\bhusal2020.xml",
+      "text_path": "paper_text/bhusal2020.txt",
+      "text_chars": 22632,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/f2/0a/PMC7396122.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "haque2014",
+    "title": "The effect of a school-based educational intervention on menstrual health: an intervention study among adolescent girls in Bangladesh",
+    "doi": "10.1136/bmjopen-2013-004607",
+    "pmid": "24993753",
+    "pmcid": "PMC4091465",
+    "region": "Bangladesh",
+    "setting": "Three rural schools, Araihazar",
+    "handle_valid": true,
+    "crossref": {
+      "title": "The effect of a school-based educational intervention on menstrual health: an intervention study among adolescent girls in Bangladesh",
+      "title_similarity": 1.0,
+      "authors": [
+        "Syed Emdadul Haque",
+        "Mosiur Rahman",
+        "Kawashima Itsuko",
+        "Mahmuda Mutahara",
+        "Kayako Sakisaka"
+      ],
+      "journal": "BMJ Open",
+      "published": [
+        2014,
+        7
+      ],
+      "volume": "4",
+      "issue": "7",
+      "pages": "e004607",
+      "url": "https://doi.org/10.1136/bmjopen-2013-004607"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\haque2014.xml",
+      "text_path": "paper_text/haque2014.txt",
+      "text_chars": 34446,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/18/b0/PMC4091465.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "alam2017",
+    "title": "Menstrual hygiene management among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from a cross-sectional survey",
+    "doi": "10.1136/bmjopen-2016-015508",
+    "pmid": "28694347",
+    "pmcid": "PMC5541609",
+    "region": "Bangladesh",
+    "setting": "National survey of 700 schools",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Menstrual hygiene management among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from a cross-sectional survey",
+      "title_similarity": 1.0,
+      "authors": [
+        "Mahbub-Ul Alam",
+        "Stephen P Luby",
+        "Amal K Halder",
+        "Khairul Islam",
+        "Aftab Opel",
+        "Abul K Shoab",
+        "Probir K Ghosh",
+        "Mahbubur Rahman",
+        "Therese Mahon",
+        "Leanne Unicomb"
+      ],
+      "journal": "BMJ Open",
+      "published": [
+        2017,
+        7
+      ],
+      "volume": "7",
+      "issue": "7",
+      "pages": "e015508",
+      "url": "https://doi.org/10.1136/bmjopen-2016-015508"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\alam2017.xml",
+      "text_path": "paper_text/alam2017.txt",
+      "text_chars": 35884,
+      "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/e4/89/PMC5541609.tar.gz"
+    },
+    "evidence_status": "full_text_checked"
+  },
+  {
+    "key": "upashe2015",
+    "title": "Assessment of knowledge and practice of menstrual hygiene among high school girls in Western Ethiopia",
+    "doi": "10.1186/s12905-015-0245-7",
+    "pmid": "26466992",
+    "pmcid": "PMC4606849",
+    "region": "Ethiopia (contextual)",
+    "setting": "High schools, Nekemte",
+    "handle_valid": true,
+    "crossref": {
+      "title": "Assessment of knowledge and practice of menstrual hygiene among high school girls in Western Ethiopia",
+      "title_similarity": 1.0,
+      "authors": [
+        "Shivaleela P. Upashe",
+        "Tesfalidet Tekelab",
+        "Jalane Mekonnen"
+      ],
+      "journal": "BMC Women's Health",
+      "published": [
+        2015,
+        10,
+        14
+      ],
+      "volume": "15",
+      "issue": "1",
+      "pages": "84",
+      "url": "https://doi.org/10.1186/s12905-015-0245-7"
+    },
+    "title_match": true,
+    "evidence": {
+      "article_xml": "article_pages\\upashe2015.xml",
+      "text_path": "paper_text/upashe2015.txt",
+      "text_chars": 33153,
+      "pdf_url": "https://link.springer.com/content/pdf/10.1186/s12905-015-0245-7.pdf",
+      "pdf_path": "papers/upashe2015.pdf",
+      "pdf_pages": 8,
+      "pdf_text_chars": 34163
+    },
+    "evidence_status": "full_text_checked"
+  }
+]

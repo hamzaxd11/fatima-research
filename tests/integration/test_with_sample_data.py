@@ -24,7 +24,8 @@ from src.data_processor import create_scored_dataset
 from src.statistical_analysis import (
     analyze_maternal_education_impact,
     calculate_demographic_summaries,
-    perform_correlation_analysis
+    perform_correlation_analysis,
+    perform_sensitivity_analyses,
 )
 from src.visualizations import generate_all_visualizations
 from src.report_generator import generate_analysis_report
@@ -170,6 +171,43 @@ class TestWithSampleData:
             for col in correlations.columns:
                 if col in correlations.index:
                     assert abs(correlations.loc[col, col] - 1.0) < 0.01, "Self-correlation should be 1"
+
+    def test_original_data_headline_results_exact(self, spss_file_path):
+        """Lock the journal headline numbers to the protected source dataset."""
+        df, metadata = load_spss_file(spss_file_path)
+        scored_df = create_scored_dataset(df)
+        impact = analyze_maternal_education_impact(scored_df)
+        sensitivity = perform_sensitivity_analyses(scored_df)
+
+        assert metadata["number_rows"] == 160
+        assert metadata["filtered_rows"] == 40
+        assert metadata["filter_method"] == "all_columns_missing"
+        assert len(scored_df) == 120
+        assert scored_df["knowledge_score"].mean() == pytest.approx(6.65)
+        assert scored_df["practice_score"].mean() == pytest.approx(5.6833333333)
+        assert impact["anova_knowledge"]["f_statistic"] == pytest.approx(8.0427082466)
+        assert impact["anova_knowledge"]["p_value"] == pytest.approx(0.0900262054)
+        assert impact["anova_practice"]["f_statistic"] == pytest.approx(10.1561837009)
+        assert impact["anova_practice"]["p_value"] == pytest.approx(0.0378773851)
+        assert impact["anova_practice"]["effect_size"] == pytest.approx(10.1561837009 / 119)
+        assert "practice_significant" not in impact["summary_table"].columns
+
+        adjusted = sensitivity[sensitivity["analysis"] == "Holm-adjusted primary outcome"]
+        adjusted = adjusted.set_index("variables")
+        assert adjusted.loc["knowledge_score", "p_value"] == pytest.approx(0.0900262054)
+        assert adjusted.loc["practice_score", "p_value"] == pytest.approx(0.0757547702)
+
+        archived = sensitivity[
+            sensitivity["analysis"] == "Archived pathological-response scoring key"
+        ].iloc[0]
+        assert archived["statistic"] == pytest.approx(5.8669387592)
+        assert archived["p_value"] == pytest.approx(0.2093081569)
+
+        complete = sensitivity[
+            sensitivity["analysis"] == "Complete-case practice responses"
+        ].iloc[0]
+        assert complete["n"] == 115
+        assert complete["p_value"] > 0.05
     
     def test_all_visualizations_generated(self, spss_file_path, temp_output_dir):
         """
@@ -214,7 +252,11 @@ class TestWithSampleData:
         scored_df = create_scored_dataset(df)
         
         # Generate data quality report
-        quality_report = generate_data_quality_report(scored_df, output_path=temp_output_dir)
+        quality_report = generate_data_quality_report(
+            scored_df,
+            output_path=temp_output_dir,
+            value_labels=metadata['value_labels'],
+        )
         
         assert 'summary' in quality_report
         summary = quality_report['summary']
@@ -228,6 +270,7 @@ class TestWithSampleData:
         # Verify quality percentage is in valid range
         quality_pct = summary['data_quality_percentage']
         assert 0 <= quality_pct <= 100, "Quality percentage should be in [0, 100]"
+        assert summary['invalid_value_count'] == 6
         
         print(f"\nData Quality Summary:")
         print(f"  Total records: {summary['total_rows']}")

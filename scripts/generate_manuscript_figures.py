@@ -22,9 +22,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Generate manuscript-specific figures from a scored dataset")
     parser.add_argument(
         "dataset_path",
-        nargs="?",
-        default=str(ROOT / "output" / "analysis_20260319_173428" / "scored_dataset.csv"),
-        help="Path to scored_dataset.csv (defaults to latest refreshed output bundle)",
+        help="Explicit path to a local scored_dataset.csv",
     )
     args = parser.parse_args()
 

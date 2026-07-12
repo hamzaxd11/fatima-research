@@ -4,3 +4,5 @@ scipy>=1.10.0
 matplotlib>=3.7.0
 pyreadstat>=1.2.0
 hypothesis>=6.82.0
+pytest>=7.4.0
+python-docx>=1.1.0

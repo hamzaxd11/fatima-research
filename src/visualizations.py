@@ -283,7 +283,7 @@ def plot_score_boxplots(
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
     
     # Knowledge score box plot
-    bp1 = ax1.boxplot(knowledge_data, labels=labels, patch_artist=True)
+    bp1 = ax1.boxplot(knowledge_data, tick_labels=labels, patch_artist=True)
     for patch in bp1['boxes']:
         patch.set_facecolor('#3498db')
         patch.set_alpha(0.7)
@@ -294,7 +294,7 @@ def plot_score_boxplots(
     ax1.grid(axis='y', alpha=0.3, linestyle='--')
     
     # Practice score box plot
-    bp2 = ax2.boxplot(practice_data, labels=labels, patch_artist=True)
+    bp2 = ax2.boxplot(practice_data, tick_labels=labels, patch_artist=True)
     for patch in bp2['boxes']:
         patch.set_facecolor('#e74c3c')
         patch.set_alpha(0.7)

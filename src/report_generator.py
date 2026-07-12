@@ -146,9 +146,10 @@ def _generate_header_section(
         filter_column = metadata.get('filter_column')
         lines.append(f"Raw Records Loaded: {raw_rows}")
         if filtered_rows:
-            lines.append(
-                f"Records Excluded (missing {filter_column}): {filtered_rows}"
-            )
+            if metadata.get('filter_method') == 'all_columns_missing':
+                lines.append(f"Fully Empty Records Removed: {filtered_rows}")
+            else:
+                lines.append(f"Records Excluded (missing {filter_column}): {filtered_rows}")
         lines.append("")
 
     lines.extend([
@@ -278,7 +279,9 @@ def _generate_knowledge_scores_section(analysis_results: Dict[str, Any], df: pd.
         "## 3. KNOWLEDGE SCORES ANALYSIS",
         "",
         "Knowledge scores range from 0 to 9, based on responses to Section III questions",
-        "about menstrual hygiene awareness.",
+        "about menstrual hygiene awareness. The adjudicated key scores menstruation as a",
+        "physiological/natural process; archived reverse coding is reported as a sensitivity analysis.",
+        "This is an instrument-specific composite rather than a validated unidimensional scale.",
         ""
     ]
     
@@ -322,7 +325,8 @@ def _generate_practice_scores_section(analysis_results: Dict[str, Any], df: pd.D
         "## 4. PRACTICE SCORES ANALYSIS",
         "",
         "Practice scores range from 0 to 7, based on responses to Section IV questions",
-        "about actual menstrual hygiene practices.",
+        "about actual menstrual hygiene practices. Missing item responses are scored zero under",
+        "the archived protocol; complete-case sensitivity results should accompany the primary result.",
         ""
     ]
     
@@ -432,14 +436,9 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
                 if checks.get('small_groups') or checks.get('insufficient_normality'):
                     lines.append("  Note: Small group sizes limit parametric assumptions")
             
-            if p_val_k < 0.001:
-                interpretation = "highly significant (p < 0.001)"
-            elif p_val_k < 0.01:
-                interpretation = "very significant (p < 0.01)"
-            elif p_val_k < 0.05:
-                interpretation = "significant (p < 0.05)"
-            else:
-                interpretation = "not significant (p ≥ 0.05)"
+            interpretation = "not statistically significant at the unadjusted 0.05 level"
+            if p_val_k < 0.05:
+                interpretation = "statistically significant at the unadjusted 0.05 level"
             
             lines.extend([
                 f"  Interpretation: The difference in knowledge scores across maternal",
@@ -475,18 +474,15 @@ def _generate_maternal_education_section(analysis_results: Dict[str, Any]) -> li
                 if checks.get('small_groups') or checks.get('insufficient_normality'):
                     lines.append("  Note: Small group sizes limit parametric assumptions")
             
-            if p_val_p < 0.001:
-                interpretation = "highly significant (p < 0.001)"
-            elif p_val_p < 0.01:
-                interpretation = "very significant (p < 0.01)"
-            elif p_val_p < 0.05:
-                interpretation = "significant (p < 0.05)"
-            else:
-                interpretation = "not significant (p ≥ 0.05)"
+            interpretation = "not statistically significant at the unadjusted 0.05 level"
+            if p_val_p < 0.05:
+                interpretation = "nominally significant before multiplicity correction"
             
             lines.extend([
                 f"  Interpretation: The difference in practice scores across maternal",
                 f"                  education levels is {interpretation}.",
+                "  Multiplicity note: Two principal outcomes were tested. Interpret the Holm-adjusted",
+                "                     p-value in the sensitivity table as the confirmatory result.",
                 ""
             ])
         
@@ -548,12 +544,11 @@ def _generate_correlation_section(analysis_results: Dict[str, Any]) -> list:
                 if not pvalues.empty and source in pvalues.columns and col in pvalues.columns:
                     p_val = pvalues.loc[source, col]
 
-                if abs(corr_val) >= 0.3 and (p_val is None or p_val < 0.05):
-                    label = f"{format_pair_label(source)} ↔ {format_pair_label(col)}"
-                    if p_val is not None:
-                        lines.append(f"  {label}: r={corr_val:.3f}, p={p_val:.4f}")
-                    else:
-                        lines.append(f"  {label}: r={corr_val:.3f}")
+                label = f"{format_pair_label(source)} <-> {format_pair_label(col)}"
+                if p_val is not None:
+                    lines.append(f"  {label}: r={corr_val:.3f}, p={p_val:.4f}")
+                else:
+                    lines.append(f"  {label}: r={corr_val:.3f}")
 
                 seen_pairs.add(pair_key)
         
@@ -562,11 +557,25 @@ def _generate_correlation_section(analysis_results: Dict[str, Any]) -> list:
             "**Visualization**: See 'scatter_matrix.png' for scatter plots",
             ""
         ])
+
     else:
         lines.extend([
             "Correlation analysis could not be performed due to insufficient data.",
             ""
         ])
+
+    sensitivity = analysis_results.get('sensitivity_analyses', pd.DataFrame())
+    if not sensitivity.empty:
+        lines.extend(["### 6.2 Sensitivity Analyses", ""])
+        for row in sensitivity.itertuples(index=False):
+            effect = ""
+            if not pd.isna(row.effect_size):
+                effect = f", effect size={row.effect_size:.4f}"
+            lines.append(
+                f"  {row.analysis} ({row.variables}): statistic={row.statistic:.4f}, "
+                f"p={row.p_value:.4f}{effect}, n={row.n}"
+            )
+        lines.append("")
     
     lines.append("")
     return lines
@@ -586,7 +595,7 @@ def _generate_files_reference_section(output_folder: str) -> list:
     
     # List expected data files
     data_files = [
-        ("scored_dataset.csv", "Complete dataset with all calculated scores and derived fields"),
+        ("scored_dataset.csv", "Local participant-level dataset; excluded from public version control"),
         ("maternal_education_summary.csv", "Summary statistics by maternal education level"),
         ("demographic_age_freq.csv", "Frequency distribution for age"),
         ("demographic_maternal_education_freq.csv", "Frequency distribution for maternal education"),
@@ -596,6 +605,7 @@ def _generate_files_reference_section(output_folder: str) -> list:
         ("demographic_continuous_stats.csv", "Descriptive statistics for continuous variables"),
         ("correlation_matrix.csv", "Correlation coefficients between continuous variables"),
         ("correlation_pvalues.csv", "P-values for Pearson correlations"),
+        ("sensitivity_analyses.csv", "Rank-based, ordinal-trend, and confounder sensitivity checks"),
         ("data_quality_summary.txt", "Data quality assessment summary"),
         ("data_quality_missing_values.csv", "Missing value details"),
         ("data_quality_invalid_values.csv", "Invalid value details (if any)")

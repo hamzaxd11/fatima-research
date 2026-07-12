@@ -1,0 +1,665 @@
+Amina Aziz, Sindh Nurses Examination Board, Karachi, Pakistan. Email: aminaaziz737@gmail.com
+Abstract
+Background:
+Menstrual hygiene management plays a significant role in the achievement of sustainable development goals, including good health and well-being, quality education, gender equality, women’s empowerment, and sanitation. Even though the United Nations emphasizes menstrual hygiene management as a global public health and human rights issue, studies from different parts of the world have shown there is a lack of policies in this area that affects adolescent girls.
+Objective:
+The study aimed to assess the menstrual-related knowledge and practices of adolescent girls (10–18 years) attending urban and rural public schools of district Khairpur of province Sindh of Pakistan.
+Design:
+This research is an analytical cross-sectional study design.
+Methods:
+Adolescent girls ( n = 310), 159 girls from urban and 159 girls from rural schools, were enrolled. Data were collected through self-administered questionnaires. Knowledge was considered satisfactory if the participant scored ⩾12/20, and <12/20 was considered unsatisfactory knowledge. Practice scores were considered good for >10 and poor for <10. Statistical Package for the Social Science (SPSS) version 20.0 was used for data analysis. Descriptive statistics such as mean and standard deviation were calculated. The chi-square test was used to assess and compare the differences between practices and knowledge of menstrual hygiene management between urban and rural adolescent school girls.
+Results:
+We found significant differences in menstrual hygiene management among adolescent girls between urban and rural areas. Approximately two-thirds of the total school girls thought that school management had inadequate resources and toilet facilities (rural: 76% versus urban: 62%). The major source of knowledge in adolescent rural and urban girls for menstrual-related matters was mothers. More girls from the urban school (81%) were aware of using sanitary pads during menstruation. The majority of the girls from urban areas showed satisfactory knowledge whereas only 38% of rural girls were shown to have satisfactory results. Nearly 71% of urban girls were found to have good practices when compared with rural girls (12%).
+Conclusion:
+With further importance by the United Nations on female education in less developed regions, where the health of women is usually given less importance, policies are required on the inclusion of reproductive health of female adolescents in the curriculum.
+Keywords: adolescent girls, knowledge, menstrual hygiene, practices, rural, urban
+Received 2023 May 26; Revised 2023 Dec 25; Accepted 2024 Jan 19; Collection date 2024.
+Introduction
+Adolescents (10–19 years) sum up to 1.2 billion worldwide and most of them reside in low- and middle-income countries (LMICs). 1 Three hundred and forty million adolescents live in South Asia, accounting for 30% of the world’s adolescent population. 2 However, these adolescents are evident to have minimal access to evidence-based information and restricted decision-making on issues affecting their lives, especially among girls. 3
+Menstrual hygiene management (MHM) has become a global public health issue around the world. 4 MHM is essential for adolescent girls and refers to personal hygiene during menstruation. 5 The World Health Organization (WHO) and the United Nations International Children’s Emergency Fund (UNICEF) define MHM as the “knowledge, awareness, information, and confidence to manage menstrual hygiene with dignity using safe and clean materials together with clean water and spaces for washing, bathing, and discarding materials with privacy.” 6 Safe and effective MHM improves self-esteem and impacts the performance and practices of adolescent girls. 6
+Even though the United Nations (UN) views this as a global public health and human rights issue, no policy is in place at the moment to guarantee MHM conditions in LMICs. 7 This has negative effects on girls’ educational opportunities in several ways, particularly for those from low socioeconomic backgrounds. 8 MHM plays a significant role in the achievement of the sustainable development goals (SDGs), including good health and well-being (SDG 3), quality education (SDG 4), gender equality, women’s empowerment (SDG 5), clean water, and sanitation (SDG 6). 9 , 10 Yet, many adolescent girls in LMICs including Pakistan face challenges with MHM due to a scarcity of knowledge and resources. 6 , 9 , 10
+In Pakistan, discussion around this topic is considered taboo due to the country’s strong patriarchal culture, which has religious implications as well. 11 Muslims view menstruation as an unclean state, and women are expected to abstain from fasting and prayer. 11 , 12 Some of the traditions in the country have been adopted from the Hindu culture with similar beliefs, wherein a woman who is on her period is considered extremely impure and is required to avoid kitchens, temples, and plants. 11 , 13 – 15 In extreme cases, she may even be reprimanded in a quarantine area. 12
+Because women are uncomfortable talking about these topics, even with their closest relatives, let alone facing them in public, these problems remain unrecognized. 14 Due to the stigma associated with menstruation, these young girls are ignorant of some very basic aspects of MHM. 14 , 15 Even renowned private schools that are thought to be somewhat progressive understand the significance of this subject, but they are reluctant to address it with their students for fear of receiving negative feedback from parents. 13
+The unpreparedness, ignorance, and unsanitary habits of girls during their menstrual period have detrimental effects on their self-worth and personal growth. 16 Their education is also impacted, and they frequently skip class out of embarrassment or a lack of facilities in schools. 15 , 16 Not only do schools frequently lack hygienic facilities, but also teachers are frequently unprepared to answer girls’ questions regarding menstruation. 10 , 11
+As of now, the educational curriculum in Pakistan does not include any formal instruction on menstrual and sexual health. 15 Sanitation, health, and education experts did not see this as pertinent to their work, and the stigma associated with the subject was acknowledged as a necessary aspect of society. 16 But as the world’s attention has turned more and more toward closing the gender gap in education, the significance of this problem has been brought to light with the success of a few campaigns that aimed to educate young girls on this topic which brought it to the attention of charities, academics, and the private sector. 17
+However, local concern for this issue is still lacking and the public sector has not made any efforts in this area, despite the topic receiving attention globally. 13 Therefore, it is challenging for researchers and policymakers to determine the full scope of MHM and the problems that affect millions of women. It is important to highlight that the previously reported evidence is from Pakistan’s metropolitan cities and data are scarce from remote areas such as the Khairpur district where the female literacy rate is only 35%. 18 , 19 In addition, the zones of this district are divided into urban and rural regions, and we believe that the differences in taboos and myths are more prominent in this district.
+Understanding and improving the menstrual experiences of adolescent girls impact their education and can help inform structural changes such as infrastructure development and improvement of resources in schools located in poor settings. Therefore, the study aimed to assess the MHM knowledge and practices of adolescent girls visiting urban and rural public schools of district Khairpur of province Sindh of Pakistan to develop interventions and strategies in the future that will support their development in knowledge and information resources related to MHM and will eventually help in appropriate policy-making in this area.
+Methods
+Study design and participants
+Adolescent school-going girls between ages 10–18 years were enrolled in this study. The inclusion criterion was girls who had attained the menarche before data collection. An analytical cross-sectional study design was carried out to collect data on the knowledge and practices of enrolled participants on MHM.
+Study setting
+Study participants were selected from two public schools in the district of Khairpur. One school was located in the urban region of the Khairpur district, and another school was located in the rural region of the Khairpur district.
+Data collection
+One urban and one rural government public school of the district Khairpur were selected. Girls were selected from standards 8th to 12th depending on availability in school on the days of the data collection. Prior approval and permission were obtained from the Institutional Review Board (IRB) of the Dow University of Health Science Karachi (IRB-1602/DUHS) and the head teachers at selected schools. Students’ mothers were contacted before data collection from each class to confirm the attainment of menarche. Those who did not attain menarche were excluded from the study. We defined each class as a stratum to carry out our stratified random sampling so that each participant has an equal chance of inclusion in the study. The sampling was done by researchers using roll numbers of students to avoid any bias in the selection of participants. All the selected participants were gathered in a separate classroom after off time. The data collection was done after the parents’ consent for their daughters ( Supplemental File 1 ) to participate in the study and was carried out by relevant guidelines and regulations as stated in the Declaration of Helsinki. STROBE guidelines have been used to prepare the article ( Supplemental File 2 ).
+A self-administered questionnaire was prepared and pretested in 10% of girls in each of the groups that is 16 girls from rural schools and 16 girls from urban schools. The questionnaires were pretested on girls studying in an urban school and a rural school in Khairpur but not those where the actual study took place to reduce the risk of bias. The questionnaire was translated and validated after translation with the help of language experts. The questionnaire was distributed to adolescent girls in classes, and the objective of the study was explained. A total of 40 min were given for each group of girls to fill out the questionnaire. One by one questions were read by the investigator, and girls were instructed to fill them out carefully. Girls were asked not to write their names or any other identifiers for anonymity. We collected information on demographics such as age, name of school, and class.
+The self-administered questionnaire was adapted and was a modified version of questionnaires used in previous studies ( Supplemental File 3 ). 20 – 22 It consisted of questions such as (1) Demographic information including age, religion, father’s and mother’s education, and occupation; (2) Source of information regarding menstruation including sources of knowledge and resources at school; (3) Knowledge regarding menstruation including rural and urban girls’ knowledge related to menstruation; and (4) Hygienic practice during menstruation including their MHM practices. Knowledge was considered satisfactory if the participant scored ⩾12/20, and <12/20 was considered unsatisfactory knowledge. Likewise, practice scores were considered good for >10 and poor for <10.
+Sample size
+OpenEpi version 3.0 was used to calculate the sample size by considering percentages from a previous study that found 29% adequate knowledge among adolescents in India (2020). 18 The study team calculated the sample size of this study by considering a 95% confidence interval (CI), 0.05% significance level, and an 80% power of the test. The sample size was calculated as n = 318 and was divided between two selected schools, that is 159 girls from the Government Girls High School (urban) Khairpur and 159 girls from the Government Girls High School (rural) to have an equal representation.
+Statistical analysis
+SPSS version 20.0 was used for data entry and analysis. Descriptive statistics such as mean and standard deviation were calculated. The chi-square test was used to assess and compare the differences between practice and knowledge of menstrual hygiene between urban and rural adolescent school girls. A p - value less than or equal to 0.05 was considered a level of significance.
+Results
+Table 1 shows the demographic characteristics of enrolled participants. The majority of the girls belonged to the age groups 12–14 years (46.5%) and 14–16 years (34.6%), respectively. Most of the girls were Muslims (95%). Among the study participants, 40.3% of girls’ fathers were literate whereas the mothers of 40.3% of girls were illiterate. The most noticeable fathers’ occupation was business (37.4%) followed by government jobs (31.4%). Approximately 8.8% of the fathers were unemployed, and 2.5% were retired. It was found that the majority of the girls’ mothers (90.9%) were housewives and only 1.9% of mothers were government employees.
+Demographic information of study participants.
+Demographic information
+Frequency (N)
+%
+Age groups (years)
+10–12
+29
+9.1
+12–14
+148
+46.5
+14–16
+110
+34.6
+16–18
+31
+9.7
+Area
+Rural
+159
+50.0
+Urban
+159
+50.0
+Religion
+Muslim
+302
+95.0
+Hindu/Christian (other than Muslim)
+16
+5.0
+Father’s level education
+Illiterate
+44
+13.8
+Literate
+128
+40.3
+Primary
+20
+6.3
+Secondary
+63
+19.8
+College
+63
+19.8
+Mother’s level education
+Illiterate
+128
+40.3
+Literate
+91
+28.6
+Primary
+27
+8.5
+Secondary
+43
+13.5
+College
+29
+9.1
+Father’s occupation
+Businessman
+119
+37.4
+Government employee
+100
+31.4
+Nongovernment employee
+63
+19.8
+Unemployed
+28
+8.8
+Retired
+8
+2.5
+Mother’s occupation
+House wife
+289
+90.9
+Government employee
+6
+1.9
+Nongovernment employee
+13
+4.1
+Unemployed
+10
+3.1
+Table 2 depicts associations of sources of information regarding menstruation among adolescent school-going girls in urban and rural areas. It was found that the major source of knowledge on menstruation-related matters was provided by mothers in both groups (urban and rural). The majority of the girls did not have any prior information regarding menstrual hygiene before menarche, and this was observed in both urban (68%) and rural (78%) girls. Approximately two-thirds of the total school girls did not think that school management provided adequate resources and toilet facilities to dispose of menstrual pads, although this was found a little higher among rural girls (76%) than urban girls (62%). There was a significant difference found in factors such as prior information before menarche, and resources provided by schools for hygiene management in urban and rural girls ( Table 2 ). However, fewer girls in both groups recognized that they were provided any sessions related to menstruation in their schools (rural: 29% versus urban: 33%).
+Association of the source of information regarding menstruation among adolescent school-going girls in urban and rural areas.
+Variables
+N (%)
+χ 2 ( p )
+Area
+Rural
+Urban
+Sources of knowledge of menstruation before menarche
+0.077
+Mother
+136 (85.5)
+146 (91.8)
+Elder sister
+22 (13.8)
+10 (6.3)
+Aunt
+0
+2 (1.3)
+Friend
+1 (0.6)
+Prior information regarding menstrual hygiene before menarche
+0.043
+Yes
+35 (22.0)
+51 (32.1)
+No
+124 (78.0)
+108 (67.9)
+Adequate resources and toilet facility to dispose of menstrual pads
+0.008
+Yes
+39 (24.5)
+61 (38.4)
+No
+120 (75.5)
+98 (61.6)
+Ever attended a class session related to menstruation in your school before onset of menstruation
+0.466
+Yes
+46 (28.9)
+52 (32.7)
+No
+113 (71.1)
+107 (67.3)
+p < 0.05 is considered as a significant using the chi-square test (χ 2 ).
+Table 3 exhibits the association of knowledge related to menstrual hygiene among adolescent school-going girls in urban and rural areas. The majority of the urban and rural girls knew about menstruation. Nearly three-fourths of the total study girls did not answer correctly regarding the average duration of menstruation flow. More urban girls (80%) were able to correctly answer regarding the organ that is responsible for the menstrual blood flow as compared with rural girls (62%). Out of the total, nearly three-fourths of study participants answered regarding the correct age of menstruation. More girls from the urban school (81%) were aware of using sanitary pads during menstruation.
+Association of knowledge related to menstrual hygiene among adolescent school girls in urban and rural areas of Sindh.
+Variables
+Rural, N (%)
+Urban, N (%)
+p (χ 2 )
+Menstruation
+0.024
+Physiological process
+139 (87.4)
+149 (93.7)
+Disease
+0 (0)
+2 (1.3)
+Don’t know
+20 (12.6)
+8 (5.0)
+Cause of menstruation
+0.676
+Hormones
+91 (57.2)
+97 (61.0)
+Curse of God
+2 (1.3)
+3 (1.9)
+Don’t know
+66 (41.5)
+59 (37.1)
+Average duration of menstruation cycle
+0.007
+21–35 days
+33 (20.8)
+57 (35.8)
+20–15 days
+77 (48.4)
+56 (35.2)
+Don’t know
+49 (30.8)
+46 (28.9)
+Organ responsible for the menstrual blood flow
+<0.001
+Uterus
+98 (61.6)
+127 (79.9)
+Don’t know
+61 (38.4)
+32 (20.1)
+Age of girls when they usually get their first period
+0.012
+10–15 years
+106 (66.7)
+129 (81.1)
+8–10 years
+20 (12.6)
+13 (8.2)
+Don’t know
+33 (20.8)
+17 (10.7)
+Girls should use a sanitary pad during menstruation
+0.006
+Yes
+108 (67.9)
+128 (80.5)
+No
+40 (25.2)
+18 (11.3)
+Don’t know
+11 (6.9)
+13 (8.2)
+Two pads can be used simultaneously
+0.015
+Yes
+26 (16.4)
+25 (15.7)
+No
+91 (57.2)
+112 (70.4)
+Don’t know
+42 (26.4)
+22 (13.8)
+Menstruation is a dark phase of girls which should be dealt secretly
+0.720
+Yes
+93 (58.5)
+100 (62.9)
+No
+23 (14.5)
+20 (12.6)
+Don’t know
+43 (27.0)
+39 (24.5)
+Girls should take a more nutritious diet during their periods
+<0.001
+Yes
+98 (61.6)
+131 (82.4)
+No
+30 (18.9)
+12 (7.5)
+Don’t know
+31 (19.5)
+16 (10.1)
+Menstrual blood is contaminated/unhygienic
+0.044
+Yes
+92 (57.9)
+113 (71.1)
+No
+26 (16.4)
+16 (10.1)
+Don’t know
+41 (25.8)
+30 (18.9)
+There is foul smell during menstruation
+0.271
+Yes
+90 (56.6)
+103 (64.8)
+No
+42 (26.4)
+31 (19.5)
+Don’t know
+27 (17.0)
+25 (15.7)
+Normal menstrual flow can interfere school performance of adolescence
+0.099
+Yes
+69 (43.4)
+87 (54.7)
+No
+46 (28.9)
+41 (25.8)
+Don’t know
+44 (27.7)
+31 (19.5)
+Menstrual pads must be changed 4 hourly
+<0.001
+Yes
+78 (49.1)
+100 (62.9)
+No
+29 (18.2)
+37 (23.3)
+Don’t know
+52 (32.7)
+22 (13.8)
+Abrasion, allergy, and prolonged wetness can injure the external genitalia and cause rashes during menstruation due to infrequent changes
+<0.001
+Yes
+102 (64.2)
+134 (84.3)
+No
+17 (10.7)
+8 (5.0)
+Don’t know
+40 (25.2)
+17 (10.7)
+Hand washing is important before and after changing menstrual pads
+0.008
+Yes
+145 (91.2)
+145 (98.7)
+No
+9 (5.7)
+1 (0.6)
+Don’t know
+5 (3.1)
+1 (0.6)
+The path of urine and menstruation is separate?
+0.075
+Yes
+62 (39.0)
+78 (49.1)
+No
+39 (24.5)
+41 (25.8)
+Don’t know
+58 (36.5)
+40 (25.2)
+Most girls are forced to use unsafe means of collecting menstrual waste, which is mostly contaminated
+<0.001
+Yes
+44 (27.7)
+80 (50.3)
+No
+43 (27.0)
+27 (17.0)
+Don’t know
+72 (45.3)
+52 (32.7)
+Taking care of yourself during menstruation is as important as taking care of your day-to-day activities
+0.001
+Yes
+114 (71.7)
+139 (87.4)
+No
+6 (3.8)
+Don’t know
+39 (24.5)
+14 (8.8)
+A little negligence in menstrual hygiene management can be harmful to the body
+<0.001
+Yes
+54 (34.0)
+94 (59.1)
+No
+34 (21.4)
+23 (14.5)
+Don’t know
+71 (44.7)
+42 (26.4)
+Unsafe use of commercial sanitary napkins can result in serious forms of infections such as toxic shock syndrome and vaginitis
+<0.001
+Yes
+59 (37.1)
+94 (59.1)
+No
+30 (18.9)
+22 (13.8)
+Don’t know
+70 (44.0)
+43 (27.0)
+p < 0.05 is considered as a significant using the chi-square test (χ 2 ).
+Regarding hygiene management, girls from the urban school had improved knowledge about MHM than the rural girls ( Table 3 ). Most of the urban girls were aware of frequent changing of menstrual pads than the rural girls (62.9% versus 49.1%) and had better knowledge about consequences associated with the infrequent change of sanitary pads than the rural girls (84.3% versus 64.2%). Yet, there was no difference in the knowledge of hand hygiene between the groups, and both rural and urban girls knew about the importance of hand hygiene. However, the significance of MHM and the harm and serious infections related to unsafe practices were mostly identified by urban girls than the rural girls (94% versus 59%) ( Table 3 ).
+Table 4 shows the practices related to menstrual hygiene among adolescent school-going girls in urban and rural areas. There was no difference observed in both groups related to food avoidance during menstruation, and it was identified that most girls do not avoid any specific food during menstruation. More girls from rural areas indicated that they failed to participate in sports and other activities due to menstruation than urban girls (43% versus 37%). Around 93% of urban girls acknowledged that they properly dispose of menstrual pads at home. Regarding comfortability in class, 72% of urban girls recognized that they felt comfortable in class during their menstruation whereas only 54% of rural girls acknowledged that they were comfortable attending classes during menstruation. Around half of the study participants acknowledged that they use home remedies to ease the discomfort associated with menstruation. However, there was no significant difference found between the two groups (33% versus 35%). Yet, rural girls tend to use medications more than urban girls to relieve pain and discomfort related to menstruation. More rural girls recognized that they felt unclean and dirty during their menstruation (84% versus 71%). Approximately three-fourths of the students acknowledged that they never got a chance to discuss menstrual-related issues with their teacher though very few urban girls still provided a positive answer (8% versus 1%) ( Table 4 ).
+Practices related to menstrual hygiene among adolescent school girls in urban and rural areas of Sindh.
+Variables
+Rural, N (%)
+Urban, N (%)
+p (χ 2 )
+Avoidance of any food during menstruation
+0.190
+Yes
+107 (67.3)
+No
+28 (17.6)
+37 (23.3)
+Don’t know
+24 (15.1)
+15 (9.4)
+Eating the same amount of food during menstruation
+0.005
+Yes
+107 (67.3)
+123 (77.4)
+No
+40 (25.2)
+35 (22.0)
+Don’t know
+12 (7.5)
+1 (0.6)
+Failing to participate in any activities (sports, games) during menstruation
+<0.001
+Yes
+69 (43.4)
+59 (37.1)
+No
+57 (35.8)
+87 (54.7)
+Don’t know
+33 (20.8)
+13 (8.2)
+Separated from family members due to menstruation
+0.130
+Yes
+46 (28.9)
+40 (25.2)
+No
+101 (63.5)
+114 (71.7)
+Don’t know
+12 (7.5)
+5 (3.1)
+Home remedies such as oil massage and hot water bottle packs to ease the discomfort of menstruation
+0.100
+Yes
+52 (32.7)
+55 (34.6)
+No
+79 (49.7)
+89 (56.0)
+Don’t know
+28 (17.6)
+15 (9.4)
+Taking medications for problems associated with menstruation
+0.046
+Yes
+53 (33.3)
+49 (30.8)
+No
+91 (57.2)
+105 (66.0)
+Don’t know
+15 (9.4)
+5 (3.1)
+Feel unclean and dirty during menstruation
+0.003
+Yes
+113 (71.1)
+134 (84.3)
+No
+28 (17.6)
+21 (13.2)
+Don’t know
+18 (11.3)
+4 (2.5)
+Using any type of absorbent like commercially made sanitary napkin or homemade pad or cotton wool during menstruation
+0.291
+Yes
+101 (63.5)
+111 (69.8)
+No
+28 (17.6)
+Don’t know
+30 (18.9)
+20 (12.6)
+Prefer taking daily bath during menstruation
+0.443
+Yes
+77 (48.4)
+86 (54.1)
+No
+62 (39.0)
+59 (37.1)
+Don’t know
+20 (12.6)
+14 (8.8)
+Genitalia should be washed with soap and water during menstruation
+0.210
+Yes
+95 (59.7)
+110 (69.2)
+No
+29 (18.2)
+23 (14.5)
+Don’t know
+35 (22.0%)
+26 (16.4)
+Proper disposal of menstrual pads at home
+<0.001
+Yes
+125 (78.6)
+149 (93.7)
+No
+23 (14.5)
+8 (5.0)
+Don’t know
+11 (6.9)
+2 (1.3)
+Feel comfortable in class during menstruation days
+0.002
+Yes
+86 (54.1)
+114 (71.7)
+No
+58 (36.5)
+40 (25.2)
+Don’t know
+15 (9.4)
+5 (3.1)
+Menstruation problems effect concentration during class
+0.890
+Yes
+61 (38.4)
+65 (40.9)
+No
+49 (30.8)
+46 (28.9)
+Don’t know
+49 (30.8)
+48 (30.2)
+Forbidden for any activities in school during menstruation
+0.359
+Yes
+59 (37.1)
+58 (36.5)
+No
+65 (40.9)
+75 (47.2)
+Don’t know
+35 (22.0)
+26 (16.4)
+Feel scared to go to class due to menstruation
+0.014
+Yes
+69 (43.4)
+55 (34.6)
+No
+75 (47.2)
+98 (61.6)
+Don’t know
+15 (9.4)
+6 (3.8)
+Properly disposing of menstrual pads at school
+0.015
+Yes
+54 (34.0)
+79 (49.7)
+No
+72 (45.3)
+58 (36.5)
+Don’t know
+33 (20.8)
+22 (13.8)
+Ever had a chance to discuss issues related to menstruation with a teacher
+0.012
+Yes
+2 (1.3)
+12 (7.5)
+No
+139 (87.4)
+136 (85.5)
+Don’t know
+18 (11.3)
+11 (6.9)
+p < 0.05 is considered as a significant using the chi-square test (χ 2 ).
+Table 5 shows associations of knowledge and practice related to menstrual hygiene with adolescent school-going girls in urban and rural areas based on the scale of questions asked from both groups ( Supplemental File 2 ). Two-thirds of the study girls from urban areas showed satisfactory knowledge whereas only 38% of rural girls were shown to have satisfactory results. Nearly 71% of urban girls were found to have good practices when compared with rural girls (12%) while considering the use, frequent changing, and disposal of sanitary pads. Figures 1 and 2 represent differences in knowledge and practices related to menstruation hygiene among both groups.
+Association of knowledge and practice related to menstrual hygiene among adolescent school girls in urban and rural areas of Sindh.
+Statistics
+Rural, N (%)
+Urban, N (%)
+χ 2 ( p )
+Knowledge regarding menstruation
+<0.001
+Unsatisfactory
+98 (61.6)
+48 (30.2)
+Satisfactory
+61 (38.4)
+111 (69.8)
+Practice during menstruation
+<0.001
+Poor
+140 (88.1)
+46 (28.9)
+Good
+19 (11.9)
+113 (71.1)
+p < 0.05 is considered as a significant using the chi-square test (χ 2 ).
+Knowledge regarding menstruation.
+Practices regarding menstruation.
+Discussion
+The main objective of this study was to explore MHM-related knowledge and practices with urban–rural differences. The right to information and education is a basic right for everyone, and the right to information on menstruation before reaching menarche is the right to information for adolescent girls and is crucial for healthy menstrual management. This boosts self-esteem and confidence in girls when they know about their body parts and processes. 7
+Yet, the study found that most girls were unaware of the natural female reproductive cycle before their menarche, and this finding was observed in both urban and rural groups of adolescent girls, though urban girls were comparatively more aware than rural girls. Rural girls were found to have underprivileged resources and access to information, and there is a stigma associated with discussing reproductive health matters in remote areas of Pakistan. This similar finding has been reported by several other studies carried out in other LMICs comparing knowledge and practice differences on MHM between rural and urban girls. 23 – 25
+Thus, the greater source of information in both groups was mothers and this finding has been reflected in other studies. 26 , 27 Moreover, it was found that urban girls were more privileged to discuss menstrual-related matters with their teachers in comparison with rural girls, yet even the urban girls found it challenging to discuss these matters with their teachers. Hence, we could not discover whether urban school girls were more open to initiating the discussions or whether the teachers provided them space to initiate the discussions.
+A significant difference in knowledge was found between the groups regarding the information on the frequent changing of sanitary napkins and its effects on health. Urban girls were more aware and informed than rural girls, and this could be related to their access to different resources available in their schools. There are different studies conducted in rural public schools in Pakistan that show a lack of availability of basic resources for students. 16 , 28 Moreover, a study conducted in Ghana presented that only 38.2% of the schools in the municipality had adequate toilets and designated places for changing pads/sanitary materials showing that this is not only a specific but also a global public problem. 29
+Schools provide a greater platform to disseminate information and educate students. Teachers play a major role in the development of students in every aspect such as social, cognitive, and physical development. However, the cultural limitations and taboos around reproductive health bring about hesitancy to discuss these issues with school students. 13 Most public schools in Pakistan follow a single-gender model, that is, only girls’ or only boys’ schools, even then there are limitations and reservations observed in the schools to discuss private topics. Moreover, the school curriculum does not cover aspects of such important subjects that are part of every girl’s life and are natural. However, it has been observed that some private schools in urban settings have started taking initiatives to educate young girls about menstruation and other female reproductive health matters such as good touch and bad touch, and physical and sexual abuse. 30 – 32
+Thus, the lack of information and availability of resources to provide information is a major cause of significant differences in knowledge and practices among rural and urban adolescent girls. The study found that most rural girls have unsatisfactory knowledge and poor menstruation practices when compared with urban girls. Nevertheless, this finding is supported by studies conducted in different LMICs. 27 This shows that disparity among the groups is a major concern in all developing countries and is not limited to only Pakistan. Moreover, a mixed-methods study carried out in African regions found that students from rural schools were less likely to practice adequate menstrual hygiene. 33 Similarly, a systematic review indicated that many school-based studies recorded poor MHM in rural areas compared with their urban counterparts. 27
+Our study has several strengths. First, this analytical study helped us to find disparities between rural and urban adolescents regarding menstrual hygiene-related knowledge and practices in the district of Khairpur. This is the first study that captured this rural district where the female literacy rate is comparatively very low than other districts of the province of Sindh. This will provide insights to develop appropriate policies on school curriculum and resource availability and has also provided directions to conduct future studies on menstrual hygiene for adolescent girls of rural areas. Second, we included participants from public schools only to avoid discrepancies in the socioeconomic classes of both groups.
+The study also has some limitations. We involved only one district due to the limitation of time and resources for data collection. Yet, we believe that the inclusion of participants from different rural districts would have presented more generalizable results.
+Conclusion
+With further importance by the UN on female education in less developed regions, where the health of women is usually given less importance, policies are required on the inclusion of reproductive health of female adolescents in the curriculum. This addition to the curriculum may positively influence the reproductive health of females, particularly in low socio-economically populations. Moreover, schools can play a major role in educating, training, and disseminating awareness among adolescent girls on MHM and its significance.
+Supplemental Material
+sj-docx-1-whe-10.1177_17455057241231420 – Supplemental material for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
+Supplemental material, sj-docx-1-whe-10.1177_17455057241231420 for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study by Amina Aziz, Salma Memon, Farhana Aziz, Farzana Memon, Bakhtawar M Hanif Khowaja and Shehla Naeem Zafar in Women’s Health
+sj-docx-2-whe-10.1177_17455057241231420 – Supplemental material for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
+Supplemental material, sj-docx-2-whe-10.1177_17455057241231420 for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study by Amina Aziz, Salma Memon, Farhana Aziz, Farzana Memon, Bakhtawar M Hanif Khowaja and Shehla Naeem Zafar in Women’s Health
+sj-docx-3-whe-10.1177_17455057241231420 – Supplemental material for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
+Supplemental material, sj-docx-3-whe-10.1177_17455057241231420 for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study by Amina Aziz, Salma Memon, Farhana Aziz, Farzana Memon, Bakhtawar M Hanif Khowaja and Shehla Naeem Zafar in Women’s Health
+Acknowledgments
+The authors acknowledge the head teachers and school staff of the selected schools that are Government Girls High School Khairpur and Government Girls High School Sobhodero for their assistance and support in data collection.
+Footnotes
+ORCID iDs: Amina Aziz https://orcid.org/0009-0002-7270-8369
+Bakhtawar M Hanif Khowaja https://orcid.org/0000-0002-8141-9203
+Supplemental material: Supplemental material for this article is available online.
+Declarations
+Ethics approval and consent to participate: Ethical approval to conduct the study was given by the IRB of Dow University of Health Science Karachi (IRB-1602/DUHS). Parents of students provided consent to indicate their willingness to participate. In the case of illiterate parents, written consent was provided by the next of kin chosen by the parents. Voluntary participation and the right to ask any questions and to decline participation at any time were emphasized during the data collection. All methods were carried out in accordance as stated in the Declarations of Helsinki.
+Consent for publication: All parents/guardians of study participants provided written consent for the publication of part of the complete study results.
+Author contribution(s): Amina Aziz: Conceptualization; Data curation; Formal analysis; Investigation; Methodology; Project administration; Resources; Software; Validation; Writing—original draft; Writing—review and editing.
+Salma Memon: Data curation; Formal analysis; Methodology; Resources; Software; Writing—review and editing.
+Farhana Aziz: Methodology; Project administration; Resources; Visualization; Writing—review and editing.
+Farzana Memon: Resources; Software; Validation; Writing—review and editing.
+Bakhtawar M Hanif Khowaja: Formal analysis; Investigation; Resources; Software; Writing—original draft; Writing—review and editing.
+Shehla Naeem Zafar: Conceptualization; Data curation; Formal analysis; Investigation; Methodology; Supervision; Validation; Visualization; Writing—original draft.
+Funding: The author(s) received no financial support for the research, authorship, and/or publication of this article.
+The author(s) declared no potential conflicts of interest concerning the research, authorship, and/or publication of this article.
+Availability of data and materials: The data sets can be made available from the corresponding author upon reasonable request.
+References
+Associated Data
+Supplementary Materials
+sj-docx-1-whe-10.1177_17455057241231420 – Supplemental material for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
+Supplemental material, sj-docx-1-whe-10.1177_17455057241231420 for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study by Amina Aziz, Salma Memon, Farhana Aziz, Farzana Memon, Bakhtawar M Hanif Khowaja and Shehla Naeem Zafar in Women’s Health
+sj-docx-2-whe-10.1177_17455057241231420 – Supplemental material for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
+Supplemental material, sj-docx-2-whe-10.1177_17455057241231420 for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study by Amina Aziz, Salma Memon, Farhana Aziz, Farzana Memon, Bakhtawar M Hanif Khowaja and Shehla Naeem Zafar in Women’s Health
+sj-docx-3-whe-10.1177_17455057241231420 – Supplemental material for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
+Supplemental material, sj-docx-3-whe-10.1177_17455057241231420 for A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study by Amina Aziz, Salma Memon, Farhana Aziz, Farzana Memon, Bakhtawar M Hanif Khowaja and Shehla Naeem Zafar in Women’s Health

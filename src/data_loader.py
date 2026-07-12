@@ -56,37 +56,19 @@ def load_spss_file(file_path: str) -> Tuple[pd.DataFrame, Dict[str, Any]]:
             'number_columns': meta.number_columns if hasattr(meta, 'number_columns') else len(df.columns)
         }
 
-        # CRITICAL FILTERING STEP:
-        # Filter out rows that are effectively empty.
-        # The dataset contains ~40 empty rows at the end which skew the analysis.
-        # We filter based on missing 'MotherEducation' as it is the primary independent variable.
-        # We try to identify the column name dynamically.
-        maternal_ed_col = None
-        for col in df.columns:
-            col_lower = col.lower()
-            if ('mother' in col_lower or 'maternal' in col_lower) and 'education' in col_lower:
-                maternal_ed_col = col
-                break
-        
+        # The source file has fully blank trailing rows. Remove only rows with no
+        # recorded response so a participant missing one variable is retained.
         initial_len = len(df)
-        if maternal_ed_col:
-            # Dropping rows where Maternal Education is NaN
-            df = df.dropna(subset=[maternal_ed_col])
-            filtered_rows = initial_len - len(df)
-            if filtered_rows > 0:
-                message = (
-                    "      [Data Loader] Filtered out "
-                    f"{filtered_rows} empty/invalid rows (based on missing {maternal_ed_col})"
-                )
-                print(message)
-                logging.info(message.strip())
-            metadata['filtered_rows'] = filtered_rows
-            metadata['filter_column'] = maternal_ed_col
-            metadata['post_filter_row_count'] = len(df)
-        else:
-            metadata['filtered_rows'] = 0
-            metadata['filter_column'] = None
-            metadata['post_filter_row_count'] = len(df)
+        df = df.dropna(how='all').reset_index(drop=True)
+        filtered_rows = initial_len - len(df)
+        if filtered_rows > 0:
+            message = f"      [Data Loader] Filtered out {filtered_rows} fully empty rows"
+            print(message)
+            logging.info(message.strip())
+        metadata['filtered_rows'] = filtered_rows
+        metadata['filter_column'] = None
+        metadata['filter_method'] = 'all_columns_missing'
+        metadata['post_filter_row_count'] = len(df)
         
         return df, metadata
         
