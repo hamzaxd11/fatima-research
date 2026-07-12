@@ -8,7 +8,7 @@ This folder contains the evidence used to compare the present Lahore study with 
 - `paper_text/`: searchable text extracted from each paper.
 - `article_pages/`: full-text XML saved from trusted repositories.
 - `metadata/`: search results, included-study records, and verification reports.
-- `outputs/`: the evidence matrix and comparative analysis.
+- `outputs/`: the narrative evidence synthesis and comparative analysis.
 - `audits/`: independent review and integrity reports.
 - `scripts/`: reproducible acquisition and verification tools.
 
@@ -21,4 +21,4 @@ pip install -r comparative_study/requirements.txt
 python comparative_study/scripts/acquire_and_verify.py
 ```
 
-The final manuscript uses only claims documented in the evidence matrix. Different studies use different definitions and scoring systems, so their percentages and scores are not pooled as a meta-analysis.
+The final manuscript uses only claims documented in the narrative evidence synthesis. Different studies use different definitions and scoring systems, so their percentages and scores are not pooled as a meta-analysis.

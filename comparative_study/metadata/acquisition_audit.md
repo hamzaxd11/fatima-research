@@ -19,8 +19,8 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\wasan2022.txt
-- Local PDF: papers\wasan2022.pdf
+- Local full text: paper_text/wasan2022.txt
+- Local PDF: papers/wasan2022.pdf
 
 ### 2. A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study
 
@@ -33,7 +33,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\aziz2024.txt
+- Local full text: paper_text/aziz2024.txt
 - Local PDF: Unavailable
 
 ### 3. Knowledge, Attitudes, and Practices Regarding Menstrual Hygiene among Girls in Ghizer, Gilgit, Pakistan
@@ -47,7 +47,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\shah2023.txt
+- Local full text: paper_text/shah2023.txt
 - Local PDF: Unavailable
 
 ### 4. Knowledge and practice of adolescent females about menstruation and menstruation hygiene visiting a public healthcare institute of Quetta, Pakistan
@@ -61,8 +61,8 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\michael2020.txt
-- Local PDF: papers\michael2020.pdf
+- Local full text: paper_text/michael2020.txt
+- Local PDF: papers/michael2020.pdf
 
 ### 5. Awareness and Practices of Menstrual Hygiene Among Rural Adolescent Schoolgirls in Lahore, Pakistan: A Cross-Sectional Study
 
@@ -75,8 +75,8 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\afzaal2024.txt
-- Local PDF: papers\afzaal2024.pdf
+- Local full text: paper_text/afzaal2024.txt
+- Local PDF: papers/afzaal2024.pdf
 
 ### 6. Menstrual hygiene: how hygienic is the adolescent girl?
 
@@ -89,7 +89,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\dasgupta2008.txt
+- Local full text: paper_text/dasgupta2008.txt
 - Local PDF: Unavailable
 
 ### 7. Menstrual Hygiene Practices in Context of Schooling: A Community Study Among Rural Adolescent Girls in Varanasi
@@ -103,7 +103,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\kansal2016.txt
+- Local full text: paper_text/kansal2016.txt
 - Local PDF: Unavailable
 
 ### 8. Knowledge, Attitude, and Practice on Menstrual Hygiene Management among School Adolescents
@@ -117,7 +117,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: abstract_and_doi_checked
-- Local full text: paper_text\yadav2018.txt
+- Local full text: paper_text/yadav2018.txt
 - Local PDF: Unavailable
 
 ### 9. Practice of Menstrual Hygiene and Associated Factors among Adolescent School Girls in Dang District, Nepal
@@ -131,7 +131,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\bhusal2020.txt
+- Local full text: paper_text/bhusal2020.txt
 - Local PDF: Unavailable
 
 ### 10. The effect of a school-based educational intervention on menstrual health: an intervention study among adolescent girls in Bangladesh
@@ -145,7 +145,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\haque2014.txt
+- Local full text: paper_text/haque2014.txt
 - Local PDF: Unavailable
 
 ### 11. Menstrual hygiene management among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from a cross-sectional survey
@@ -159,7 +159,7 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\alam2017.txt
+- Local full text: paper_text/alam2017.txt
 - Local PDF: Unavailable
 
 ### 12. Assessment of knowledge and practice of menstrual hygiene among high school girls in Western Ethiopia
@@ -173,8 +173,8 @@ PubMed and OpenAlex were searched with four prespecified queries. The complete m
 - Crossref title similarity: 1.0
 - Crossref title match: True
 - Evidence status: full_text_checked
-- Local full text: paper_text\upashe2015.txt
-- Local PDF: papers\upashe2015.pdf
+- Local full text: paper_text/upashe2015.txt
+- Local PDF: papers/upashe2015.pdf
 
 ## Retrieval Limitations
 

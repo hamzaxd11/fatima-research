@@ -11,7 +11,7 @@ The manuscript and supporting artifacts were reviewed against the final source b
 - `../../output/analysis_20260712_224950/`
 - `../analysis/ANALYSIS_METHODOLOGY.md`
 - `../analysis/DATA_ANALYSIS_SUMMARY.md`
-- `../../doc.md`
+- `../../Synopsis - Menstrual hygiene..docx`
 - verified journal metadata and DOI records
 
 The review identified six high-priority issues.
@@ -20,7 +20,7 @@ First, the maternal education labels used in the manuscript and in some generate
 
 Second, the paper still contained report-style bullet lists in sections that should be written as flowing scientific prose. This reduced journal readiness and did not meet standard manuscript conventions.
 
-Third, the methods section underused protocol information available in `doc.md`, particularly the school setting, study period, sampling approach, consent framework, questionnaire administration approach, and interview duration.
+Third, the methods section underused information from the original study synopsis, particularly the school setting, study period, sampling approach, consent framework, questionnaire administration approach, and interview duration.
 
 Fourth, the reference list required verification against real-world sources. DOI-bearing references needed exact metadata confirmation, and non-DOI references needed stable official URLs.
 
@@ -54,7 +54,7 @@ Remove report-style bullets from the final paper except where unavoidable in ref
 
 ### 4. Strengthen methods reporting
 
-Integrate protocol details available in `../../doc.md`, including setting, study timeframe, sampling description, questionnaire administration, and interview procedure. Where the protocol bundle lacks an ethics approval identifier, state this cautiously and transparently rather than fabricating one.
+Integrate details from the original study synopsis, including setting, study timeframe, sampling description, questionnaire administration, and interview procedure. Where the available study records lack an ethics approval identifier, state this cautiously and transparently rather than fabricating one.
 
 ### 5. Standardize references
 

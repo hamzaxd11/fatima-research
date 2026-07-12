@@ -36,7 +36,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\wasan2022.xml",
+      "article_xml": "article_pages/wasan2022.xml",
       "text_path": "paper_text/wasan2022.txt",
       "text_chars": 32916,
       "pdf_url": "https://jogh.org/wp-content/uploads/2022/08/jogh-12-04059.pdf",
@@ -79,7 +79,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\aziz2024.xml",
+      "article_xml": "article_pages/aziz2024.xml",
       "text_path": "paper_text/aziz2024.txt",
       "text_chars": 37541,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/8b/64/PMC10893828.tar.gz"
@@ -118,7 +118,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\shah2023.xml",
+      "article_xml": "article_pages/shah2023.xml",
       "text_path": "paper_text/shah2023.txt",
       "text_chars": 38757,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/fc/72/PMC10378792.tar.gz"
@@ -161,7 +161,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\michael2020.xml",
+      "article_xml": "article_pages/michael2020.xml",
       "text_path": "paper_text/michael2020.txt",
       "text_chars": 28754,
       "pdf_url": "https://link.springer.com/content/pdf/10.1186/s12905-019-0874-3.pdf",
@@ -206,7 +206,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\afzaal2024.xml",
+      "article_xml": "article_pages/afzaal2024.xml",
       "text_path": "paper_text/afzaal2024.txt",
       "text_chars": 16181,
       "pdf_url": "https://www.cureus.com/articles/298309-awareness-and-practices-of-menstrual-hygiene-among-rural-adolescent-schoolgirls-in-lahore-pakistan-a-cross-sectional-study.pdf",
@@ -243,7 +243,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\dasgupta2008.xml",
+      "article_xml": "article_pages/dasgupta2008.xml",
       "text_path": "paper_text/dasgupta2008.txt",
       "text_chars": 17313,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/59/6b/PMC2784630.tar.gz"
@@ -278,7 +278,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\kansal2016.xml",
+      "article_xml": "article_pages/kansal2016.xml",
       "text_path": "paper_text/kansal2016.txt",
       "text_chars": 22970,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/12/3a/PMC4746952.tar.gz"
@@ -318,7 +318,7 @@
     "evidence": {
       "pdf_url": "https://www.nepjol.info/index.php/JNHRC/article/download/18842/15403",
       "pdf_error": "500 Server Error: Internal Server Error for url: https://www.nepjol.info/index.php/JNHRC/article/download/18842/15403",
-      "article_page": "article_pages\\yadav2018.html",
+      "article_page": "article_pages/yadav2018.html",
       "text_path": "paper_text/yadav2018.txt",
       "text_chars": 1495
     },
@@ -352,7 +352,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\bhusal2020.xml",
+      "article_xml": "article_pages/bhusal2020.xml",
       "text_path": "paper_text/bhusal2020.txt",
       "text_chars": 22632,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/f2/0a/PMC7396122.tar.gz"
@@ -390,7 +390,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\haque2014.xml",
+      "article_xml": "article_pages/haque2014.xml",
       "text_path": "paper_text/haque2014.txt",
       "text_chars": 34446,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/18/b0/PMC4091465.tar.gz"
@@ -433,7 +433,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\alam2017.xml",
+      "article_xml": "article_pages/alam2017.xml",
       "text_path": "paper_text/alam2017.txt",
       "text_chars": 35884,
       "pdf_error": "404 Client Error: Not Found for url: https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/e4/89/PMC5541609.tar.gz"
@@ -470,7 +470,7 @@
     },
     "title_match": true,
     "evidence": {
-      "article_xml": "article_pages\\upashe2015.xml",
+      "article_xml": "article_pages/upashe2015.xml",
       "text_path": "paper_text/upashe2015.txt",
       "text_chars": 33153,
       "pdf_url": "https://link.springer.com/content/pdf/10.1186/s12905-015-0245-7.pdf",

@@ -45,7 +45,7 @@ def validate_claim_sources() -> list[dict]:
         "dasgupta2008.txt": ["48.75%", "11.25%"],
         "kansal2016.txt": ["literate (62%)", "illiterate (13%)"],
         "yadav2018.txt": ["67.4%", "26.4%", "56 (40%)"],
-        "bhusal2020.txt": ["AOR = 0.52", "AOR = 2.61"],
+        "bhusal2020.txt": ["0. 52(0.30-0.89)", "2.55(1.26–5.15)"],
         "haque2014.txt": ["51% vs 82.4%", "28.8% vs 88.9%"],
         "alam2017.txt": ["APD=−5.4", "APD=9.1"],
         "upashe2015.txt": ["AOR = 1.51", "AOR = 2.03"],
@@ -60,16 +60,16 @@ def validate_claim_sources() -> list[dict]:
 
 def validate_manuscript() -> list[dict]:
     markdown = (REPO / "RESEARCH_PAPER_RAW.md").read_text(encoding="utf-8")
+    flat_markdown = " ".join(markdown.split())
     reference_numbers = [int(value) for value in re.findall(r"^(\d+)\. ", markdown, flags=re.MULTILINE)]
     reference_numbers = [number for number in reference_numbers if number <= 50][-21:]
     dois = re.findall(r"https://doi\.org/([^\s)]+)", markdown)
     expected_phrases = [
-        "### 6.1 Comparative review methods",
-        "### 6.2 Comparison with published studies",
-        "Holm-adjusted p = 0.0758",
+        "### 6.1 Comparison with published studies",
+        "adjusted practice p-value of 0.0758",
         "H = 8.0427",
         "rho = 0.3650, p < 0.001",
-        "Contradicts the expected direction",
+        "AOR 2.55, 95% CI 1.26-5.15",
     ]
     protected = [
         REPO / "menstrual hygiene spss.sav fatima and ayesha (1).sav",
@@ -79,7 +79,7 @@ def validate_manuscript() -> list[dict]:
     return [
         check("reference numbering", reference_numbers == list(range(1, 22)), f"references: {reference_numbers}"),
         check("unique DOI count", len(set(dois)) == 18, f"{len(set(dois))} unique DOI links; 3 institutional references have no DOI"),
-        check("comparative manuscript content", all(phrase in markdown for phrase in expected_phrases), "all required comparative and result phrases present"),
+        check("comparative manuscript content", all(phrase in flat_markdown for phrase in expected_phrases), "all required comparative and result phrases present"),
         check("protected root files", all(path.exists() for path in protected), ", ".join(path.name for path in protected)),
     ]
 
@@ -113,17 +113,16 @@ def validate_docx() -> list[dict]:
         media = [name for name in archive.namelist() if name.startswith("word/media/")]
         tables = [element for element in root.iter() if element.tag.endswith("}tbl")]
     phrases = [
-        "Comparative review methods",
         "Comparison with published studies",
-        "Wasan et al., rural Sindh",
-        "Upashe et al., Ethiopia",
+        "Wasan et al. found",
+        "Upashe et al. found",
         "10.1186/s12905-015-0245-7",
     ]
     return [
         check("DOCX exists", True, f"{docx_path.stat().st_size} bytes"),
         check("DOCX comparative content", all(phrase in text for phrase in phrases), "required comparison phrases present"),
         check("DOCX figures", len(media) == 4, f"{len(media)} embedded media files"),
-        check("DOCX tables", len(tables) >= 8, f"{len(tables)} tables"),
+        check("DOCX tables", len(tables) == 6, f"{len(tables)} tables"),
     ]
 
 

@@ -1,0 +1,423 @@
+{
+  "verified_on": "2026-07-13",
+  "references": [
+    {
+      "number": 1,
+      "url": "https://apps.who.int/iris/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y",
+      "status_code": 200,
+      "resolves": true,
+      "final_url": "https://iris.who.int/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y",
+      "reference": "1. World Health Organization. _Strengthening the health sector response to adolescent health and development._ Geneva: WHO; 2010. Available from: https://apps.who.int/iris/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y (No DOI; accessed 2026-03-19)."
+    },
+    {
+      "number": 2,
+      "url": "https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights",
+      "status_code": 200,
+      "resolves": true,
+      "final_url": "https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights",
+      "reference": "2. World Health Organization. _WHO statement on menstrual health and rights._ 22 June 2022. Available from: https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights (No DOI; accessed 2026-03-19)."
+    },
+    {
+      "number": 3,
+      "url": "https://unesdoc.unesco.org/ark:/48223/pf0000226792",
+      "status_code": 200,
+      "resolves": true,
+      "final_url": "https://unesdoc.unesco.org/ark:/48223/pf0000226792",
+      "reference": "3. UNESCO. _Puberty education & menstrual hygiene management._ Good Policy and Practice in Health Education Booklet 9. Paris: UNESCO; 2014. Available from: https://unesdoc.unesco.org/ark:/48223/pf0000226792 (No DOI; accessed 2026-07-12)."
+    },
+    {
+      "number": 4,
+      "doi": "10.11604/pamj.2020.37.190.19015",
+      "resolver_valid": true,
+      "title": "Menstrual hygiene among adolescent girls in junior high schools in rural Northern Ghana",
+      "title_match": true,
+      "authors": [
+        "Maxwell Tii Kumbeni",
+        "Easmon Otupiri",
+        "Florence Assibi Ziba"
+      ],
+      "journal": "Pan African Medical Journal",
+      "year": 2020,
+      "year_match": true,
+      "volume": "37",
+      "issue": null,
+      "pages": null,
+      "crossref_url": "https://doi.org/10.11604/pamj.2020.37.190.19015",
+      "reference": "4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools in rural Northern Ghana. _Pan Afr Med J._ 2020;37:190. https://doi.org/10.11604/pamj.2020.37.190.19015"
+    },
+    {
+      "number": 5,
+      "doi": "10.1371/journal.pone.0262295",
+      "resolver_valid": true,
+      "title": "Menstrual hygiene practice among adolescent girls in Ethiopia: A systematic review and meta-analysis",
+      "title_match": true,
+      "authors": [
+        "Biniyam Sahiledengle",
+        "Daniel Atlaw",
+        "Abera Kumie",
+        "Yohannes Tekalegn",
+        "Demelash Woldeyohannes",
+        "Kingsley Emwinyore Agho"
+      ],
+      "journal": "PLOS ONE",
+      "year": 2022,
+      "year_match": true,
+      "volume": "17",
+      "issue": "1",
+      "pages": "e0262295",
+      "crossref_url": "https://doi.org/10.1371/journal.pone.0262295",
+      "reference": "5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene practice among adolescent girls in Ethiopia: a systematic review and meta-analysis. _PLoS One._ 2022;17(1):e0262295. https://doi.org/10.1371/journal.pone.0262295"
+    },
+    {
+      "number": 6,
+      "doi": "10.1186/s12889-019-7973-9",
+      "resolver_valid": true,
+      "title": "Knowledge and menstrual hygiene practice among adolescent school girls in southern Ethiopia: a cross-sectional study",
+      "title_match": true,
+      "authors": [
+        "Zelalem Belayneh",
+        "Birhanie Mekuriaw"
+      ],
+      "journal": "BMC Public Health",
+      "year": 2019,
+      "year_match": true,
+      "volume": "19",
+      "issue": "1",
+      "pages": "1595",
+      "crossref_url": "https://doi.org/10.1186/s12889-019-7973-9",
+      "reference": "6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent school girls in southern Ethiopia: a cross-sectional study. _BMC Public Health._ 2019;19(1):1595. https://doi.org/10.1186/s12889-019-7973-9"
+    },
+    {
+      "number": 7,
+      "doi": "10.1155/2020/1292070",
+      "resolver_valid": true,
+      "title": "Practice of Menstrual Hygiene and Associated Factors among Adolescent School Girls in Dang District, Nepal",
+      "title_match": true,
+      "authors": [
+        "Chet Kant Bhusal"
+      ],
+      "journal": "Advances in Preventive Medicine",
+      "year": 2020,
+      "year_match": true,
+      "volume": "2020",
+      "issue": null,
+      "pages": "1-7",
+      "crossref_url": "https://doi.org/10.1155/2020/1292070",
+      "reference": "7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in Dang District, Nepal. _Adv Prev Med._ 2020;2020:1292070. https://doi.org/10.1155/2020/1292070"
+    },
+    {
+      "number": 8,
+      "doi": "10.1155/2020/8872119",
+      "resolver_valid": true,
+      "title": "Level and Associated Factors of Knowledge regarding Menstrual Hygiene among School-Going Adolescent Girls in Dang District, Nepal",
+      "title_match": true,
+      "authors": [
+        "Chet Kant Bhusal",
+        "Sigma Bhattarai",
+        "Raju Kafle",
+        "Rubina Shrestha",
+        "Pradip Chhetri",
+        "Kishor Adhikari"
+      ],
+      "journal": "Advances in Preventive Medicine",
+      "year": 2020,
+      "year_match": true,
+      "volume": "2020",
+      "issue": null,
+      "pages": "1-9",
+      "crossref_url": "https://doi.org/10.1155/2020/8872119",
+      "reference": "8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District, Nepal. _Adv Prev Med._ 2020;2020:8872119. https://doi.org/10.1155/2020/8872119"
+    },
+    {
+      "number": 9,
+      "doi": "10.4103/jfmpc.jfmpc_703_21",
+      "resolver_valid": true,
+      "title": "Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in Urban slums of Dibrugarh town, Assam",
+      "title_match": true,
+      "authors": [
+        "Pranjal Sonowal",
+        "Kaushik Talukdar",
+        "Hiranya Saikia"
+      ],
+      "journal": "Journal of Family Medicine and Primary Care",
+      "year": 2021,
+      "year_match": true,
+      "volume": "10",
+      "issue": "12",
+      "pages": "4446-4451",
+      "crossref_url": "https://doi.org/10.4103/jfmpc.jfmpc_703_21",
+      "reference": "9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in urban slums of Dibrugarh town, Assam. _J Family Med Prim Care._ 2021;10(12):4446-4451. https://doi.org/10.4103/jfmpc.jfmpc_703_21"
+    },
+    {
+      "number": 10,
+      "doi": "10.24321/2349.2880.201705",
+      "resolver_valid": true,
+      "title": "Exploring Knowledge and Perceptions of School Adolescents regarding Pubertal Changes and Reproductive Health",
+      "title_match": true,
+      "authors": [
+        "",
+        "Ms. Ujjaval Srivastava"
+      ],
+      "journal": "Indian Journal of Youth and Adolescent Health ",
+      "year": 2017,
+      "year_match": true,
+      "volume": "4",
+      "issue": "1",
+      "pages": "26-35",
+      "crossref_url": "https://doi.org/10.24321/2349.2880.201705",
+      "reference": "10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding pubertal changes and reproductive health. _Indian J Youth Adolesc Health._ 2017;4(1):26-35. https://doi.org/10.24321/2349.2880.201705"
+    },
+    {
+      "number": 11,
+      "doi": "10.7189/jogh.12.04059",
+      "resolver_valid": true,
+      "title": "Practices and predictors of menstrual hygiene management material use among adolescent and young women in rural Pakistan: A cross-sectional assessment",
+      "title_match": true,
+      "authors": [
+        "Yaqub Wasan",
+        "Jo-Anna B. Baxter",
+        "Arjumand Rizvi",
+        "Fariha Shaheen",
+        "Qamaruddin Junejo",
+        "Mansoor A Abro",
+        "Amjad Hussain",
+        "Imran Ahmed",
+        "Sajid B Soofi",
+        "Zulfiqar A Bhutta"
+      ],
+      "journal": "Journal of Global Health",
+      "year": 2022,
+      "year_match": true,
+      "volume": "12",
+      "issue": null,
+      "pages": "04059",
+      "crossref_url": "https://doi.org/10.7189/jogh.12.04059",
+      "reference": "11. Wasan Y, Baxter JAB, Rizvi A, Shaheen F, Junejo Q, Abro MA, et al. Practices and predictors of menstrual hygiene management material use among adolescent and young women in rural Pakistan: a cross-sectional assessment. _J Glob Health._ 2022;12:04059. https://doi.org/10.7189/jogh.12.04059"
+    },
+    {
+      "number": 12,
+      "doi": "10.1177/17455057241231420",
+      "resolver_valid": true,
+      "title": "A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: A cross-sectional study",
+      "title_match": true,
+      "authors": [
+        "Amina Aziz",
+        "Salma Memon",
+        "Farhana Aziz",
+        "Farzana Memon",
+        "Bakhtawar M Hanif Khowaja",
+        "Shehla Naeem Zafar"
+      ],
+      "journal": "Women's Health",
+      "year": 2024,
+      "year_match": true,
+      "volume": "20",
+      "issue": null,
+      "pages": "17455057241231420",
+      "crossref_url": "https://doi.org/10.1177/17455057241231420",
+      "reference": "12. Aziz A, Memon S, Aziz F, Memon F, Khowaja BMH, Zafar SN. A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: a cross-sectional study. _Womens Health (Lond)._ 2024;20:17455057241231420. https://doi.org/10.1177/17455057241231420"
+    },
+    {
+      "number": 13,
+      "doi": "10.3390/ijerph20146424",
+      "resolver_valid": true,
+      "title": "Knowledge, Attitudes, and Practices Regarding Menstrual Hygiene among Girls in Ghizer, Gilgit, Pakistan",
+      "title_match": true,
+      "authors": [
+        "Sanober Fazal Shah",
+        "Neelam Saleem Punjani",
+        "Syeda Naghma Rizvi",
+        "Sana Sadiq Sheikh",
+        "Rafat Jan"
+      ],
+      "journal": "International Journal of Environmental Research and Public Health",
+      "year": 2023,
+      "year_match": true,
+      "volume": "20",
+      "issue": "14",
+      "pages": "6424",
+      "crossref_url": "https://doi.org/10.3390/ijerph20146424",
+      "reference": "13. Shah SF, Punjani NS, Rizvi SN, Sheikh SS, Jan R. Knowledge, attitudes, and practices regarding menstrual hygiene among girls in Ghizer, Gilgit, Pakistan. _Int J Environ Res Public Health._ 2023;20(14):6424. https://doi.org/10.3390/ijerph20146424"
+    },
+    {
+      "number": 14,
+      "doi": "10.1186/s12905-019-0874-3",
+      "resolver_valid": true,
+      "title": "Knowledge and practice of adolescent females about menstruation and menstruation hygiene visiting a public healthcare institute of Quetta, Pakistan",
+      "title_match": true,
+      "authors": [
+        "Judy Michael",
+        "Qaiser Iqbal",
+        "Sajjad Haider",
+        "Adnan Khalid",
+        "Naheed Haque",
+        "Rabia Ishaq",
+        "Fahad Saleem",
+        "Mohamed Azmi Hassali",
+        "Mohammad Bashaar"
+      ],
+      "journal": "BMC Women's Health",
+      "year": 2020,
+      "year_match": true,
+      "volume": "20",
+      "issue": "1",
+      "pages": "4",
+      "crossref_url": "https://doi.org/10.1186/s12905-019-0874-3",
+      "reference": "14. Michael J, Iqbal Q, Haider S, Khalid A, Haque N, Ishaq R, et al. Knowledge and practice of adolescent females about menstruation and menstruation hygiene visiting a public healthcare institute of Quetta, Pakistan. _BMC Womens Health._ 2020;20(1):4. https://doi.org/10.1186/s12905-019-0874-3"
+    },
+    {
+      "number": 15,
+      "doi": "10.7759/cureus.73899",
+      "resolver_valid": true,
+      "title": "Awareness and Practices of Menstrual Hygiene Among Rural Adolescent Schoolgirls in Lahore, Pakistan: A Cross-Sectional Study",
+      "title_match": true,
+      "authors": [
+        "Saba Shanza Afzaal",
+        "Shahzeb Baloch",
+        "Sulaiman Tahir",
+        "Hamna Javed",
+        "Adil Saeed",
+        "Muhammad Haadi Ashal Pal",
+        "Maryyam Islam",
+        "Bilal Qammar"
+      ],
+      "journal": "Cureus",
+      "year": 2024,
+      "year_match": true,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "crossref_url": "https://doi.org/10.7759/cureus.73899",
+      "reference": "15. Afzaal SS, Baloch S, Tahir S, Javed H, Saeed A, Pal MHA, et al. Awareness and practices of menstrual hygiene among rural adolescent schoolgirls in Lahore, Pakistan: a cross-sectional study. _Cureus._ 2024;16(11):e73899. https://doi.org/10.7759/cureus.73899"
+    },
+    {
+      "number": 16,
+      "doi": "10.4103/0970-0218.40872",
+      "resolver_valid": true,
+      "title": "Menstrual hygiene: How hygienic is the adolescent girl?",
+      "title_match": true,
+      "authors": [
+        "A Dasgupta",
+        "M Sarkar"
+      ],
+      "journal": "Indian Journal of Community Medicine",
+      "year": 2008,
+      "year_match": true,
+      "volume": "33",
+      "issue": "2",
+      "pages": "77",
+      "crossref_url": "https://doi.org/10.4103/0970-0218.40872",
+      "reference": "16. Dasgupta A, Sarkar M. Menstrual hygiene: how hygienic is the adolescent girl? _Indian J Community Med._ 2008;33(2):77-80. https://doi.org/10.4103/0970-0218.40872"
+    },
+    {
+      "number": 17,
+      "doi": "10.4103/0970-0218.170964",
+      "resolver_valid": true,
+      "title": "Menstrual hygiene practices in context of schooling: A community study among rural adolescent girls in Varanasi",
+      "title_match": true,
+      "authors": [
+        "Alok Kumar",
+        "Sangeeta Kansal",
+        "Sweta Singh"
+      ],
+      "journal": "Indian Journal of Community Medicine",
+      "year": 2016,
+      "year_match": true,
+      "volume": "41",
+      "issue": "1",
+      "pages": "39",
+      "crossref_url": "https://doi.org/10.4103/0970-0218.170964",
+      "reference": "17. Kumar A, Kansal S, Singh S. Menstrual hygiene practices in context of schooling: a community study among rural adolescent girls in Varanasi. _Indian J Community Med._ 2016;41(1):39-44. https://doi.org/10.4103/0970-0218.170964"
+    },
+    {
+      "number": 18,
+      "doi": "10.3126/jnhrc.v15i3.18842",
+      "resolver_valid": true,
+      "title": "Knowledge, Attitude, and Practice on Menstrual Hygiene Management among School Adolescents",
+      "title_match": true,
+      "authors": [
+        "Ram Naresh Yadav",
+        "Shrijana Joshi",
+        "Rajesh Poudel",
+        "Pawan Pandeya"
+      ],
+      "journal": "Journal of Nepal Health Research Council",
+      "year": 2018,
+      "year_match": true,
+      "volume": "15",
+      "issue": "3",
+      "pages": "212-216",
+      "crossref_url": "https://doi.org/10.3126/jnhrc.v15i3.18842",
+      "reference": "18. Yadav RN, Joshi S, Poudel R, Pandeya P. Knowledge, attitude, and practice on menstrual hygiene management among school adolescents. _J Nepal Health Res Counc._ 2018;15(3):212-216. https://doi.org/10.3126/jnhrc.v15i3.18842"
+    },
+    {
+      "number": 19,
+      "doi": "10.1136/bmjopen-2013-004607",
+      "resolver_valid": true,
+      "title": "The effect of a school-based educational intervention on menstrual health: an intervention study among adolescent girls in Bangladesh",
+      "title_match": true,
+      "authors": [
+        "Syed Emdadul Haque",
+        "Mosiur Rahman",
+        "Kawashima Itsuko",
+        "Mahmuda Mutahara",
+        "Kayako Sakisaka"
+      ],
+      "journal": "BMJ Open",
+      "year": 2014,
+      "year_match": true,
+      "volume": "4",
+      "issue": "7",
+      "pages": "e004607",
+      "crossref_url": "https://doi.org/10.1136/bmjopen-2013-004607",
+      "reference": "19. Haque SE, Rahman M, Kawashima I, Mutahara M, Sakisaka K. The effect of a school-based educational intervention on menstrual health: an intervention study among adolescent girls in Bangladesh. _BMJ Open._ 2014;4(7):e004607. https://doi.org/10.1136/bmjopen-2013-004607"
+    },
+    {
+      "number": 20,
+      "doi": "10.1136/bmjopen-2016-015508",
+      "resolver_valid": true,
+      "title": "Menstrual hygiene management among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from a cross-sectional survey",
+      "title_match": true,
+      "authors": [
+        "Mahbub-Ul Alam",
+        "Stephen P Luby",
+        "Amal K Halder",
+        "Khairul Islam",
+        "Aftab Opel",
+        "Abul K Shoab",
+        "Probir K Ghosh",
+        "Mahbubur Rahman",
+        "Therese Mahon",
+        "Leanne Unicomb"
+      ],
+      "journal": "BMJ Open",
+      "year": 2017,
+      "year_match": true,
+      "volume": "7",
+      "issue": "7",
+      "pages": "e015508",
+      "crossref_url": "https://doi.org/10.1136/bmjopen-2016-015508",
+      "reference": "20. Alam MU, Luby SP, Halder AK, Islam K, Opel A, Shoab AK, et al. Menstrual hygiene management among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from a cross-sectional survey. _BMJ Open._ 2017;7(7):e015508. https://doi.org/10.1136/bmjopen-2016-015508"
+    },
+    {
+      "number": 21,
+      "doi": "10.1186/s12905-015-0245-7",
+      "resolver_valid": true,
+      "title": "Assessment of knowledge and practice of menstrual hygiene among high school girls in Western Ethiopia",
+      "title_match": true,
+      "authors": [
+        "Shivaleela P. Upashe",
+        "Tesfalidet Tekelab",
+        "Jalane Mekonnen"
+      ],
+      "journal": "BMC Women's Health",
+      "year": 2015,
+      "year_match": true,
+      "volume": "15",
+      "issue": "1",
+      "pages": "84",
+      "crossref_url": "https://doi.org/10.1186/s12905-015-0245-7",
+      "reference": "21. Upashe SP, Tekelab T, Mekonnen J. Assessment of knowledge and practice of menstrual hygiene among high school girls in Western Ethiopia. _BMC Womens Health._ 2015;15:84. https://doi.org/10.1186/s12905-015-0245-7"
+    }
+  ]
+}

@@ -27,8 +27,9 @@ The final analysis included **120 valid participants**.
 
 ## Supporting Documents
 
-- [Original study synopsis](doc.md)
-- [Comparative evidence matrix](comparative_study/outputs/evidence_matrix.md)
+- [Original study synopsis](Synopsis%20-%20Menstrual%20hygiene..docx)
+- [Searchable text extracted from the synopsis](doc.md)
+- [Comparative evidence synthesis](comparative_study/outputs/evidence_matrix.md)
 - [Comparative research workspace](comparative_study/README.md)
 - [Manuscript submission and revision plan](docs/verification/MANUSCRIPT_SUBMISSION_PLAN.md)
 - [Reference verification](docs/verification/REFERENCES_VERIFICATION.md)

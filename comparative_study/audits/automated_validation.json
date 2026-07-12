@@ -106,12 +106,12 @@
     {
       "check": "local Markdown links",
       "passed": true,
-      "detail": "40 inspected; broken: []"
+      "detail": "41 inspected; broken: []"
     },
     {
       "check": "DOCX exists",
       "passed": true,
-      "detail": "1023497 bytes"
+      "detail": "1021366 bytes"
     },
     {
       "check": "DOCX comparative content",
@@ -126,7 +126,7 @@
     {
       "check": "DOCX tables",
       "passed": true,
-      "detail": "8 tables"
+      "detail": "6 tables"
     }
   ]
 }

@@ -26,7 +26,7 @@ This document outlines the verification steps taken to ensure the accuracy, reli
 - **Small Group Sizes**: The "Intermediate and above" group has n = 1; Levels 3 and 4 have n = 8.
   - **Implication**: Conclusions about the smallest groups should be interpreted cautiously.
 - **Score Discrimination**: Four items award a point to every listed response option and therefore cannot distinguish stronger from weaker knowledge or practice.
-- **Ethics Archive**: The consent text appended to `doc.md` concerns bullying rather than menstrual hygiene. The correct consent and ethics approval record must be confirmed before submission.
+- **Ethics records**: The consent text appended to the original study synopsis concerns bullying rather than menstrual hygiene. The correct consent and ethics approval record must be confirmed before submission.
 
 ## 5. Final Verdict
 The corrected calculations and reproducibility artifacts have been verified. Practice scores differed significantly across maternal-education groups in the primary unadjusted comparison; a conservative exploratory Holm sensitivity correction attenuated this evidence. The knowledge omnibus comparison is not significant, although an exploratory ordinal trend is statistically significant. Neither result establishes causation or an independent maternal-education effect.
