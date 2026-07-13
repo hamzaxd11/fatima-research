@@ -10,7 +10,7 @@ This repository contains the final research paper, statistical analysis, and sup
 | **[Research paper preview](RESEARCH_PAPER_RAW.md)** | The paper in a format that can be read directly on GitHub. |
 | **[Plain scholarly paper](RESEARCH_PAPER%20-%20PLAIN%20SCHOLARLY.md)** ([DOCX](RESEARCH_PAPER%20-%20PLAIN%20SCHOLARLY.docx)) | Full paper in direct, restrained scholarly language. |
 | **[Natural academic paper](RESEARCH_PAPER%20-%20NATURAL%20ACADEMIC.md)** ([DOCX](RESEARCH_PAPER%20-%20NATURAL%20ACADEMIC.docx)) | Full paper in natural academic prose with varied sentence rhythm. |
-| **[Concise journal paper](RESEARCH_PAPER%20-%20CONCISE%20JOURNAL.md)** ([DOCX](RESEARCH_PAPER%20-%20CONCISE%20JOURNAL.docx)) | Full paper edited for a tighter journal style. |
+| **[EMHJ concise paper](RESEARCH_PAPER%20-%20CONCISE%20JOURNAL.md)** ([DOCX](RESEARCH_PAPER%20-%20CONCISE%20JOURNAL.docx)) | Original-research manuscript formatted for the WHO Eastern Mediterranean Health Journal. |
 | **[Simple results summary](docs/analysis/DATA_ANALYSIS_SUMMARY.md)** | The main findings and numbers in one short document. |
 | **[Full analysis report](output/analysis_20260712_224950/analysis_report.md)** | The complete corrected results of the statistical analysis. |
 | **[Analysis methodology](docs/analysis/ANALYSIS_METHODOLOGY.md)** | How the scores and statistical tests were chosen. |

@@ -106,7 +106,7 @@
     {
       "check": "local Markdown links",
       "passed": true,
-      "detail": "41 inspected; broken: []"
+      "detail": "39 inspected; broken: []"
     },
     {
       "check": "DOCX exists",

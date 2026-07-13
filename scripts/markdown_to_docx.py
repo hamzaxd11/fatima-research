@@ -4,7 +4,7 @@ Convert Markdown to a formatted DOCX file.
 This converter is intentionally lightweight and dependency-minimal:
 - Parses headings, paragraphs, bullet/numbered lists, tables, code blocks, and images
 - Preserves basic inline formatting (**bold**, *italic*, `code`)
-- Applies manuscript-friendly defaults (Times New Roman, 12pt, 1.5 spacing)
+- Applies manuscript-friendly defaults (Times New Roman, 12pt, double spacing)
 
 Usage:
     python scripts/markdown_to_docx.py RESEARCH_PAPER_RAW.md RESEARCH_PAPER.docx
@@ -40,25 +40,24 @@ def configure_document(doc: Document) -> None:
     normal._element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
     normal.font.size = Pt(12)
     normal.font.color.rgb = RGBColor(0, 0, 0)
-    normal.paragraph_format.line_spacing = 1.5
+    normal.paragraph_format.line_spacing = 2.0
     normal.paragraph_format.space_after = Pt(0)
     normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
 
     title = doc.styles["Title"]
     title.font.name = "Times New Roman"
     title._element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
-    title.font.size = Pt(16)
+    title.font.size = Pt(12)
     title.font.color.rgb = RGBColor(0, 0, 0)
+    title.paragraph_format.line_spacing = 2.0
 
     for style_name in ("Heading 1", "Heading 2", "Heading 3", "Heading 4"):
         style = doc.styles[style_name]
         style.font.name = "Times New Roman"
         style._element.rPr.rFonts.set(qn("w:eastAsia"), "Times New Roman")
+        style.font.size = Pt(12)
         style.font.color.rgb = RGBColor(0, 0, 0)
-    doc.styles["Heading 1"].font.size = Pt(14)
-    doc.styles["Heading 2"].font.size = Pt(12)
-    doc.styles["Heading 3"].font.size = Pt(12)
-    doc.styles["Heading 4"].font.size = Pt(12)
+        style.paragraph_format.line_spacing = 2.0
 
 
 def add_page_number(section) -> None:
@@ -162,10 +161,11 @@ def add_table(doc: Document, rows: List[List[str]]) -> None:
             cell = table.cell(r_idx, c_idx)
             cell.text = text
             para = cell.paragraphs[0]
-            para.paragraph_format.space_after = Pt(3)
+            para.paragraph_format.line_spacing = 2.0
+            para.paragraph_format.space_after = Pt(0)
             for run in para.runs:
                 run.font.name = "Times New Roman"
-                run.font.size = Pt(10)
+                run.font.size = Pt(12)
                 run.font.color.rgb = RGBColor(0, 0, 0)
                 if r_idx == 0:
                     run.bold = True
@@ -279,8 +279,9 @@ def convert_markdown_to_docx(markdown_path: Path, output_path: Path) -> None:
                 for run in cp.runs:
                     run.italic = True
                     run.font.name = "Times New Roman"
-                    run.font.size = Pt(11)
+                    run.font.size = Pt(12)
                     run.font.color.rgb = RGBColor(0, 0, 0)
+                cp.paragraph_format.line_spacing = 2.0
 
             doc.add_paragraph()
             i += 1

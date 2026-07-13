@@ -1,469 +1,188 @@
-# Association Between Maternal Education and Menstrual Hygiene Knowledge and Practices Among Adolescent Girls: A School-Based Cross-Sectional Study in Lahore, Pakistan
+# Maternal Education and Menstrual Hygiene Among Adolescent Girls in Lahore: A Cross-Sectional Study
 
-**Authors:** Dr Ayesha Javed; Dr Fatima Sohail
+**Authors:** Fatima Sohail; Ayesha Javed; Muhammad Hamza Adnan
 
-**Study supervisor:** Dr Naureen Omar
+**Affiliations:** To be confirmed by the authors before submission.
+
+**Corresponding author:** To be confirmed by the authors before submission.
+
+**Arabic author-name forms:** To be supplied by the authors in the submission system for abstract translation.
 
 ## Abstract
 
-Evidence linking maternal education with adolescent menstrual hygiene in sub-urban Pakistan is
-limited. A school-based cross-sectional study of 120 girls in Lahore assessed knowledge (0-9) and
-practice (0-7). Missing questionnaire responses were scored zero. Kruskal-Wallis tests, effect
-sizes, correlations, and sensitivity analyses were used. Mean age was 14.47 years, mean knowledge
-was 6.65/9 (SD 1.22), and mean practice was 5.68/7 (SD 0.58). Practice differed significantly across
-maternal education groups in the primary unadjusted analysis (H = 10.1562, p = 0.0379,
-epsilon-squared = 0.0853), while knowledge did not (H = 8.0427, p = 0.0900, epsilon-squared =
-0.0676). The exploratory Holm-adjusted practice p-value was 0.0758. Age correlated with knowledge (r
-= 0.314, p = 0.0005), and knowledge correlated with practice (r = 0.317, p = 0.0004).
-Complete-response practice analysis produced H = 8.6488 and p = 0.0705. Maternal education was
-associated with practice in the primary unadjusted analysis, but sensitivity to missing-response
-handling, imbalanced groups, and possible age confounding limits inference.
-
-**Keywords:** menstrual hygiene; adolescent girls; maternal education; Pakistan; school health;
-cross-sectional study
-
-## 1. Introduction
-
-Adolescence is a formative period for health attitudes and behaviors. Menstrual health is integral
-to adolescent well-being because girls must manage menarche, menstrual cycles, hygiene, and stigma,
-often without adequate information or material support. World Health Organization and UNESCO
-guidance frames menstrual health as a health, education, rights, and gender-equity issue requiring
-suitable materials, knowledge, supportive norms, and safe sanitation [1-3].
-
-In low- and middle-income settings, menstrual hygiene management may be constrained by silence,
-cultural taboos, limited privacy, and inadequate absorbents or disposal facilities. Girls may reach
-menarche unprepared and depend on informal or incomplete information, potentially impairing hygiene,
-causing discomfort and embarrassment, and limiting school and social participation. Studies from
-Ghana, Ethiopia, Nepal, India, and related settings associate menstrual knowledge and practice with
-parental education, information access, and socioeconomic conditions [4-10].
-
-These relationships are particularly relevant in sub-urban Pakistan, where educational attainment,
-household resources, and social norms vary. Maternal education may influence daughters through
-communication, supervision, modeled routines, and access to menstrual products. However, it may
-produce limited differences in formal knowledge when peers, media, or schools also provide
-information. This study assessed menstrual hygiene knowledge and practices among adolescent girls in
-a sub-urban area of Lahore and compared outcomes across maternal education categories.
-
-## 2. Rationale and Objectives
-
-The study examined whether maternal education was associated more strongly with menstrual knowledge
-or behavior, recognizing that awareness may not improve practice when household circumstances,
-product access, or sanitation impose constraints. The primary objectives were to assess knowledge
-and practice scores and compare them by maternal education. Secondary objectives were to describe
-demographic and household economic characteristics and explore correlations among age, income,
-family size, and menstrual hygiene scores.
-
-## 3. Methods
-
-### 3.1 Study design, setting, and study synopsis
-
-This cross-sectional school-based questionnaire study used the finalized survey dataset from Reach
-School on Sau Asal Road, Lahore. The original study synopsis specified a nine-month study period
-from March to December 2024, school-based recruitment, a structured questionnaire administered by
-the primary investigators, and interviews lasting approximately 15-20 minutes.
-
-### 3.2 Participant selection and analytic sample
-
-The study synopsis included adolescent girls with parental consent and excluded students without
-parental consent or willingness to participate. It described simple random sampling by lottery from
-a list of eligible female students. The SPSS file contained 120 nonblank participant records and 40
-fully blank trailing rows. The blank rows were file artifacts rather than excluded participants. No
-recruitment denominator, response rate, or prospective sample-size calculation was documented; all
-120 nonblank records were analyzed.
-
-### 3.3 Study variables
-
-The outcomes were bounded discrete menstrual hygiene knowledge (0-9) and practice (0-7) scores.
-Maternal education was coded from SPSS metadata as 1 = Illiterate, 2 = Primary, 3 = Middle, 4 =
-Secondary, and 5 = Intermediate and above. Other descriptive and exploratory variables were age,
-paternal education, maternal and paternal occupation, monthly household income, family size, and
-per-capita income.
-
-### 3.4 Scoring rules and derived variables
-
-Knowledge was calculated from Section III questionnaire items using the prespecified scoring key,
-with one correction based on the variable labels and biological validity. The key awarded the
-menstruation-process point to code 2, although SPSS metadata labeled code 1 as physiological/natural
-and code 2 as pathological/disease. The primary analysis awarded the point to code 1 because
-menstruation is physiological; the original coding was examined in a sensitivity analysis. Practice
-was calculated from Section IV using the prespecified scoring key. Missing or out-of-label
-questionnaire responses received zero. Four scored items awarded one point to every listed response:
-the absorbent and change-frequency items in both knowledge and practice. They contributed to totals
-but did not discriminate among participants. Per-capita income equaled monthly household income
-divided by total family members and was treated as missing when income or family size was
-unavailable or family size was zero.
-
-Higher scores represented greater knowledge or more favorable reported practice. The questionnaire
-was study-specific; documentation of prior validation, reliability testing, language adaptation, or
-pilot testing was not available.
-
-### 3.5 Data quality procedures
-
-Before analysis, missing values and categorical responses outside the SPSS value domains were
-identified. Conditional follow-up questions were distinguished from core variables so that expected
-skip-pattern missingness was not classified as poor data capture. Reported total family size was
-compared with the sum of male and female family members.
-
-### 3.6 Statistical analysis
-
-All tests were two-sided with a 0.05 significance threshold. Categorical variables were summarized
-as counts and percentages; continuous variables were summarized using means, medians, standard
-deviations, minima, maxima, and quartiles. Within-group normality was assessed by Shapiro-Wilk tests
-when group size permitted, variance homogeneity by Levene's test when feasible, and small groups
-were identified. Because knowledge and practice were bounded, discrete, and distributed across
-markedly imbalanced education groups, primary comparisons used Kruskal-Wallis tests with
-epsilon-squared effect sizes. Unadjusted p-values were reported for the principal comparisons.
-Because the protocol did not identify one inferential outcome as primary, a conservative exploratory
-Holm correction was also examined as a sensitivity analysis.
-
-Analyses were conducted in Python 3.12.7 using pandas 2.2.2, NumPy 1.26.4, and SciPy 1.13.1.
-Kruskal-Wallis p-values were asymptotic, and epsilon-squared was calculated as H/(n-1).
-
-Pearson complete-case correlations assessed linear relationships among age, income, family size,
-per-capita income, knowledge, practice, and total score. These secondary analyses were exploratory
-and unadjusted for multiplicity. Spearman correlations examined sensitivity to strongly
-right-skewed, outlier-prone income. Further sensitivity analyses excluded the highest maternal
-education category, treated maternal education as ordinal, tested age differences across education
-groups, restricted practice analysis to complete responses, and applied the original scoring for the
-disputed knowledge item.
-
-### 3.7 Ethical considerations
-
-Ethics approval and parental consent documentation could not be verified. The manuscript must not be
-submitted until the approving institution, approval identifier, and menstrual-hygiene-specific
-consent process are confirmed.
-
-## 4. Results
-
-### 4.1 Analytic sample
-
-The analysis included 120 nonblank participant records. The 40 fully blank trailing rows contained
-no participant data and were not counted as recruited or excluded participants. Recruitment and
-response-rate denominators were unavailable.
-
-### 4.2 Demographic and household characteristics
-
-Mean age was 14.47 years (SD 1.40; range 12-18). Monthly household income was widely dispersed (mean
-48,833.33; maximum 600,000), indicating substantial right-skewness. Mean family size was 6.66 and
-mean per-capita income was 8,648.83. Maternal education was predominantly illiterate (71.7%) or
-primary (14.2%); only one participant was in the Intermediate-and-above category (Table 1).
-
-| Variable            | Category/Statistic     | Value                      |
-| ------------------- | ---------------------- | -------------------------- |
-| Age (years)         | Mean +/- SD            | 14.47 +/- 1.40             |
-| Age (years)         | Median (IQR)           | 14.0 (13.0-15.0)           |
-| Age (years)         | Range                  | 12-18                      |
-| Monthly income      | Mean +/- SD            | 48,833.33 +/- 57,440.99    |
-| Monthly income      | Median (IQR)           | 45,000 (30,000-50,000)     |
-| Family size         | Mean +/- SD            | 6.66 +/- 2.38              |
-| Family size         | Median (IQR)           | 6 (5-8)                    |
-| Per-capita income   | Mean +/- SD            | 8,648.83 +/- 10,763.62     |
-| Per-capita income   | Median (IQR)           | 6,428.57 (4,285.71-10,000) |
-| Maternal education  | Illiterate             | 86 (71.7%)                 |
-| Maternal education  | Primary                | 17 (14.2%)                 |
-| Maternal education  | Middle                 | 8 (6.7%)                   |
-| Maternal education  | Secondary              | 8 (6.7%)                   |
-| Maternal education  | Intermediate and above | 1 (0.8%)                   |
-| Maternal occupation | Non-working            | 103 (85.8%)                |
-| Maternal occupation | Working                | 14 (11.7%)                 |
-| Maternal occupation | Other/unlabeled code   | 3 (2.5%)                   |
-| Paternal education  | Primary                | 35 (29.2%)                 |
-| Paternal education  | Middle                 | 28 (23.3%)                 |
-| Paternal education  | Secondary              | 24 (20.0%)                 |
-| Paternal education  | Illiterate             | 24 (20.0%)                 |
-| Paternal education  | Intermediate and above | 9 (7.5%)                   |
-
-### 4.3 Knowledge and practice score distributions
-
-Knowledge scores ranged from 3 to 9 (mean 6.65; median 7.00), and practice scores from 4 to 7 (mean
-5.68; median 6.00). Practice was more tightly clustered. The modal knowledge score was 7 (37.5%),
-and the modal practice score was 6 (71.7%) (Table 2; Figure 1).
-
-| Score domain          | Summary                                       |
-| --------------------- | --------------------------------------------- |
-| Knowledge score (0-9) | Mean 6.65, Median 7.00, SD 1.22, Min 3, Max 9 |
-| Practice score (0-7)  | Mean 5.68, Median 6.00, SD 0.58, Min 4, Max 7 |
-
-### 4.4 Scores by maternal education
-
-Mean scores increased modestly across some education categories, but the severe group imbalance,
-including one participant in the highest category, limited interpretation. Mean knowledge ranged
-from 6.53 in the illiterate and primary groups to 8.00 in the Intermediate-and-above group; mean
-practice ranged from 5.59 in the illiterate group to 6.12 in the secondary group (Table 3; Figures 2
-and 3).
-
-| Maternal education level |   n | Knowledge mean +/- SD | Knowledge median (IQR) | Practice mean +/- SD | Practice median (IQR) |
-| ------------------------ | --: | --------------------: | ---------------------: | -------------------: | --------------------: |
-| Illiterate               |  86 |         6.53 +/- 1.27 |          7.0 (6.0-7.0) |        5.59 +/- 0.62 |         6.0 (5.0-6.0) |
-| Primary                  |  17 |         6.53 +/- 1.23 |          7.0 (7.0-7.0) |        5.76 +/- 0.44 |         6.0 (6.0-6.0) |
-| Middle                   |   8 |         7.38 +/- 0.52 |          7.0 (7.0-8.0) |        6.00 +/- 0.00 |         6.0 (6.0-6.0) |
-| Secondary                |   8 |         7.25 +/- 0.71 |          7.0 (7.0-8.0) |        6.12 +/- 0.35 |         6.0 (6.0-6.0) |
-| Intermediate and above   |   1 |                  8.00 |     8.0 (single value) |                 6.00 |    6.0 (single value) |
-
-### 4.5 Inferential analysis for maternal education
-
-Assumption checks did not support parametric comparisons. Practice scores differed significantly
-across maternal education groups in the primary unadjusted comparison (H = 10.1562, p = 0.0379,
-epsilon-squared = 0.0853). The omnibus knowledge comparison was not significant (H = 8.0427, p =
-0.0900, epsilon-squared = 0.0676). A conservative exploratory Holm sensitivity correction gave an
-adjusted practice p-value of 0.0758. A significant result for one outcome and a non-significant
-result for another does not establish that their associations differ (Table 4).
-
-| Outcome         | Test           |   Statistic | p-value | Effect size (epsilon-squared) | Interpretation                                                             |
-| --------------- | -------------- | ----------: | ------: | ----------------------------: | -------------------------------------------------------------------------- |
-| Knowledge score | Kruskal-Wallis |  H = 8.0427 |  0.0900 |                        0.0676 | Omnibus comparison not statistically significant                           |
-| Practice score  | Kruskal-Wallis | H = 10.1562 |  0.0379 |                        0.0853 | Statistically significant unadjusted; exploratory Holm-adjusted p = 0.0758 |
-
-### 4.6 Correlation analysis
-
-Pearson complete-case correlations were positive for age with knowledge (r = 0.314, p = 0.0005), age
-with practice (r = 0.267, p = 0.0032), and knowledge with practice (r = 0.317, p = 0.0004). Family
-size correlated negatively with knowledge (r = -0.201, p = 0.0279). Household and per-capita income
-were not significantly correlated with either score. These secondary analyses were exploratory
-because multiple correlations were tested without adjustment. Total-score correlations were not
-interpreted because total score is mathematically derived from knowledge and practice (Table 5;
-Figure 4).
-
-| Variable pair                        |      r | p-value | Interpretation                        |
-| ------------------------------------ | -----: | ------: | ------------------------------------- |
-| Age vs Knowledge score               |  0.314 |  0.0005 | Moderate positive association         |
-| Knowledge score vs Practice score    |  0.317 |  0.0004 | Weak-to-moderate positive association |
-| Age vs Practice score                |  0.267 |  0.0032 | Weak positive association             |
-| Family size vs Knowledge score       | -0.201 |  0.0279 | Weak negative association             |
-| Family size vs Practice score        | -0.165 |  0.0725 | Not significant                       |
-| Income vs Knowledge score            | -0.042 |  0.6501 | Not significant                       |
-| Income vs Practice score             | -0.122 |  0.1834 | Not significant                       |
-| Per-capita income vs Knowledge score |  0.040 |  0.6637 | Not significant                       |
-| Per-capita income vs Practice score  | -0.077 |  0.4040 | Not significant                       |
-
-### 4.7 Data quality and sensitivity analyses
-
-The transformed 41-column dataset contained 550 missing cells and six out-of-label categorical
-responses among 4,920 cells, yielding 88.70% overall issue-free cell rate. This denominator included
-optional free-text and five derived fields. Invalid values were three maternal-occupation codes of
-3, two menstruation-process codes of 5, and one handwashing code of 3. Core issue-free cell rate was
-99.70% after conditional and skip-logic variables were excluded. No inconsistency was found between
-total family size and summed male and female family members.
-
-Excluding the sole participant in maternal education category 5 left knowledge non-significant (H =
-6.3719, p = 0.0949, epsilon-squared = 0.0540), while unadjusted practice remained below 0.05 (H =
-9.7515, p = 0.0208, epsilon-squared = 0.0826). Restriction to 115 participants with complete
-responses on all seven practice items produced H = 8.6488, p = 0.0705, and epsilon-squared = 0.0759,
-indicating that the statistically significant primary practice result was sensitive to the
-prespecified missing-as-zero rule. Ordinal education correlated positively with knowledge (rho =
-0.2023, p = 0.0267) and practice (rho = 0.2684, p = 0.0030), but these exploratory trends were not
-multiplicity-adjusted. Age differed among education groups (H = 10.6913, p = 0.0303), leaving
-plausible confounding.
-
-Spearman analyses retained positive associations between age and knowledge (rho = 0.3710, p < 0.001)
-and between knowledge and practice (rho = 0.3650, p < 0.001). Unlike Pearson analysis, Spearman
-analysis showed a weak positive income-knowledge association (rho = 0.2160, p = 0.0178);
-income-practice remained non-significant (rho = 0.0544, p = 0.5550). Using the original
-pathological-response key yielded a mean knowledge score of 5.82 and a non-significant omnibus
-comparison (H = 5.8669, p = 0.2093, epsilon-squared = 0.0493) (Table 6).
-
-| Sensitivity analysis                                           | Knowledge result                                            | Practice result                                           | Interpretation                                                              |
-| -------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Excluding maternal education level 5 (n = 1)                   | H = 6.3719, p = 0.0949, epsilon-squared = 0.0540            | H = 9.7515, p = 0.0208, epsilon-squared = 0.0826          | Unadjusted practice p remains below 0.05; knowledge remains non-significant |
-| Complete practice responses only                               | Unchanged                                                   | H = 8.6488, p = 0.0705, epsilon-squared = 0.0759; n = 115 | Practice result is sensitive to missing-response handling                   |
-| Maternal education treated as ordinal                          | rho = 0.2023, p = 0.0267                                    | rho = 0.2684, p = 0.0030                                  | Exploratory monotonic trends; unadjusted for multiplicity                   |
-| Age across maternal-education groups                           | H = 10.6913, p = 0.0303                                     | -                                                         | Age is a plausible confounder                                               |
-| Original pathological-response scoring key                     | Mean 5.82; H = 5.8669, p = 0.2093, epsilon-squared = 0.0493 | Unchanged                                                 | Main significance classification is unchanged                               |
-| Spearman rank correlation (age-knowledge)                      | rho = 0.3710, p < 0.001                                     | -                                                         | Positive association remains                                                |
-| Spearman rank correlation (knowledge-practice)                 | rho = 0.3650, p < 0.001                                     | -                                                         | Positive association remains                                                |
-| Spearman rank correlation (income-knowledge / income-practice) | rho = 0.2160, p = 0.0178                                    | rho = 0.0544, p = 0.5550                                  | Weak income-knowledge association appears only in the rank-based analysis   |
-
-## 5. Figures
-
-### Figure 1. Distribution of knowledge and practice scores
-
-![Figure 1. Knowledge and practice score distributions.](figures/manuscript_score_distributions.png)
-
-### Figure 2. Mean knowledge and practice scores by maternal education level
-
-![Figure 2. Mean knowledge and practice scores by maternal education level.](figures/manuscript_scores_by_maternal_education.png)
-
-### Figure 3. Boxplots of knowledge and practice scores by maternal education level
-
-![Figure 3. Boxplot comparison by maternal education level.](figures/manuscript_score_boxplots.png)
-
-### Figure 4. Scatter matrix of continuous variables
-
-![Figure 4. Scatter matrix for age, income, family size, per-capita income, knowledge, practice, and total score.](figures/manuscript_scatter_matrix.png)
-
-## 6. Discussion
-
-Practice scores differed significantly across maternal education groups in the primary unadjusted
-analysis; the knowledge comparison was not significant. This suggests a possible association between
-maternal education and reported menstrual hygiene practice in the observed sample. Conservative
-multiplicity and complete-response sensitivity analyses attenuated the evidence. No formal test
-compared the strengths of the knowledge and practice associations. Household routines, product
-access, supervision, and age may contribute, but this unadjusted analysis cannot distinguish their
-effects.
-
-The positive age-knowledge correlation is compatible with greater menstrual experience and
-accumulated information among older adolescents. Knowledge also correlated positively with practice,
-but not strongly enough to imply automatic behavioral translation. Structural barriers, stigma, and
-limited access may modify this relationship.
-
-### 6.1 Comparison with published studies
-
-Published Pakistani studies show marked contextual variation. In rural Sindh, only 25% of 25,305
-participants used appropriate menstrual materials, and no education was associated with
-inappropriate use compared with higher secondary or university education (OR 3.90, 95% CI 3.36-4.52)
-[11]. In Khairpur, satisfactory knowledge was reported by 69.8% of urban and 38.4% of rural
-participants, while good practice was reported by 71.1% and 11.9%, respectively [12]. Mothers were
-prominent information sources in Ghizer and Quetta, where limited premenarcheal awareness and
-school-based education coexisted with variable product use [13,14]. The positive knowledge-practice
-correlation reported in Lahore (r = 0.649, p < 0.001) agrees with the direction observed here [15],
-but these Pakistani studies did not establish an independent effect of maternal education.
-
-Other South Asian evidence confirms that knowledge and practice may diverge. In rural India, 48.75%
-knew that pads were appropriate but only 11.25% used them [16]. Kumar et al. found greater pad use
-among girls with literate mothers than among those with illiterate mothers (62% versus 13%) [17]. In
-Nepal, most participants in the Yadav study had fair or good knowledge, but only 40% met its
-good-practice definition [18].
-
-Maternal-education findings are inconsistent. Bhusal reported lower adjusted odds of good practice
-among Nepalese girls with literate mothers (AOR 0.52, 95% CI 0.30-0.89) but higher odds among those
-with literate fathers (AOR 2.55, 95% CI 1.26-5.15) [7]. Upashe et al. instead found that maternal
-secondary or higher education predicted good knowledge (AOR 1.51, 95% CI 1.02-2.22) and good
-practice (AOR 2.03, 95% CI 1.38-2.97) [21]. Differences in definitions, age ranges, education
-coding, adjustment, and context preclude direct numerical comparison [7,17,21].
-
-Structural conditions also matter. Following an uncontrolled school intervention in Bangladesh, high
-knowledge increased from 51.0% to 82.4% and good practice from 28.8% to 88.9% [19]. Access to girls'
-toilets was associated with less menstrual-related absence in another Bangladeshi study (adjusted
-prevalence difference -5.4 percentage points, 95% CI -10.0 to -1.6), whereas restrictions were
-associated with greater absence [20]. Product access, household resources, privacy, sanitation,
-school facilities, communication, and social restrictions may therefore mediate associations between
-education and menstrual hygiene [11-15,20].
-
-Strengths include assessment of data completeness and coding, checks of statistical assumptions,
-effect-size reporting, and sensitivity analyses addressing the smallest education group, missing
-practice responses, alternative scoring, and rank-based correlations.
-
-Limitations are substantial. The cross-sectional design permits association, not causation. Analyses
-were unadjusted and bivariate; age differed across maternal education groups, and school context,
-product access, and family factors were uncontrolled. The statistically significant unadjusted
-practice result was attenuated by the exploratory Holm and complete-response sensitivity analyses.
-Education groups were severely imbalanced, particularly the highest category, limiting precision;
-the omnibus test did not identify differing groups. Scoring missing or invalid responses as zero may
-have lowered scores when non-response did not indicate poor knowledge or practice. Four items were
-nondiscriminating because every listed response received one point, limiting construct validity and
-inflating the apparent proportion of the maximum. One knowledge item required correction because the
-original scoring key contradicted the biological meaning of its labels, and six responses fell
-outside SPSS value-label domains. Secondary correlations and ordinal trends were exploratory and
-unadjusted for multiplicity. The single-school sample may not generalize to other adolescents in
-Lahore or Pakistan.
-
-Interventions in similar settings should address behavior, caregiver engagement, product access,
-privacy, and safe disposal rather than factual information alone. Larger, balanced samples, adjusted
-multivariable models, and prospective or mixed-methods designs are needed to clarify how maternal
-education relates to menstrual hygiene behavior.
-
-## 7. Conclusion
-
-In this sub-urban Lahore sample, practice scores differed significantly across maternal education
-groups, while the omnibus knowledge comparison did not. Age was positively associated with knowledge
-and practice, and knowledge was positively associated with practice. These findings support a
-relationship between maternal education and menstrual hygiene behavior, although sensitivity
-analyses and possible age confounding indicate that its independent contribution requires
-confirmation. Larger studies with validated scoring, balanced education groups, documented ethics
-procedures, and adjusted models are needed to establish the magnitude and independence of this
-relationship.
-
-## 8. Declarations
-
-### Ethics statement
-
-Ethics approval and parental consent documentation could not be verified. The approving institution,
-approval identifier, and study-specific consent process must be confirmed before submission.
-
-### Funding
+**Background:** Evidence on the relationship between maternal education and menstrual hygiene among adolescent girls in sub-urban Pakistan is limited.
+
+**Aim:** To assess menstrual hygiene knowledge and practice and compare scores across maternal education groups among schoolgirls in Lahore, Pakistan.
+
+**Methods:** This school-based cross-sectional study analysed questionnaire data from 120 adolescent girls. Knowledge and practice scores ranged from 0 to 9 and 0 to 7, respectively. Maternal education groups were compared using Kruskal-Wallis tests. Effect sizes, correlations and sensitivity analyses were also examined.
+
+**Results:** Mean age was 14.47 years (standard deviation 1.40), mean knowledge score was 6.65 (1.22), and mean practice score was 5.68 (0.58). Practice differed across maternal education groups in the primary unadjusted analysis (H = 10.1562, P = 0.0379; epsilon-squared = 0.0853), whereas knowledge did not (H = 8.0427, P = 0.0900; epsilon-squared = 0.0676). The exploratory Holm-adjusted practice P-value was 0.0758. Complete-response practice analysis gave H = 8.6488 and P = 0.0705.
+
+**Conclusion:** Maternal education was associated with reported menstrual hygiene practice in the primary unadjusted analysis, but the result was sensitive to missing-response handling and potential age confounding. Larger adjusted studies using validated measures are needed.
+
+**Keywords:** adolescent health; maternal education; menstrual hygiene; Pakistan; school health
+
+## Background
+
+Menstrual health is integral to adolescent health, education and gender equality. Girls require accurate information, suitable menstrual materials, privacy, water and sanitation, safe disposal options, and supportive social norms. World Health Organization and UNESCO guidance identifies menstrual health as both a health issue and a rights-based public health priority *(1–3)*.
+
+In low- and middle-income settings, menstrual hygiene may be constrained by stigma, limited communication, unaffordable or unavailable products, and inadequate school facilities. Girls may consequently reach menarche without preparation or depend on incomplete information. Studies in African and South Asian settings have associated menstrual knowledge and practice with parental education, access to information and household conditions *(4–10)*.
+
+Maternal education may affect daughters' menstrual hygiene through communication, supervision, household resources and health-related decision-making. However, school, peer and media exposure may reduce educational differences in factual knowledge, while practical constraints may continue to affect behaviour. Evidence from sub-urban Pakistan remains limited.
+
+## Objectives
+
+The primary objectives were to assess menstrual hygiene knowledge and practice scores among adolescent schoolgirls and compare these outcomes across maternal education categories. Secondary objectives were to describe demographic and household characteristics and explore relationships among age, household resources, knowledge and practice.
+
+## Methods
+
+### Study design and setting
+
+This school-based cross-sectional questionnaire study was conducted at Reach School on Sau Asal Road, Lahore, Pakistan. The planned study period was March-December 2024. The questionnaire was administered by the investigators in interviews lasting approximately 15-20 minutes.
+
+### Participants
+
+Eligible participants were adolescent girls willing to participate and for whom parental consent was available. The study plan described simple random sampling by lottery from a list of eligible students. The data file contained 120 nonblank participant records and 40 fully blank trailing rows. The blank rows were file artifacts and did not represent recruited or excluded participants. The recruitment denominator, response rate and prospective sample-size calculation were not documented; all 120 nonblank records were analysed.
+
+### Measures and scoring
+
+The primary outcomes were menstrual hygiene knowledge (0-9) and practice (0-7) scores. Maternal education was categorized as illiterate, primary, middle, secondary, or intermediate and above. Other variables included age, parental occupation, paternal education, monthly household income and family size.
+
+Knowledge and practice were calculated from the prespecified questionnaire scoring keys. For one knowledge item, the data labels identified menstruation as physiological or natural under code 1 and pathological or disease under code 2, whereas the original scoring key awarded the point to code 2. The primary analysis awarded the point to code 1 because menstruation is physiological; original-key scoring was examined in sensitivity analysis. Missing or out-of-label scored responses received zero. Four items awarded one point to every listed response and therefore contributed to totals without discriminating among participants. The study-specific questionnaire had no available documentation of validation, reliability testing, language adaptation or pilot testing.
+
+### Data quality and statistical analysis
+
+Categorical variables were summarized using frequencies and percentages. Continuous variables were summarized using means, standard deviations, medians, interquartile ranges and ranges. Data checks examined missing values, responses outside SPSS value-label domains and consistency between total family size and the sum of male and female family members.
+
+The knowledge and practice scores were bounded and discrete, and maternal education groups were markedly imbalanced. Primary comparisons therefore used two-sided Kruskal-Wallis tests at a 0.05 significance threshold, with epsilon-squared calculated as H/(n-1). Principal comparisons used unadjusted P-values; because the study plan did not identify one inferential outcome as primary, a conservative exploratory Holm correction was also examined. Pearson complete-case correlations assessed linear associations. Spearman correlations and analyses excluding the smallest education group, restricting practice scores to complete responses, treating education as ordinal and applying the original disputed scoring key were used as sensitivity analyses. Analyses were conducted using Python 3.12.7, pandas 2.2.2, NumPy 1.26.4 and SciPy 1.13.1.
+
+### Ethical considerations
+
+Ethics approval and parental consent documentation could not be verified. In accordance with Eastern Mediterranean Health Journal requirements, the approving institution, ethics approval number and study-specific consent process for minors must be confirmed and inserted before submission. The manuscript is not ready for submission until these details are supplied.
+
+## Results
+
+### Participant characteristics
+
+The 120 participants had a mean age of 14.47 years (standard deviation 1.40; range 12-18 years). Maternal education was predominantly illiterate (71.7%) or primary (14.2%), and only one participant was in the intermediate-and-above category. Monthly household income was strongly right-skewed. Participant characteristics and score summaries are presented in Table 1.
+
+**Table 1. Participant characteristics and menstrual hygiene scores (N = 120)**
+
+| Characteristic | Summary |
+| --- | --- |
+| Age, years | Mean 14.47 (SD 1.40); median 14.0 (IQR 13.0-15.0) |
+| Monthly household income | Mean 48,833.33 (SD 57,440.99); median 45,000 (IQR 30,000-50,000) |
+| Family size | Mean 6.66 (SD 2.38); median 6 (IQR 5-8) |
+| Maternal education: illiterate | 86 (71.7%) |
+| Maternal education: primary | 17 (14.2%) |
+| Maternal education: middle | 8 (6.7%) |
+| Maternal education: secondary | 8 (6.7%) |
+| Maternal education: intermediate and above | 1 (0.8%) |
+| Knowledge score, 0-9 | Mean 6.65 (SD 1.22); median 7.00; range 3-9 |
+| Practice score, 0-7 | Mean 5.68 (SD 0.58); median 6.00; range 4-7 |
+
+*SD: standard deviation; IQR: interquartile range.*
+
+Knowledge scores ranged from 3 to 9 and practice scores from 4 to 7. The modal knowledge score was 7 (37.5%) and the modal practice score was 6 (71.7%) (Figure 1).
+
+![Figure 1. Distribution of menstrual hygiene knowledge and practice scores.](figures/manuscript_score_distributions.png)
+
+### Maternal education and menstrual hygiene scores
+
+Mean knowledge scores ranged from 6.53 among participants whose mothers were illiterate or had primary education to 8.00 in the single participant in the highest category. Mean practice scores ranged from 5.59 in the illiterate group to 6.12 in the secondary group (Table 2 and Figure 2).
+
+**Table 2. Menstrual hygiene scores by maternal education**
+
+| Maternal education | n | Knowledge, mean (SD) | Knowledge, median (IQR) | Practice, mean (SD) | Practice, median (IQR) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Illiterate | 86 | 6.53 (1.27) | 7.0 (6.0-7.0) | 5.59 (0.62) | 6.0 (5.0-6.0) |
+| Primary | 17 | 6.53 (1.23) | 7.0 (7.0-7.0) | 5.76 (0.44) | 6.0 (6.0-6.0) |
+| Middle | 8 | 7.38 (0.52) | 7.0 (7.0-8.0) | 6.00 (0.00) | 6.0 (6.0-6.0) |
+| Secondary | 8 | 7.25 (0.71) | 7.0 (7.0-8.0) | 6.12 (0.35) | 6.0 (6.0-6.0) |
+| Intermediate and above | 1 | 8.00 | 8.0 (single value) | 6.00 | 6.0 (single value) |
+
+*SD: standard deviation; IQR: interquartile range. Kruskal-Wallis results: knowledge H = 8.0427, P = 0.0900, epsilon-squared = 0.0676; practice H = 10.1562, P = 0.0379, epsilon-squared = 0.0853.*
+
+![Figure 2. Mean knowledge and practice scores by maternal education.](figures/manuscript_scores_by_maternal_education.png)
+
+Practice scores differed significantly across maternal education groups in the primary unadjusted analysis (H = 10.1562, P = 0.0379; epsilon-squared = 0.0853). The knowledge comparison was not statistically significant (H = 8.0427, P = 0.0900; epsilon-squared = 0.0676). The conservative exploratory Holm-adjusted practice P-value was 0.0758. A significant result for practice and a nonsignificant result for knowledge does not establish that the strengths of these associations differ.
+
+### Correlations, data quality and sensitivity analyses
+
+Age correlated positively with knowledge (r = 0.314, P = 0.0005) and practice (r = 0.267, P = 0.0032), and knowledge correlated positively with practice (r = 0.317, P = 0.0004). Family size correlated negatively with knowledge (r = -0.201, P = 0.0279). Income measures were not significantly correlated with either score. These secondary analyses were exploratory and were not adjusted for multiplicity.
+
+The transformed 41-variable dataset contained 550 missing cells and six out-of-label categorical responses among 4920 cells. Most missingness occurred in conditional, free-text or derived fields. The core issue-free cell rate was 99.70% after conditional and skip-pattern variables were excluded. Total family size was consistent with the summed male and female family members.
+
+The primary practice result was sensitive to missing-response handling, while the knowledge conclusion remained nonsignificant across the main sensitivity analyses (Table 3). Age also differed across maternal education groups, indicating possible confounding.
+
+**Table 3. Sensitivity analyses**
+
+| Analysis | Knowledge result | Practice result |
+| --- | --- | --- |
+| Excluded highest education category (n = 1) | H = 6.3719; P = 0.0949; epsilon-squared = 0.0540 | H = 9.7515; P = 0.0208; epsilon-squared = 0.0826 |
+| Complete practice responses (n = 115) | Not applicable | H = 8.6488; P = 0.0705; epsilon-squared = 0.0759 |
+| Education treated as ordinal | rho = 0.2023; P = 0.0267 | rho = 0.2684; P = 0.0030 |
+| Age compared across education groups | H = 10.6913; P = 0.0303 | Possible confounding of practice comparison |
+| Original disputed knowledge key | Mean 5.82; H = 5.8669; P = 0.2093; epsilon-squared = 0.0493 | Not applicable |
+
+*Not applicable indicates that the sensitivity analysis was defined for the other outcome and did not estimate a corresponding result for this outcome.*
+
+## Discussion
+
+Reported practice differed across maternal education groups in the primary unadjusted comparison, whereas knowledge did not. This pattern is compatible with maternal education affecting practical menstrual management through household routines, communication, supervision or access to products. However, the exploratory multiplicity adjustment and complete-response analysis attenuated the practice evidence. Age differed across education groups and was positively associated with both outcomes, so the present bivariate analysis cannot establish an independent maternal education effect.
+
+Pakistani studies show substantial contextual variation. In rural Sindh, appropriate menstrual material use was reported by 25% of participants, and no education was associated with inappropriate use *(11)*. Urban-rural differences in Sindh were large for both satisfactory knowledge and good practice *(12)*. Studies from Ghizer and Quetta identified mothers as important information sources but also documented limited premenarcheal awareness and variable product use *(13,14)*. A Lahore study reported a positive knowledge-practice correlation, consistent with the direction observed here *(15)*.
+
+Evidence elsewhere in South Asia also shows that knowledge may not translate directly into practice. In rural India, knowledge that sanitary pads were appropriate was more common than pad use *(16)*, while another Indian study found greater pad use among girls with literate mothers *(17)*. A Nepalese study similarly found that only 40% met its good-practice definition despite generally fair or good knowledge *(18)*. Maternal education findings are inconsistent: one Nepalese study reported lower adjusted odds of good practice among girls with literate mothers but higher odds among girls with literate fathers *(7)*, whereas an Ethiopian study associated maternal secondary education or above with better knowledge and practice *(19)*. Differences in outcome definitions, education coding, adjustment and social context limit direct comparison.
+
+Structural conditions remain important. A school intervention in Bangladesh was followed by improvements in knowledge and practice *(20)*. In another Bangladeshi study, access to girls' toilets was associated with less menstrual-related absence, while menstrual restrictions were associated with more absence *(21)*. Caregiver engagement should therefore be combined with product access, privacy, sanitation, safe disposal and supportive school environments.
+
+The study included data-quality checks, effect-size reporting and sensitivity analyses. Nevertheless, its limitations are substantial. The cross-sectional design precludes causal inference. Analyses were unadjusted, education groups were severely imbalanced, and the highest category contained one participant. The study-specific questionnaire lacked documented validation, and four score items did not discriminate among responses. Missing or invalid responses were scored zero, and the practice finding changed in the complete-response analysis. The single-school sample and unavailable recruitment denominator limit generalizability. Residual confounding by age, resources and school context is likely.
+
+## Conclusion
+
+Menstrual hygiene practice differed across maternal education groups in the primary unadjusted analysis, while knowledge did not. The association was attenuated in sensitivity analyses and may be confounded by age. School health programmes should combine accurate information and caregiver engagement with practical support for products, privacy, sanitation and disposal. Larger studies using validated measures, balanced education groups and adjusted models are required.
+
+## Acknowledgements
+
+The authors acknowledge Dr Naureen Omar for study supervision. The authors should confirm that this acknowledgement is accurate and that the acknowledged contributor has approved being named.
+
+## Funding
 
 The authors must provide a final funding declaration before submission.
 
-### Competing interests
+## Competing interests
 
 The authors must provide a final competing-interests declaration before submission.
 
-### Data and materials availability
+## Data availability
 
-The study dataset is not publicly available. Access conditions must be determined by the responsible
-institution following confirmation of the applicable ethics and consent restrictions.
+The dataset is not publicly available. Access conditions must be determined by the responsible institution after confirmation of the applicable ethics and consent restrictions.
 
-### Author contributions
+## Author contributions
 
-Naureen Omar supervised the study. Ayesha Javed and Fatima Sohail conducted the investigation.
+Fatima Sohail and Ayesha Javed conducted the investigation. Muhammad Hamza Adnan's contribution must be specified by the authors before submission. All three authors must review and confirm that they meet all four ICMJE authorship criteria and approve the final manuscript.
 
-## 9. References
+## References
 
-1. World Health Organization. _Strengthening the health sector response to adolescent health and
-   development._ Geneva: WHO; 2010. Available from:
-   https://apps.who.int/iris/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y
-   (No DOI; accessed 2026-03-19).
-2. World Health Organization. _WHO statement on menstrual health and rights._ 22 June 2022.
-   Available from:
-   https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights (No DOI;
-   accessed 2026-03-19).
-3. UNESCO. _Puberty education & menstrual hygiene management._ Good Policy and Practice in Health
-   Education Booklet 9. Paris: UNESCO; 2014. Available from:
-   https://unesdoc.unesco.org/ark:/48223/pf0000226792 (No DOI; accessed 2026-07-12).
-4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools
-   in rural Northern Ghana. _Pan Afr Med J._ 2020;37:190.
-   https://doi.org/10.11604/pamj.2020.37.190.19015
-5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene
-   practice among adolescent girls in Ethiopia: a systematic review and meta-analysis. _PLoS One._
-   2022;17(1):e0262295. https://doi.org/10.1371/journal.pone.0262295
-6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent school girls in
-   southern Ethiopia: a cross-sectional study. _BMC Public Health._ 2019;19(1):1595.
-   https://doi.org/10.1186/s12889-019-7973-9
-7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in
-   Dang District, Nepal. _Adv Prev Med._ 2020;2020:1292070. https://doi.org/10.1155/2020/1292070
-8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors
-   of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District,
-   Nepal. _Adv Prev Med._ 2020;2020:8872119. https://doi.org/10.1155/2020/8872119
-9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual
-   hygiene practices among adolescent girls in urban slums of Dibrugarh town, Assam. _J Family Med
-   Prim Care._ 2021;10(12):4446-4451. https://doi.org/10.4103/jfmpc.jfmpc_703_21
-10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding
-    pubertal changes and reproductive health. _Indian J Youth Adolesc Health._ 2017;4(1):26-35.
-    https://doi.org/10.24321/2349.2880.201705
-
-11. Wasan Y, Baxter JAB, Rizvi A, Shaheen F, Junejo Q, Abro MA, et al. Practices and predictors of
-    menstrual hygiene management material use among adolescent and young women in rural Pakistan: a
-    cross-sectional assessment. _J Glob Health._ 2022;12:04059.
-    https://doi.org/10.7189/jogh.12.04059
-12. Aziz A, Memon S, Aziz F, Memon F, Khowaja BMH, Zafar SN. A comparative study of the knowledge
-    and practices related to menstrual hygiene among adolescent girls in urban and rural areas of
-    Sindh, Pakistan: a cross-sectional study. _Womens Health (Lond)._ 2024;20:17455057241231420.
-    https://doi.org/10.1177/17455057241231420
-13. Shah SF, Punjani NS, Rizvi SN, Sheikh SS, Jan R. Knowledge, attitudes, and practices regarding
-    menstrual hygiene among girls in Ghizer, Gilgit, Pakistan. _Int J Environ Res Public Health._
-    2023;20(14):6424. https://doi.org/10.3390/ijerph20146424
-14. Michael J, Iqbal Q, Haider S, Khalid A, Haque N, Ishaq R, et al. Knowledge and practice of
-    adolescent females about menstruation and menstruation hygiene visiting a public healthcare
-    institute of Quetta, Pakistan. _BMC Womens Health._ 2020;20(1):4.
-    https://doi.org/10.1186/s12905-019-0874-3
-15. Afzaal SS, Baloch S, Tahir S, Javed H, Saeed A, Pal MHA, et al. Awareness and practices of
-    menstrual hygiene among rural adolescent schoolgirls in Lahore, Pakistan: a cross-sectional
-    study. _Cureus._ 2024;16(11):e73899. https://doi.org/10.7759/cureus.73899
-16. Dasgupta A, Sarkar M. Menstrual hygiene: how hygienic is the adolescent girl? _Indian J
-    Community Med._ 2008;33(2):77-80. https://doi.org/10.4103/0970-0218.40872
-17. Kumar A, Kansal S, Singh S. Menstrual hygiene practices in context of schooling: a community
-    study among rural adolescent girls in Varanasi. _Indian J Community Med._ 2016;41(1):39-44.
-    https://doi.org/10.4103/0970-0218.170964
-18. Yadav RN, Joshi S, Poudel R, Pandeya P. Knowledge, attitude, and practice on menstrual hygiene
-    management among school adolescents. _J Nepal Health Res Counc._ 2018;15(3):212-216.
-    https://doi.org/10.3126/jnhrc.v15i3.18842
-19. Haque SE, Rahman M, Kawashima I, Mutahara M, Sakisaka K. The effect of a school-based
-    educational intervention on menstrual health: an intervention study among adolescent girls in
-    Bangladesh. _BMJ Open._ 2014;4(7):e004607. https://doi.org/10.1136/bmjopen-2013-004607
-20. Alam MU, Luby SP, Halder AK, Islam K, Opel A, Shoab AK, et al. Menstrual hygiene management
-    among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from
-    a cross-sectional survey. _BMJ Open._ 2017;7(7):e015508.
-    https://doi.org/10.1136/bmjopen-2016-015508
-21. Upashe SP, Tekelab T, Mekonnen J. Assessment of knowledge and practice of menstrual hygiene
-    among high school girls in Western Ethiopia. _BMC Womens Health._ 2015;15:84.
-    https://doi.org/10.1186/s12905-015-0245-7
+1. World Health Organization. Strengthening the health sector response to adolescent health and development. Geneva: World Health Organization; 2010. https://apps.who.int/iris/bitstream/handle/10665/340531/WHO-FCH-CAH-10-01-eng.pdf?sequence=1&isAllowed=y (accessed 19 March 2026).
+2. World Health Organization. WHO statement on menstrual health and rights. Geneva: World Health Organization; 2022. https://www.who.int/news/item/22-06-2022-who-statement-on-menstrual-health-and-rights (accessed 19 March 2026).
+3. United Nations Educational, Scientific and Cultural Organization. Puberty education and menstrual hygiene management. Paris: UNESCO; 2014. https://unesdoc.unesco.org/ark:/48223/pf0000226792 (accessed 12 July 2026).
+4. Kumbeni MT, Otupiri E, Ziba FA. Menstrual hygiene among adolescent girls in junior high schools in rural Northern Ghana. Pan Afr Med J. 2020;37:190. doi:10.11604/pamj.2020.37.190.19015.
+5. Sahiledengle B, Atlaw D, Kumie A, Tekalegn Y, Woldeyohannes D, Agho KE. Menstrual hygiene practice among adolescent girls in Ethiopia: a systematic review and meta-analysis. PLoS One. 2022;17(1):e0262295. doi:10.1371/journal.pone.0262295.
+6. Belayneh Z, Mekuriaw B. Knowledge and menstrual hygiene practice among adolescent school girls in southern Ethiopia: a cross-sectional study. BMC Public Health. 2019;19(1):1595. doi:10.1186/s12889-019-7973-9.
+7. Bhusal CK. Practice of menstrual hygiene and associated factors among adolescent school girls in Dang District, Nepal. Adv Prev Med. 2020;2020:1292070. doi:10.1155/2020/1292070.
+8. Bhusal CK, Bhattarai S, Kafle R, Shrestha R, Chhetri P, Adhikari K. Level and associated factors of knowledge regarding menstrual hygiene among school-going adolescent girls in Dang District, Nepal. Adv Prev Med. 2020;2020:8872119. doi:10.1155/2020/8872119.
+9. Sonowal P, Talukdar K, Saikia H. Sociodemographic factors and their association with menstrual hygiene practices among adolescent girls in urban slums of Dibrugarh town, Assam. J Family Med Prim Care. 2021;10(12):4446–4451. doi:10.4103/jfmpc.jfmpc_703_21.
+10. Srivastava U, Singh KK. Exploring knowledge and perceptions of school adolescents regarding pubertal changes and reproductive health. Indian J Youth Adolesc Health. 2017;4(1):26–35. doi:10.24321/2349.2880.201705.
+11. Wasan Y, Baxter JAB, Rizvi A, Shaheen F, Junejo Q, Abro MA, et al. Practices and predictors of menstrual hygiene management material use among adolescent and young women in rural Pakistan: a cross-sectional assessment. J Glob Health. 2022;12:04059. doi:10.7189/jogh.12.04059.
+12. Aziz A, Memon S, Aziz F, Memon F, Khowaja BMH, Zafar SN. A comparative study of the knowledge and practices related to menstrual hygiene among adolescent girls in urban and rural areas of Sindh, Pakistan: a cross-sectional study. Womens Health (Lond). 2024;20:17455057241231420. doi:10.1177/17455057241231420.
+13. Shah SF, Punjani NS, Rizvi SN, Sheikh SS, Jan R. Knowledge, attitudes, and practices regarding menstrual hygiene among girls in Ghizer, Gilgit, Pakistan. Int J Environ Res Public Health. 2023;20(14):6424. doi:10.3390/ijerph20146424.
+14. Michael J, Iqbal Q, Haider S, Khalid A, Haque N, Ishaq R, et al. Knowledge and practice of adolescent females about menstruation and menstruation hygiene visiting a public healthcare institute of Quetta, Pakistan. BMC Womens Health. 2020;20(1):4. doi:10.1186/s12905-019-0874-3.
+15. Afzaal SS, Baloch S, Tahir S, Javed H, Saeed A, Pal MHA, et al. Awareness and practices of menstrual hygiene among rural adolescent schoolgirls in Lahore, Pakistan: a cross-sectional study. Cureus. 2024;16(11):e73899. doi:10.7759/cureus.73899.
+16. Dasgupta A, Sarkar M. Menstrual hygiene: how hygienic is the adolescent girl? Indian J Community Med. 2008;33(2):77–80. doi:10.4103/0970-0218.40872.
+17. Kumar A, Kansal S, Singh S. Menstrual hygiene practices in context of schooling: a community study among rural adolescent girls in Varanasi. Indian J Community Med. 2016;41(1):39–44. doi:10.4103/0970-0218.170964.
+18. Yadav RN, Joshi S, Poudel R, Pandeya P. Knowledge, attitude, and practice on menstrual hygiene management among school adolescents. J Nepal Health Res Counc. 2018;15(3):212–216. doi:10.3126/jnhrc.v15i3.18842.
+19. Upashe SP, Tekelab T, Mekonnen J. Assessment of knowledge and practice of menstrual hygiene among high school girls in Western Ethiopia. BMC Womens Health. 2015;15:84. doi:10.1186/s12905-015-0245-7.
+20. Haque SE, Rahman M, Kawashima I, Mutahara M, Sakisaka K. The effect of a school-based educational intervention on menstrual health: an intervention study among adolescent girls in Bangladesh. BMJ Open. 2014;4(7):e004607. doi:10.1136/bmjopen-2013-004607.
+21. Alam MU, Luby SP, Halder AK, Islam K, Opel A, Shoab AK, et al. Menstrual hygiene management among Bangladeshi adolescent schoolgirls and risk factors affecting school absence: results from a cross-sectional survey. BMJ Open. 2017;7(7):e015508. doi:10.1136/bmjopen-2016-015508.

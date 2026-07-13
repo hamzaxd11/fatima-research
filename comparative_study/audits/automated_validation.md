@@ -24,7 +24,7 @@ Overall: PASS (25/25)
 | unique DOI count | PASS | 18 unique DOI links; 3 institutional references have no DOI |
 | comparative manuscript content | PASS | all required comparative and result phrases present |
 | protected root files | PASS | menstrual hygiene spss.sav fatima and ayesha (1).sav, Synopsis - Menstrual hygiene..docx, doc.md |
-| local Markdown links | PASS | 41 inspected; broken: [] |
+| local Markdown links | PASS | 39 inspected; broken: [] |
 | DOCX exists | PASS | 1021366 bytes |
 | DOCX comparative content | PASS | required comparison phrases present |
 | DOCX figures | PASS | 4 embedded media files |
